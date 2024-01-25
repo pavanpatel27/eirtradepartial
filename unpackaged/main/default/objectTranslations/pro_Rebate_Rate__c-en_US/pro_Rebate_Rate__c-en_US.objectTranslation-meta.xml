@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Rebate Rate</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Rebate Rates</value>
+    </caseValues>
+    
+    
+    
+    
+    
+    
+    
+    <layouts>
+        <layout>Rebate Rate Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- The RangeEnd value must be Greater Than the Range Start value --></errorMessage>
+        <name>Range_End_Greater_Than_Range_Start</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The Range Start value must be Less Than the Range End value --></errorMessage>
+        <name>Range_Start_Less_Than_Range_End</name>
+    </validationRules>
+</CustomObjectTranslation>

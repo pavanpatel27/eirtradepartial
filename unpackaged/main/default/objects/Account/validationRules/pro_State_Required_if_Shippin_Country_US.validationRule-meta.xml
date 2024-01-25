@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pro_State_Required_if_Shippin_Country_US</fullName>
+    <active>true</active>
+    <description>Isil Kaya - Createdby Prodigy.
+Update this validation if country and state free text fields are changed to picklists.</description>
+    <errorConditionFormula>ISBLANK( ShippingState ) &amp;&amp; (
+  
+OR(  ShippingCountry = &#39;US&#39; ,
+     ShippingCountry = &#39;USA&#39; ,
+     ShippingCountry = &#39;U.S&#39; ,
+     ShippingCountry = &#39;U.S.&#39; ,
+     ShippingCountry = &#39;U.S.A&#39; ,
+     ShippingCountry = &#39;U.S.A.&#39; ,
+     ShippingCountry = &#39;us&#39; ,
+     ShippingCountry = &#39;usa&#39; ,
+     ShippingCountry = &#39;u.s&#39; ,
+     ShippingCountry = &#39;u.s.&#39; ,
+     ShippingCountry = &#39;u.s.a&#39; ,
+     ShippingCountry = &#39;u.s.a.&#39; ,
+     ShippingCountry = &#39;United States&#39; ,
+     ShippingCountry = &#39;united states&#39; ,
+     ShippingCountry = &#39;United States of America&#39; ,
+     ShippingCountry = &#39;America&#39; 
+  
+ )
+)</errorConditionFormula>
+    <errorDisplayField>ShippingState</errorDisplayField>
+    <errorMessage>Please enter a value for &#39;Shipping State&#39;.</errorMessage>
+</ValidationRule>

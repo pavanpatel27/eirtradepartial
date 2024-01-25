@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <brand>
+        <headerColor>#0070D2</headerColor>
+        <logo>salestrip</logo>
+        <logoVersion>1</logoVersion>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <formFactors>Small</formFactors>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <label>SalesTrip Expenses</label>
+    <navType>Standard</navType>
+    <tabs>salestrip__SalesTripHomeNew</tabs>
+    <tabs>salestrip__Expense__c</tabs>
+    <tabs>salestrip__BulkApproval</tabs>
+    <tabs>salestrip__ExpenseReport__c</tabs>
+    <tabs>salestrip__ReviewMyExpenses</tabs>
+    <tabs>standard-report</tabs>
+    <tabs>standard-Dashboard</tabs>
+    <tabs>Tech_Team_Request__c</tabs>
+    <tabs>Remote_Work_Request__c</tabs>
+    <tabs>pro_OCR_Document__c</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>SalesTrip_Expenses_UtilityBar</utilityBar>
+</CustomApplication>

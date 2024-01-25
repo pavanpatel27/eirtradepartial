@@ -1,0 +1,14 @@
+<apex:page standardController="Remote_Work_Request__c" recordSetVar="remoteRequests">
+    <apex:includeLightning />
+        <div id="display">
+
+        </div>
+
+        <script>
+            $Lightning.use("c:Pro_RemoteWorkRequestApp", function() {
+                $Lightning.createComponent("c:Pro_RemoteWorkRequest", {}, "display", function(cmp) {
+
+                });
+            });
+        </script>
+</apex:page>

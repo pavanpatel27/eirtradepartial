@@ -1,0 +1,11 @@
+Hi,
+
+The following Purchase Order has been approved.
+
+Purchase Order: {!pro_Purchase_Order__c.Name}
+
+Link to record: {!pro_Purchase_Order__c.Link}
+
+Regards,
+EirTrade
+Salesforce System

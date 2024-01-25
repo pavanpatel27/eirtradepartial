@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <layouts>
+        <layout>Account (Accounting) Layout</layout>
+        <sections>
+            <label><!-- Accounting Information --></label>
+            <section>Accounting Information</section>
+        </sections>
+        <sections>
+            <label><!-- Billing Information --></label>
+            <section>Billing Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Payable Information --></label>
+            <section>Payable Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Account (Sales) Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Account - AvSight v3</layout>
+        <sections>
+            <label><!-- Accounting Settings --></label>
+            <section>Accounting Settings</section>
+        </sections>
+        <sections>
+            <label><!-- Days Due --></label>
+            <section>Days Due</section>
+        </sections>
+        <sections>
+            <label><!-- Email Information --></label>
+            <section>Email Information</section>
+        </sections>
+        <sections>
+            <label><!-- Form Options Overrides --></label>
+            <section>Form Options Overrides</section>
+        </sections>
+        <sections>
+            <label><!-- Operations Defaults --></label>
+            <section>Operations Defaults</section>
+        </sections>
+        <sections>
+            <label><!-- Owner Information --></label>
+            <section>Owner Information</section>
+        </sections>
+        <sections>
+            <label><!-- Segmentation-Pricing --></label>
+            <section>Segmentation-Pricing</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Account AvSight - AS v1</layout>
+        <sections>
+            <label><!-- AS - Account Payable Information --></label>
+            <section>AS - Account Payable Information</section>
+        </sections>
+        <sections>
+            <label><!-- AS - Accounting Information --></label>
+            <section>AS - Accounting Information</section>
+        </sections>
+        <sections>
+            <label><!-- AS - Billing Information --></label>
+            <section>AS - Billing Information</section>
+        </sections>
+        <sections>
+            <label><!-- AvSight Additional Information --></label>
+            <section>AvSight Additional Information</section>
+        </sections>
+        <sections>
+            <label><!-- AvSight Billing Info --></label>
+            <section>AvSight Billing Info</section>
+        </sections>
+        <sections>
+            <label><!-- AvSight Payable Info --></label>
+            <section>AvSight Payable Info</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Operations Defaults --></label>
+            <section>Operations Defaults</section>
+        </sections>
+        <sections>
+            <label><!-- Owner Information --></label>
+            <section>Owner Information</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- New Rebate --></label>
+        <name>pro_New_Rebate</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Promise to Pay --></label>
+        <name>pro_Promise_to_Pay</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- AP --></label>
+        <name>AP</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- AR --></label>
+        <name>AR</name>
+    </quickActions>
+    <validationRules>
+        <errorMessage><!-- Please enter the billing contact AV for the account. --></errorMessage>
+        <name>pro_Billing_Contact_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter the invoice email for the account. --></errorMessage>
+        <name>pro_Invoice_Email_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter a value for &apos;Billing State&apos;. --></errorMessage>
+        <name>pro_State_Required_if_Billing_Country_US</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter a value for &apos;Shipping State&apos;. --></errorMessage>
+        <name>pro_State_Required_if_Shippin_Country_US</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- AltavistaNews --></label>
+        <name>AltavistaNews</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Billings_Report --></label>
+        <name>Billings_Report</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Cash_Disbursements_Report --></label>
+        <name>Cash_Disbursements_Report</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleMaps --></label>
+        <name>GoogleMaps</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleNews --></label>
+        <name>GoogleNews</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleSearch --></label>
+        <name>GoogleSearch</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- HooversProfile --></label>
+        <name>HooversProfile</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- LOOP --></label>
+        <name>Loop__LOOP</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- LOOP_Merge --></label>
+        <name>Loop__LOOP_Merge</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- LOOPlus --></label>
+        <name>Loop__LOOPlus</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Mass_LOOP_Merge --></label>
+        <name>Loop__Mass_LOOP_Merge</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Mass_LOOPlus --></label>
+        <name>Loop__Mass_LOOPlus</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Payables_Report --></label>
+        <name>Payables_Report</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- YahooMaps --></label>
+        <name>YahooMaps</name>
+    </webLinks>
+</CustomObjectTranslation>

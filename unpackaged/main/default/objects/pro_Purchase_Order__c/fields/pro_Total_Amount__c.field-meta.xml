@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pro_Total_Amount__c</fullName>
+    <description>JP 14/03/2023 V1 - Created by Prodigy</description>
+    <externalId>false</externalId>
+    <label>Total Amount</label>
+    <summarizedField>pro_Purchase_Order_Line__c.pro_Total_Amount__c</summarizedField>
+    <summaryForeignKey>pro_Purchase_Order_Line__c.pro_Purchase_Order__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

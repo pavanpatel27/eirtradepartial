@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pro_My_Team_and_Me__c</fullName>
+    <description>JP 20/08/2023 - Created by Prodigy</description>
+    <externalId>false</externalId>
+    <formula>OR(
+$User.Id = pro_Employee_Remote_Request__r.GlicW__User__c ,
+$User.Id =  pro_Employee_Remote_Request__r.GlicW__Manager__r.GlicW__User__c)</formula>
+    <label>My Team and Me</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

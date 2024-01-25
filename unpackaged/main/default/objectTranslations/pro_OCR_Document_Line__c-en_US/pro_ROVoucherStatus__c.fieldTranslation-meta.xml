@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label><!-- ROVoucherStatus --></label>
+        <name>pro_ROVoucherStatus__c</name>
+        <picklistValues>
+            <masterLabel>Deferred</masterLabel>
+            <translation><!-- Deferred --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Failed</masterLabel>
+            <translation><!-- Failed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Todo</masterLabel>
+            <translation><!-- Todo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vouchered</masterLabel>
+            <translation><!-- Vouchered --></translation>
+        </picklistValues>
+    </CustomFieldTranslation>

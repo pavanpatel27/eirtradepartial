@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pro_Projo_Manager_Dashboard__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>JP 16/08/2023 - Created by Prodigy</description>
+    <externalId>false</externalId>
+    <label>Projo Manager Dashboard</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Checkbox</type>
+</CustomField>

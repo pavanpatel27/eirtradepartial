@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Billing</label>
+    <protected>false</protected>
+    <values>
+        <field>pro_Accounting_Seed_Ledger__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>pro_Billing_Format__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>pro_Days__c</field>
+        <value xsi:type="xsd:double">0.0</value>
+    </values>
+    <values>
+        <field>pro_Email_Template__c</field>
+        <value xsi:type="xsd:string">pro_Eirtrade_Billing</value>
+    </values>
+    <values>
+        <field>pro_Type__c</field>
+        <value xsi:type="xsd:string">Billing</value>
+    </values>
+    <values>
+        <field>pro_Visualforce_Page__c</field>
+        <value xsi:type="xsd:string">GenerateInvoice_Master</value>
+    </values>
+</CustomMetadata>

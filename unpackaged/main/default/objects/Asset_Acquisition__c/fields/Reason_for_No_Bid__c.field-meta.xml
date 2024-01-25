@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_for_No_Bid__c</fullName>
+    <externalId>false</externalId>
+    <label>Reason for No Bid</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Asset type</fullName>
+                <default>false</default>
+                <label>Asset type</label>
+            </value>
+            <value>
+                <fullName>Engine condition</fullName>
+                <default>false</default>
+                <label>Engine condition</label>
+            </value>
+            <value>
+                <fullName>Last Operator</fullName>
+                <default>false</default>
+                <label>Last Operator</label>
+            </value>
+            <value>
+                <fullName>Incomplete Technical Records</fullName>
+                <default>false</default>
+                <label>Incomplete Technical Records</label>
+            </value>
+            <value>
+                <fullName>Incident Related</fullName>
+                <default>false</default>
+                <label>Incident Related</label>
+            </value>
+            <value>
+                <fullName>Price too high</fullName>
+                <default>false</default>
+                <label>Price too high</label>
+            </value>
+            <value>
+                <fullName>Option 1</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Option 1</label>
+            </value>
+            <value>
+                <fullName>Option 2</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Option 2</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

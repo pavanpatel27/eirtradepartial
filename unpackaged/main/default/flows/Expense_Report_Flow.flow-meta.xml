@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56.0</apiVersion>
+    <decisions>
+        <name>Check_the_Status</name>
+        <label>Check the Status?</label>
+        <locationX>446</locationX>
+        <locationY>335</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Pending_Approval</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.salestrip__Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Pending Approval</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Expense_Status_to_Pending_Approval</targetReference>
+            </connector>
+            <label>Pending Approval</label>
+        </rules>
+        <rules>
+            <name>Approved</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.salestrip__Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Approved</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Expense_Status_to_Pending_Reimbursement</targetReference>
+            </connector>
+            <label>Approved</label>
+        </rules>
+        <rules>
+            <name>Rejected</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.salestrip__Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Rejected</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Expense_Status_to_Rejected</targetReference>
+            </connector>
+            <label>Rejected</label>
+        </rules>
+    </decisions>
+    <description>This Expense Report flow updates the related Expense Status.</description>
+    <environments>Default</environments>
+    <interviewLabel>Expense Report Flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Expense Report Flow</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Expense_Status_to_Pending_Approval</name>
+        <label>Update Expense Status to Pending Approval</label>
+        <locationX>50</locationX>
+        <locationY>455</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>salestrip__ExpenseReport__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>salestrip__Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Draft</stringValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>salestrip__Status__c</field>
+            <value>
+                <stringValue>Pending Approval</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record.salestrip__Expenses__r</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Expense_Status_to_Pending_Reimbursement</name>
+        <label>Update Expense Status to Pending Reimbursement</label>
+        <locationX>314</locationX>
+        <locationY>455</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>salestrip__ExpenseReport__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>salestrip__Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Pending Approval</stringValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>salestrip__Status__c</field>
+            <value>
+                <stringValue>Pending Reimbursement</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record.salestrip__Expenses__r</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Expense_Status_to_Rejected</name>
+        <label>Update Expense Status to Rejected</label>
+        <locationX>578</locationX>
+        <locationY>455</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>salestrip__ExpenseReport__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>salestrip__Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Pending Approval</stringValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>salestrip__Status__c</field>
+            <value>
+                <stringValue>Rejected</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record.salestrip__Expenses__r</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>320</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Check_the_Status</targetReference>
+        </connector>
+        <object>salestrip__ExpenseReport__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

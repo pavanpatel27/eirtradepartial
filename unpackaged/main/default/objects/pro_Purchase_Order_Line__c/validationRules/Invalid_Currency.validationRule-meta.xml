@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Invalid_Currency</fullName>
+    <active>true</active>
+    <description>JP 14/03/2023 V1 - Created by Prodigy</description>
+    <errorConditionFormula>TEXT( CurrencyIsoCode ) != TEXT( pro_Purchase_Order__r.CurrencyIsoCode )</errorConditionFormula>
+    <errorDisplayField>CurrencyIsoCode</errorDisplayField>
+    <errorMessage>Currency must match PO Header.</errorMessage>
+</ValidationRule>

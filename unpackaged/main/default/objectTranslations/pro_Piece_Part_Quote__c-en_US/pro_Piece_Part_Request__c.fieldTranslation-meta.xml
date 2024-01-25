@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label><!-- Piece Part Request --></label>
+        <name>pro_Piece_Part_Request__c</name>
+        <relationshipLabel><!-- Piece Part Quotes --></relationshipLabel>
+    </CustomFieldTranslation>

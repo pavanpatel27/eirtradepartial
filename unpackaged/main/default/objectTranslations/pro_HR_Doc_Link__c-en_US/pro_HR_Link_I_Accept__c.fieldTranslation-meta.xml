@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- By checking this box, you are agreeing to have read the document. --></help>
+        <label><!-- I Accept --></label>
+        <name>pro_HR_Link_I_Accept__c</name>
+    </CustomFieldTranslation>

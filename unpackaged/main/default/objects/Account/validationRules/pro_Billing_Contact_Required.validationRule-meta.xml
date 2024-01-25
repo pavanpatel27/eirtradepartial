@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pro_Billing_Contact_Required</fullName>
+    <active>true</active>
+    <description>Isil Kaya - Created by Prodigy.</description>
+    <errorConditionFormula>OR(  ISPICKVAL( inscor__Accounting_Type__c , &#39;Customer&#39;) ,
+     ISPICKVAL( inscor__Accounting_Type__c , &#39;Customer and Vendor&#39;) 
+  ) 
+
+&amp;&amp;
+
+     ISBLANK( inscor__Billing_Contact__c  )</errorConditionFormula>
+    <errorDisplayField>inscor__Billing_Contact__c</errorDisplayField>
+    <errorMessage>Please enter the billing contact AV for the account.</errorMessage>
+</ValidationRule>

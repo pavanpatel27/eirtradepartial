@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Tech Team Request</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Tech Team Requests</value>
+    </caseValues>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <layouts>
+        <layout>Asset Tech Team Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>General Enquiry Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Inventory Tech Team Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Master Tech Team Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Sales Enquiry Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- General Query --></label>
+        <name>pro_General_Query</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Sales Query --></label>
+        <name>pro_Sales_Query</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Asset --></label>
+        <name>pro_Tech_Team_Asset</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Inventory --></label>
+        <name>pro_Tech_Team_Inventory</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pro_Create_Document</fullName>
+    <availability>online</availability>
+    <description>AB 19/06/2023 - Created by Prodigy</description>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <height>600</height>
+    <linkType>url</linkType>
+    <masterLabel>Create Document</masterLabel>
+    <openType>sidebar</openType>
+    <protected>false</protected>
+    <requireRowSelection>false</requireRowSelection>
+    <url>/flow/Prodigy_HR_Docs_After_Update?retUrl=lightning/o/pro_HR_Doc__c/list?filterName=00BDL00000HahUN2AZ</url>
+</WebLink>

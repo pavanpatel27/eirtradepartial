@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tracking_Details</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+IF(TEXT(pro_Type__c) = &#39;Attendance&#39;, TRUE, FALSE),
+OR(
+ISBLANK(  pro_Late_Arrival_Date__c ),
+ISBLANK(  pro_Hours_Late__c ),
+ISBLANK(  pro_Late_Arrival_Reason__c ))
+)</errorConditionFormula>
+    <errorMessage>Please note if the type is &#39;Attendance&#39; then the following fields need to be populated. &#39;Late Arrival Date&#39;, &#39;Hours Late&#39; and &#39;Late Arrival Reason&#39;</errorMessage>
+</ValidationRule>

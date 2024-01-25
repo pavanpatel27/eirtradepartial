@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label><!-- Financier --></label>
+        <name>Financier__c</name>
+        <picklistValues>
+            <masterLabel>Blackrock</masterLabel>
+            <translation><!-- Blackrock --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EirTrade</masterLabel>
+            <translation><!-- EirTrade --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Faverey</masterLabel>
+            <translation><!-- Faverey --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TBC</masterLabel>
+            <translation><!-- TBC --></translation>
+        </picklistValues>
+    </CustomFieldTranslation>

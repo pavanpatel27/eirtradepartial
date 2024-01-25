@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label><!-- Reason for Closed Lost --></label>
+        <name>Reason_for_Closed_Lost__c</name>
+        <picklistValues>
+            <masterLabel>Consigned to another party</masterLabel>
+            <translation><!-- Consigned to another party --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Incomplete Technical Records</masterLabel>
+            <translation><!-- Incomplete Technical Records --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lease Extended</masterLabel>
+            <translation><!-- Lease Extended --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Leased to another party</masterLabel>
+            <translation><!-- Leased to another party --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Bid</masterLabel>
+            <translation><!-- No Bid --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Outbid</masterLabel>
+            <translation><!-- Outbid --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Withdrawn For Sale</masterLabel>
+            <translation><!-- Withdrawn For Sale --></translation>
+        </picklistValues>
+    </CustomFieldTranslation>

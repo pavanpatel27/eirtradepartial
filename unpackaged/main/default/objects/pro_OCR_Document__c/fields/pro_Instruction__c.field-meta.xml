@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pro_Instruction__c</fullName>
+    <description>FT - 31/07/2023 - Created by Prodigy</description>
+    <externalId>false</externalId>
+    <label>Instruction</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Voucher</fullName>
+                <default>false</default>
+                <label>Voucher</label>
+            </value>
+            <value>
+                <fullName>Payable</fullName>
+                <default>false</default>
+                <label>Payable</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

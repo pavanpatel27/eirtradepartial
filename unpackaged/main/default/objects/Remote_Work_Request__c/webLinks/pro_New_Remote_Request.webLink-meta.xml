@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pro_New_Remote_Request</fullName>
+    <availability>online</availability>
+    <description>AB 10/08/2023 - Created by Prodigy</description>
+    <displayType>massActionButton</displayType>
+    <linkType>page</linkType>
+    <masterLabel>New Remote Request</masterLabel>
+    <openType>replace</openType>
+    <page>Pro_RemoteWorkRequestFlowPage</page>
+    <protected>false</protected>
+    <requireRowSelection>false</requireRowSelection>
+</WebLink>

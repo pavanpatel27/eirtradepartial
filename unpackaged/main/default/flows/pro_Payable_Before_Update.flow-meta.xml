@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>57.0</apiVersion>
+    <assignments>
+        <description>JP 14/03/2023 V1 - Created by Prodigy</description>
+        <name>Assign_Value_to_AP_Total</name>
+        <label>Assign Value to AP Total</label>
+        <locationX>264</locationX>
+        <locationY>575</locationY>
+        <assignmentItems>
+            <assignToReference>AP_Total</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Loop_through_Payables.AcctSeed__Total__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_through_Payables</targetReference>
+        </connector>
+    </assignments>
+    <description>JP 14/03/2023 V1 - Created by Prodigy</description>
+    <environments>Default</environments>
+    <interviewLabel>Payable Before Update {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Payable Before Update</label>
+    <loops>
+        <description>JP 14/03/2023 V1 - Created by Prodigy</description>
+        <name>Loop_through_Payables</name>
+        <label>Loop through Payables</label>
+        <locationX>176</locationX>
+        <locationY>455</locationY>
+        <collectionReference>Get_Account_Payables</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Assign_Value_to_AP_Total</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Update_Purchase_Order</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>JP 14/03/2023 V1 - Created by Prodigy</description>
+        <name>Get_Account_Payables</name>
+        <label>Get Account Payables</label>
+        <locationX>176</locationX>
+        <locationY>335</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Loop_through_Payables</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>pro_Purchase_Order__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.pro_Purchase_Order__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>AcctSeed__Account_Payable__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <description>JP 14/03/2023 V1 - Created by Prodigy</description>
+        <name>Update_Purchase_Order</name>
+        <label>Update Purchase Order</label>
+        <locationX>176</locationX>
+        <locationY>791</locationY>
+        <inputAssignments>
+            <field>pro_AP_Total__c</field>
+            <value>
+                <elementReference>AP_Total</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record.pro_Purchase_Order__r</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Account_Payables</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>pro_Purchase_Order__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>AcctSeed__Total__c</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>AcctSeed__Account_Payable__c</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>JP 14/03/2023 V1 - Created by prodigy</description>
+        <name>AP_Total</name>
+        <dataType>Currency</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>2</scale>
+    </variables>
+</Flow>

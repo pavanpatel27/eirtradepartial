@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>inscor__Sales_Order__c$Name</field>
+    </columns>
+    <columns>
+        <field>inscor__Sales_Order__c.inscor__Invoices__r.inscor__Invoice_Lines__r$inscor__Owner_Code__c</field>
+    </columns>
+    <columns>
+        <field>inscor__Sales_Order__c.inscor__Invoices__r.inscor__Invoice_Lines__r$inscor__Item__c</field>
+    </columns>
+    <columns>
+        <field>inscor__Sales_Order__c.inscor__Invoices__r.inscor__Invoice_Lines__r$inscor__Serial_Number__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>inscor__Sales_Order__c.inscor__Invoices__r.inscor__Invoice_Lines__r$inscor__Quantity__c</field>
+    </columns>
+    <columns>
+        <field>inscor__Sales_Order__c$inscor__Create_Date__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>inscor__Sales_Order__c.inscor__Invoices__r.inscor__Invoice_Lines__r$inscor__Price__c</field>
+    </columns>
+    <columns>
+        <field>inscor__Sales_Order__c.inscor__Invoices__r.inscor__Invoice_Lines__r$inscor__Condition_Code__c</field>
+    </columns>
+    <currency>USD</currency>
+    <format>Tabular</format>
+    <name>Sales (30/09/2022</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Sales_Order_Part_Invoice_Invoice_Lines__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>inscor__Sales_Order__c$inscor__Create_Date__c</dateColumn>
+        <endDate>2022-10-14</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2022-09-30</startDate>
+    </timeFrameFilter>
+</Report>

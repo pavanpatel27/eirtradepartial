@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>59.0</apiVersion>
+    <decisions>
+        <name>Is_Technical_Review</name>
+        <label>Is Technical Review?</label>
+        <locationX>182</locationX>
+        <locationY>323</locationY>
+        <defaultConnector>
+            <targetReference>Update_Project_Milestone</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No - It&#39;s not</defaultConnectorLabel>
+        <rules>
+            <name>Yes_It_is</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Technical Review</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Create_Tech_Task</targetReference>
+            </connector>
+            <label>Yes - It is</label>
+        </rules>
+    </decisions>
+    <description>AB 24/10/2023 - Created by Prodigy</description>
+    <environments>Default</environments>
+    <interviewLabel>Prodigy - Project Milestone After Create {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Prodigy - Project Milestone After Create</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Create_Tech_Task</name>
+        <label>Create Tech Task</label>
+        <locationX>50</locationX>
+        <locationY>431</locationY>
+        <assignRecordIdToReference>v_TaskId</assignRecordIdToReference>
+        <connector>
+            <targetReference>Update_Project_Milestone</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>pro_TechTeam_Asset_Acquisition__c</field>
+            <value>
+                <elementReference>$Record.GlicW__Project__r.pro_Asset_Acquisition__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>pro_Tech_Team_Asset__c</field>
+            <value>
+                <elementReference>$Record.GlicW__Project__r.pro_Asset_Acquisition__r.Asset__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>pro_Tech_Team_Required_Date__c</field>
+            <value>
+                <elementReference>$Record.GlicW__Start_Date__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Tech_Team_Request__c</object>
+    </recordCreates>
+    <recordUpdates>
+        <name>Update_Project_Milestone</name>
+        <label>Update Project Milestone</label>
+        <locationX>182</locationX>
+        <locationY>623</locationY>
+        <inputAssignments>
+            <field>pro_Tech_Team_Request__c</field>
+            <value>
+                <elementReference>v_TaskId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Is_Technical_Review</targetReference>
+        </connector>
+        <object>GlicW__Project_Milestone1__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>v_TaskId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

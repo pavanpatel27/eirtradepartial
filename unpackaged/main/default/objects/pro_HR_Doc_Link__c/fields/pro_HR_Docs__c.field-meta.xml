@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pro_HR_Docs__c</fullName>
+    <description>AB 16/09/2023 - Created by Prodigy</description>
+    <externalId>false</externalId>
+    <label>HR Documents</label>
+    <referenceTo>pro_HR_Doc__c</referenceTo>
+    <relationshipLabel>Documents</relationshipLabel>
+    <relationshipName>pro_HR_Doc_Links</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>true</writeRequiresMasterRead>
+</CustomField>

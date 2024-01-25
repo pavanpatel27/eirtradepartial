@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>No_Bid_Reason</fullName>
+    <active>true</active>
+    <errorConditionFormula>TEXT(Status__c) = &quot;No Bid&quot; &amp;&amp; TEXT( Reason_for_No_Bid__c ) = &quot;&quot;</errorConditionFormula>
+    <errorMessage>Please enter a No Bid reason before saving.</errorMessage>
+</ValidationRule>

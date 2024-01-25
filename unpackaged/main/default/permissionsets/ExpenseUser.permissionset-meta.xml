@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <applicationVisibilities>
+        <application>SalesTrip_Expenses</application>
+        <visible>true</visible>
+    </applicationVisibilities>
+    <description>An Expense-only user of the SalesTrip Application</description>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Tech_Team_Request__c.pro_TechTeam_Asset_Acquisition__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>SalesTrip Expense User New</label>
+</PermissionSet>

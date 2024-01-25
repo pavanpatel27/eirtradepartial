@@ -1,0 +1,102 @@
+<!-- sldsValidatorIgnore -->
+<!--
+ * Created by Prodigy on 30-03-2023.
+ *
+ * Lightning Web Component Name: c-pro-custom-lookup-field-dynamic.
+ *
+ * Description: Custom Lookup field used on custom UIs.
+ *
+ * Last modified by Johnny in Prodigy on 30-03-2023.
+-->
+<template>
+    <!-- For rendering input field and search results -->
+    <template if:true={isBlank}>
+        <div class="containerPosition">
+			<template if:false={blankLabel}>
+				<label for="gtCustomInput">{fieldLabel}</label>
+			</template>
+			<input 
+				id="gtCustomInput" 
+				type="text" 
+				class="slds-input" 
+				placeholder={gtPlaceHolder} 
+				onkeyup={handleChange} 
+				onblur={blurResults}/>
+
+			<template if:true={showResults}>
+				<!-- pad_sides -->
+				<div class="slds-dropdown slds-dropdown_length-5 slds-dropdown_fluid mar_left_rev resultsPosition" role="listbox" style="max-height: 208px;">
+					<ul class="slds-listbox slds-listbox_vertical recordListBox" role="presentation">
+						<!-- If records are found, displays results -->
+						<template if:false={noResultsFound}>
+							<template for:each={listOfRecords} for:item="rec">
+								<li key={rec.Value} id={rec.Value} class="slds-listbox__item" data-ind={rec.Value} onmousedown={glSelectItem}>
+									<div class="slds-media slds-listbox__option_entity">
+										<span>
+											<lightning-icon 
+												icon-name={iconName} 
+												alternative-text="icon">
+											</lightning-icon>
+										</span>
+										<span class="verticalAlign pushLabelDown pushLabelRight">
+											<span class="slds-truncate">{rec.Label}</span>
+										</span>
+									</div>
+								</li>
+							</template>
+							<!-- If no records are found, displays 'No Records Found' message -->
+							<template if:true={noResultsFound}>
+								<li id="errorMessageItem" class="slds-listbox__item">
+									<!-- slds-listbox__option slds-listbox__option_has-meta -->
+									<div class="slds-media slds-listbox__option_entity">
+										<!-- slds-media__body -->  
+										<span class="verticalAlign">
+											<span class="slds-truncate">No Record(s) Found</span>
+										</span>
+									</div>
+								</li>
+							</template>
+						</template>
+					</ul>
+				</div>
+			</template>
+		</div>
+	</template>
+	<!-- For Rendering Lightning pill with selected record -->
+	<template if:false={isBlank}>
+		<div class="">
+			{fieldLabel}
+		</div>
+		<div class="slds-pill_container">
+			<span class="slds-pill slds-pill_link pillFullLength">
+				<span class="slds-pill__action" title={selectedRecordName}>
+					<template if:true={navigable}>
+						<span 
+							class="slds-pill__label pill_colour selectedItemHover" 
+							onclick={NavigateToRecord}>
+							{selectedRecordName}
+						</span>
+					</template>
+					<template if:false={navigable}>
+						<span 
+							class="slds-pill__label pill_colour">
+							{selectedRecordName}
+						</span>
+					</template>
+				</span>
+				<template if:false={notChangeable}>
+					<button 
+						class="slds-button slds-button_icon slds-button_icon slds-pill__remove" 
+						title="Remove Choice" 
+						onclick={pillRemove}>
+						
+						<lightning-icon 
+							icon-name="utility:close" 
+							alternative-text="remove choice">
+						</lightning-icon>
+					</button>
+				</template>
+			</span>
+		</div>
+	</template>
+</template>

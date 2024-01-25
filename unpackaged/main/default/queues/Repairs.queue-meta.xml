@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>true</doesSendEmailToMembers>
+    <name>Repairs</name>
+    <queueMembers>
+        <users>
+            <user>prod-avs-admin@eirtrade.com</user>
+            <user>a.sanni@eirtradeaviation.com</user>
+            <user>c.griffin@eirtradeaviation.com</user>
+            <user>c.keane@eirtradeaviation.com</user>
+            <user>e.byrne@eirtradeaviation.com</user>
+            <user>laura.fitzgibbon@eirtradeaviation.com</user>
+            <user>l.reardon@eirtradeaviation.com</user>
+            <user>n.smyth@eirtradeaviation.com</user>
+            <user>s.dixon@eirtradeaviation.com</user>
+            <user>s.caesar@eirtradeaviation.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Task</sobjectType>
+    </queueSobject>
+</Queue>

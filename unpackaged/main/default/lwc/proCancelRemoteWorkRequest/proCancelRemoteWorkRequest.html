@@ -1,0 +1,39 @@
+<!-- sldsValidatorIgnore -->
+<!--
+ * Created by Prodigy Ltd on 19/10/2023.
+ *
+ * Lightning Web Component Name: c-pro-cancel-remote-work-request.
+ *
+ * Description: Displays to confirm cancellation of a Remote Work Request.
+ *
+ * Last modified by Finbar in Prodigy on 25/10/2023.
+-->
+<template>
+    <div>
+        <header class="slds-modal__header">
+            <h2 class="slds-text-heading_medium">Confirm Cancellation</h2>
+        </header>
+
+        <div class="slds-p-around_medium" style="text-align: center;">
+            <p style="font-size: 18px;">Are you sure you want to cancel your Remote work request ?</p>
+        </div>
+
+        <footer class="slds-modal__footer">
+            <button 
+                class="slds-button slds-button_neutral"
+                onclick={Cancel}>
+                Back
+            </button>
+
+            &nbsp;
+            &nbsp;
+            &nbsp;
+
+            <button 
+                class="slds-button slds-button_brand"
+                onclick={Recall}>
+                Cancel
+            </button>
+        </footer>
+    </div>
+</template>

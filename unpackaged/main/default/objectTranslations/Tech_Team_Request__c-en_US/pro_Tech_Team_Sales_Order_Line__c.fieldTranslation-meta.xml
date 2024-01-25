@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label><!-- Sales Order Line --></label>
+        <name>pro_Tech_Team_Sales_Order_Line__c</name>
+        <relationshipLabel><!-- Tech Team Requests --></relationshipLabel>
+    </CustomFieldTranslation>

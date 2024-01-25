@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>58.0</apiVersion>
+    <description>Isil Kaya - Created by Prodigy.</description>
+    <environments>Default</environments>
+    <interviewLabel>Prodigy - Update {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Prodigy - Update Notification Email Receiver as Quality When Account Approval is Created</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Account_Approval_Record</name>
+        <label>Update Account Approval Record</label>
+        <locationX>176</locationX>
+        <locationY>287</locationY>
+        <inputAssignments>
+            <field>inscor__Notification_Email__c</field>
+            <value>
+                <stringValue>sfadmin@weareprodigy.com</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_Account_Approval_Record</targetReference>
+        </connector>
+        <filterLogic>or</filterLogic>
+        <filters>
+            <field>inscor__Unapprove_Type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>PO</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>inscor__Unapprove_Type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>RO</stringValue>
+            </value>
+        </filters>
+        <object>inscor__Account_Approvals__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

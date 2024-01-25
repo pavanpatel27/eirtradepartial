@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Repair Manager</label>
+    <permissionSets>AvSight_Dashboard_Admin</permissionSets>
+    <permissionSets>AvSight_Reporting_Admin</permissionSets>
+    <permissionSets>inscor__AvSight_Inventory_User</permissionSets>
+    <permissionSets>inscor__AvSight_Picking</permissionSets>
+    <permissionSets>inscor__AvSight_Receiving_User</permissionSets>
+    <permissionSets>inscor__AvSight_Repair_User</permissionSets>
+    <permissionSets>inscor__AvSight_Sales_User</permissionSets>
+    <permissionSets>inscor__AvSight_Sourcing_User</permissionSets>
+    <permissionSets>inscor__AvSight_User</permissionSets>
+    <permissionSets>inscor__AvSight_User_Base_Read</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Purchase Order Line - Overhead</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Purchase Order Lines - Overhead</value>
+    </caseValues>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <layouts>
+        <layout>Purchase Order Line Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Purchase Order Line Information --></label>
+            <section>Purchase Order Line Information</section>
+        </sections>
+        <sections>
+            <label><!-- Quantities --></label>
+            <section>Quantities</section>
+        </sections>
+        <sections>
+            <label><!-- System Information --></label>
+            <section>System Information</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Currency must match PO Header. --></errorMessage>
+        <name>Invalid_Currency</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Product is required. --></errorMessage>
+        <name>Missing_Product</name>
+    </validationRules>
+</CustomObjectTranslation>

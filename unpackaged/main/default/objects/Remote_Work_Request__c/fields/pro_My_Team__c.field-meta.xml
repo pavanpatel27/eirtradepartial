@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pro_My_Team__c</fullName>
+    <description>AB 30/08/2023 - Prodigy</description>
+    <externalId>false</externalId>
+    <formula>OR(
+CASESAFEID($User.Id) = CASESAFEID(pro_Employee_Remote_Request__r.GlicW__User__c),
+$User.pro_Projo_Department__c = pro_Employee_Remote_Request__r.GlicW__User__r.pro_Projo_Department__c )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>My Team</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

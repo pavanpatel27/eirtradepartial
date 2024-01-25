@@ -1,0 +1,10 @@
+td {
+    width: 200px;
+    padding-right: 10px;
+}
+
+table {
+    width: 1200px;
+    margin-top: 10px;
+    overflow-x: auto;
+}

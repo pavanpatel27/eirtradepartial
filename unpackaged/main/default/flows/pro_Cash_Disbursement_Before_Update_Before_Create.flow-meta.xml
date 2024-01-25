@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>57.0</apiVersion>
+    <assignments>
+        <name>Assign_Cc_Email_Address</name>
+        <label>Assign Cc Email Address</label>
+        <locationX>50</locationX>
+        <locationY>695</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.pro_Supplier_CC_Email_Address__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.AcctSeed__Vendor__r.pro_Remittance_CC_Email__c</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Assign_Supplier_Email</name>
+        <label>Assign Supplier Email</label>
+        <locationX>50</locationX>
+        <locationY>395</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.pro_Supplier_Email_Address__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.AcctSeed__Vendor__r.pro_Email__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Is_Cc_Email_Blank</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Is_Cc_Email_Blank</name>
+        <label>Is Cc Email Blank</label>
+        <locationX>182</locationX>
+        <locationY>587</locationY>
+        <defaultConnectorLabel>Cc Email is not Blank</defaultConnectorLabel>
+        <rules>
+            <name>Cc_Email_is_Blank</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>CashDisbursementIsNew</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.pro_Supplier_CC_Email_Address__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Cc_Email_Address</targetReference>
+            </connector>
+            <label>Cc Email is Blank</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_Email_Blank</name>
+        <label>Is Email Blank</label>
+        <locationX>182</locationX>
+        <locationY>287</locationY>
+        <defaultConnector>
+            <targetReference>Is_Cc_Email_Blank</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Email not blank</defaultConnectorLabel>
+        <rules>
+            <name>Email_is_blank</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>IsSupplierEmailBlank</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CashDisbursementIsNew</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Supplier_Email</targetReference>
+            </connector>
+            <label>Email is blank</label>
+        </rules>
+    </decisions>
+    <description>JP 22/05/2023 - Updates to logic
+JP 16/05/2023 - Created by Prodigy</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>CashDisbursementIsNew</name>
+        <dataType>Boolean</dataType>
+        <expression>ISNEW()</expression>
+    </formulas>
+    <formulas>
+        <name>IsSupplierEmailBlank</name>
+        <dataType>Boolean</dataType>
+        <expression>ISBLANK({!$Record.pro_Supplier_Email_Address__c})</expression>
+    </formulas>
+    <interviewLabel>Prodigy - Cash Disbursement Before Update Before Create {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Prodigy - Cash Disbursement Before Update Before Create</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Is_Email_Blank</targetReference>
+        </connector>
+        <object>AcctSeed__Cash_Disbursement__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

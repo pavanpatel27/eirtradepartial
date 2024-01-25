@@ -1,0 +1,4 @@
+# of Lines: {!inscor__Purchase_Order__c.inscor__Number_of_Lines__c}
+PO Total Value: {!inscor__Purchase_Order__c.inscor__PO_Total_Value__c}
+Vendor: {!inscor__Purchase_Order__c.inscor__Vendor__c}
+PO Owner: {!inscor__Purchase_Order__c.OwnerFullName}

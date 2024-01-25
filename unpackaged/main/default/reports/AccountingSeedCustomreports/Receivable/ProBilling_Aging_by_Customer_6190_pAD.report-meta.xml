@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Billing__c.AcctSeed__Date__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Billing__c.AcctSeed__Due_Date2__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>AcctSeed__Billing__c.AcctSeed__Balance__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Billing__c.Customer_PO_Number__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Billing__c.inscoras__Sales_Order__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Billing__c.AcctSeed__Ledger__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Uncollected Billings by Aging Category as of Today (Period does not need to be closed.)</description>
+    <filter>
+        <criteriaItems>
+            <column>AcctSeed__Billing__c.AcctSeed__Age__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Closed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>AcctSeed__Billing__c.AcctSeed__Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>In Process,Waiting for Approval,Rejected,Approved</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>AcctSeed__Billing__c.Pro_Summarized_Ageing_Period__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>61-90 Days</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>AcctSeed__Billing__c.AcctSeed__Customer__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notContain</operator>
+            <value>eirtrade aviation</value>
+        </criteriaItems>
+    </filter>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <dateGranularity>Day</dateGranularity>
+        <field>AcctSeed__Billing__c.Pro_Summarized_Ageing_Period__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>AcctSeed__Billing__c.AcctSeed__Customer__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>AcctSeed__Billing__c.AcctSeed__Proprietary_Billing_Number__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Pro-Billing Aging by Customer - 61-90</name>
+    <params>
+        <name>co</name>
+        <value>0</value>
+    </params>
+    <reportType>CustomEntity$AcctSeed__Billing__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>AcctSeed__Billing__c.AcctSeed__Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

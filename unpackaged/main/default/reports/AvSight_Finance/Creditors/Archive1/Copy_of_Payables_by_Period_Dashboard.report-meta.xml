@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Account_Payable__c.AcctSeed__Ledger__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Account_Payable__c.AcctSeed__Proprietary_Payable_Number__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Account_Payable__c.AcctSeed__Date__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Account_Payable__c.AcctSeed__Due_Date__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Account_Payable__c.AcctSeed__Payment_Status__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>AcctSeed__Account_Payable__c.AcctSeed__Net_Amount__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Shows Payables by Period and Payee</description>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>AcctSeed__Account_Payable__c.AcctSeed__Accounting_Period__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>AcctSeed__Account_Payable__c.AcctSeed__Payee__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Copy of Payables by Period Dashboard</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$AcctSeed__Account_Payable__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>AcctSeed__Account_Payable__c.AcctSeed__Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

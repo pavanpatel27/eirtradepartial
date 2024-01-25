@@ -1,0 +1,590 @@
+<!--
+ * Created by Prodigy Ltd on 21-03-2023.
+ *
+ * Visualforce Page Name: Pro_RemittancePDF.
+ *
+ * Description: Displays Purchase Order PDF.
+ *
+ * Last modified by Johnny in Prodigy on 24-03-2023.
+-->
+<apex:page renderAs="pdf" 
+    sidebar="false" 
+    showHeader="false" 
+    applyBodyTag="false" 
+    applyHtmlTag="false" 
+    standardStylesheets="false"
+    extensions="Pro_RemittancePdf_ext"
+    standardController="AcctSeed__Cash_Disbursement__c"
+    action="{!SavePDF}"> 
+
+    <html>
+        <head>
+            <style type="text/css" media="print">
+                /* 
+                    To update the color scheme look for comments 
+                    below that start with the word "COLOR:" 
+                */
+
+                @page {
+                    /*@bottom-left {
+                        content: element(footer);
+                    }*/
+                    margin-top: 35px;
+                    margin-bottom: 5px;
+                    size: 8.27in 11.69in;
+                }
+
+                /* General Styles */
+                body {
+                    font-family: Arial, Sans-Serif;
+                    font-size: 12px;
+                    margin: 0px;
+                }
+                table {
+                    border-collapse: collapse;
+                }
+                table th {
+                    font-weight: bold;
+                    height: 20px;
+                    padding: 6px;
+                    vertical-align: top;
+                    /* COLOR: change column header font color for all tables */
+                    color: #087C01; /*Original Colour: FF8B25*/
+                    /* COLOR: change color of line at top of all talbe headers */
+                    border-top: 3px solid #000;
+                    text-transform: uppercase;
+                }
+                .amount-due td {
+                    /* COLOR: change amount due background color */
+                    background-color: #087C01; /*Original Colour: FF8B25*/
+                    /* COLOR: change amount due font color */
+                    color: white;
+                    font-weight: bold;
+                    padding: 6px;
+                }
+                .text-align--right {
+                    text-align: right;
+                }
+                /* adds dividing line between table rows */
+                .divided-rows td {
+                    /* COLOR: change color of divider bewteen table rows */
+                    border-bottom: 1px solid #087C01; /*Original Colour: 002b66*/
+                    padding: 6px;
+                    vertical-align: text-top;
+                }
+
+                /* Content Container */
+                .content {
+                    position: relative;
+                    height: 100%;
+                }
+
+                /* page numbers */
+                .footer {
+                    position: fixed;
+                    bottom: 0;
+                    padding: 5px;
+                }
+                .pagenumber:before {
+                    content: counter(page);
+                }
+                .pagecount:before {
+                    content: counter(pages);
+                }
+
+                /* footer content entered by user on pdf format setup page */
+                .footer-user-created {
+                    page-break-inside: avoid;
+                }
+                .footer-user-created table {
+                    width: 100%;
+                }
+                .footer-user-created p {
+                    margin: 5px 0 5px 0;
+                }
+
+                /* Header */
+                .header table {
+                    width: 100%;
+                }
+                .header__address {
+                    font-weight: bold;
+                    vertical-align: top;
+                    text-align: right;
+                }
+                .header__logo,
+                .header__logo div {
+                    vertical-align: top;
+                    width: 350px;
+                }
+
+                /* Page Header */
+                .pro_font__large{
+                    font-size: 20px;
+                }
+
+                /* Billing Summary */
+                .summary {
+                    width: 350px;
+                    float: right;
+                }
+                .summary tr td + td {
+                    text-align: right;
+                }
+
+                /* Billing Lines Table */
+                .billing-lines {
+                    width: 100%;
+                    -fs-table-paginate: paginate;
+                    border-spacing: 0;
+                }
+                .billing-lines tbody td > div {
+                    width: 100%;
+                    overflow: hidden;
+                }
+
+                /* Below the Line Calculations */
+                .below-line-summary {
+                    width: 220px;
+                    border-collapse: collapse;
+                    float: right;
+                    margin: 5px 0 0 0;
+                }
+                .below-line-summary td {
+                    padding-top: 6px;
+                }
+                .below-line-summary tr td + td {
+                    text-align: right;
+                }
+                .below-line-summary__container {
+                    width: 100%;
+                    overflow: hidden;
+                }
+                .underscore--single {
+                    border-bottom: 1px solid #000;
+                }
+                .underscore--double {
+                    border-bottom: 2px double #000;
+                }
+                .negative {
+                    color: #d00000;
+                }
+                .hideSection{
+                    display: none;
+                }
+            </style>
+        </head>
+        <body>
+                <!--
+                    *
+                    * SECTION: Header Section (Logo & Address)
+                    *
+                -->
+                <div class="header">
+                    <table>
+                        <tr>
+                            <td>
+                                <div class="pro_font__large">
+                                    <strong>Remittance</strong>
+                                </div>
+                            </td>
+                            
+                        </tr>
+                        <tr>
+                            <td class="header__logo">
+                                <div>
+                                    <!-- rendered="{!IF(HeaderLogo=='', false, true)}" -->
+                                    <apex:image id="theLogoImage" value="{!URLFOR($Resource.pro_Logo,'')}" width="300" height="147" alt="Eirtrade Logo" />
+                                </div>
+                            </td>
+                            <td class="header__address">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <apex:outputText value="{!IF(ISBLANK(Ledger.Name),'',Ledger.Name)}" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <apex:outputText value="{! IF( ISBLANK(CashDisbursement.pro_Remittance_Format_Street__c), '', CashDisbursement.pro_Remittance_Format_Street__c)}" />
+                                        </td>
+                                    </tr>
+                                    <tr style="display:{!IF(ISBLANK(CashDisbursement.pro_Remittance_Format_Street2__c), 'none', '')}">
+                                        <td>
+                                            <apex:outputText value="{! IF( ISBLANK(CashDisbursement.pro_Remittance_Format_Street2__c), '', CashDisbursement.pro_Remittance_Format_Street2__c)}" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <apex:outputText value="{!IF(ISBLANK(CashDisbursement.pro_Remittance_Format_City__c),'', CashDisbursement.pro_Remittance_Format_City__c) & IF(ISBLANK(CashDisbursement.pro_Remittance_Format_City__c),'', ', ') & IF(ISBLANK(CashDisbursement.pro_Remittance_Format_State__c),'', CashDisbursement.pro_Remittance_Format_State__c) & ' ' & IF(ISBLANK(CashDisbursement.pro_Remittance_Format_Postal_Code__c), '', CashDisbursement.pro_Remittance_Format_Postal_Code__c)}" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <apex:outputText value="{!IF(ISBLANK(CashDisbursement.pro_Remittance_Format_Country__c), '', CashDisbursement.pro_Remittance_Format_Country__c)}" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <apex:outputText value="{!IF(ISBLANK(CashDisbursement.pro_Remittance_Format_Phone__c), '', 'Phone No: ' + CashDisbursement.pro_Remittance_Format_Phone__c)}" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <apex:outputText value="{!IF(ISBLANK(CashDisbursement.pro_Remittance_Format_Email__c), '', 'Email: ' + CashDisbursement.pro_Remittance_Format_Email__c)}" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td> 
+                        </tr>
+                    </table>
+                </div>
+
+                <div style="margin-bottom: 15px;"></div>
+    
+                <!--
+                    *
+                    * SECTION: Payee and Cash Disbursement info
+                    *
+                -->
+                <table style="width: 100%; margin-top: 25px; margin-bottom: 10px; ">
+                    <tr>
+                        <!--
+                            *
+                            * SECTION: Payee Information
+                            *
+                         -->
+                        <td style="width: 50%; vertical-align: top">
+                            <table style="width: 350px">
+                                <thead>
+                                    <tr>
+                                        <th style="padding-left: 0"><apex:outputText value="TO:" /></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <apex:outputField value="{!CashDisbursement.AcctSeed__Vendor__r.Name}" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <apex:outputField value="{!CashDisbursement.AcctSeed__Payee_Street__c}" rendered="{!!ISBLANK(CashDisbursement.AcctSeed__Payee_Street__c)}" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <apex:outputField value="{!CashDisbursement.AcctSeed__Payee_City__c}" rendered="{!!ISBLANK(CashDisbursement.AcctSeed__Payee_City__c)}" /> &nbsp;
+                                            <apex:outputField value="{!CashDisbursement.AcctSeed__Payee_State__c}" rendered="{!!ISBLANK(CashDisbursement.AcctSeed__Payee_State__c)}" /> &nbsp;
+                                            <apex:outputField value="{!CashDisbursement.AcctSeed__Payee_Postal_Code__c}" rendered="{!!ISBLANK(CashDisbursement.AcctSeed__Payee_Postal_Code__c)}" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <apex:outputField value="{!CashDisbursement.AcctSeed__Payee_Country__c}" rendered="{!!ISBLANK(CashDisbursement.AcctSeed__Payee_Country__c)}" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <apex:outputText value="{! 'Email: ' + CashDisbursement.AcctSeed__Vendor__r.pro_Email__c}" rendered="{!!ISBLANK(CashDisbursement.AcctSeed__Vendor__r.pro_Email__c)}" />
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td valign="top">
+                            <!--
+                                *
+                                * SECTION: Cash Disbursement Info
+                                *
+                             -->
+                            <table class="summary divided-rows">
+                                <tr>
+                                    <td style="padding: 0"></td>
+                                    <td style="padding: 0"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <apex:outputText value="Cash Disbursement Number" />
+                                    </td>
+                                    <td>
+                                        <apex:outputText value="{!CashDisbursement.Name}"  />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <apex:outputText value="Disbursement Date" />
+                                    </td>
+                                    <td>
+                                        <apex:outputText value="{0, date, dd'/'MM'/'yyyy}">
+                                            <apex:param value="{!CashDisbursement.AcctSeed__Disbursement_Date__c}" />
+                                        </apex:outputText>
+                                    </td>
+                                </tr>
+                                <tr style="{!IF(ISBLANK(CashDisbursement.AcctSeed__Description__c), 'display:none', '' )}">
+                                    <td>
+                                        <apex:outputText value="Disbursement Description" />
+                                    </td>
+                                    <td>
+                                        <apex:outputText value="{!CashDisbursement.AcctSeed__Description__c}" />
+                                    </td>
+                                </tr>
+                                
+                                <tr style="{!IF(ISBLANK(CashDisbursement.AcctSeed__Reference__c), 'display:none', '' )}">
+                                    <td>
+                                        <apex:outputText value="Reference" />
+                                    </td>
+                                    <td>
+                                        <apex:outputText value="{!CashDisbursement.AcctSeed__Reference__c}" />
+                                    </td>
+                                </tr>
+                                <tr class="amount-due">
+                                    <td style="padding:6px">
+                                            <span style="font-weight:bold">
+                                                <apex:outputText value="Payment Amount"/>
+                                            </span>
+                                    </td>
+                                    <td style="text-align:right;padding:6px">
+                                            <span style="font-weight:bold">
+                                                <apex:outputText value="{!CurrencyFormat}" rendered="{!NOT(ISBLANK(CurrencyFormat))}">
+                                                    <apex:param value="{!CashDisbursement.AcctSeed__Applied_Amount__c}"/>
+                                                </apex:outputText>
+                                                <apex:outputText value="{0, number, ###,###,##0.00}" rendered="{!ISBLANK(CurrencyFormat)}">
+                                                    <apex:param value="{!CashDisbursement.AcctSeed__Applied_Amount__c}"/>
+                                                </apex:outputText>
+                                            </span>
+                                    </td>
+                                </tr>
+                                <!-- <tr>
+                                    <td>
+                                        <apex:outputText value="Payment Amount" />
+                                    </td>
+                                    <td>
+                                        <apex:outputText value="{0, number, currency}">
+                                            <apex:param value="{!CashDisbursement.AcctSeed__Applied_Amount__c}"/>
+                                        </apex:outputText>
+                                    </td>
+                                </tr> -->
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+    
+                <!--
+                    *
+                    * SECTION: AP Disbursement(s) info
+                    *
+                -->
+                <table class="billing-lines divided-rows">
+                    <colgroup span="9"></colgroup>
+                    <thead>
+                        <tr>
+                            <th style="width:90px;">
+                                <apex:outputText value="Our Ref" />
+                            </th>
+                            <th style="width: 80px;">
+                                <apex:outputText value="Date" />
+                            </th>
+                            <th style="width: 60px;">
+                                <apex:outputText value="Type" />
+                            </th>
+                            <th style="width: 90px;">
+                                <apex:outputText value="Your Ref" />
+                            </th>
+                            <th class="text-align--right" style="width: 80px;">
+                                <apex:outputText value="Amount" />
+                            </th>
+                            <!-- <th class="text-align--right" style="width: 80px;">
+                                <apex:outputText value="Discount" />
+                            </th> -->
+                            <th class="text-align--right" style="width: 80px;">
+                                <apex:outputText value="Net Amount" />
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <apex:repeat value="{!Lines}" var="item">
+                            <tr>
+                                <td style="width: 90px;">
+                                    <div>
+                                        <apex:outputText value="{!item.pro_Payable_Name__c}"/>
+                                    </div>
+                                </td>
+                                <td style="width: 80px;">
+                                    <div>
+                                        <apex:outputText value="{0, date, dd'/'MM'/'yyyy}">
+                                            <apex:param value="{!item.AcctSeed__Applied_Date__c}" />
+                                        </apex:outputText>
+                                    </div>
+                                </td>
+                                <td style="width:60px;">
+                                    <div>
+                                        <apex:outputText value="{!item.pro_Payable_Type__c}"/>
+                                    </div>
+                                </td>
+                                <td style="width: 90px;">
+                                    <div>
+                                        <apex:outputText value="{!item.AcctSeed__Payee_Reference__c}"/>
+                                    </div>
+                                </td>
+                                <td class="text-align--right" style="width: 80px;">
+                                    <div>
+                                        <apex:outputText value="{!CurrencyFormat}" rendered="{!NOT(ISBLANK(CurrencyFormat))}">
+                                            <apex:param value="{!item.AcctSeed__Payable_Amount__c}"/>
+                                        </apex:outputText>
+                                        <apex:outputText value="{0, number, ###,###,##0.00}" rendered="{!ISBLANK(CurrencyFormat)}">
+                                            <apex:param value="{!item.AcctSeed__Payable_Amount__c}"/>
+                                        </apex:outputText>
+                                    </div>
+                                </td>
+                                <!-- <td class="text-align--right" style="width: 80px;">
+                                    <div>
+                                        <apex:outputText value="{0, number, currency}">
+                                            <apex:param value="{!item.AcctSeed__Discount_Amount__c}"/>
+                                        </apex:outputText>
+                                    </div>
+                                </td> -->
+                                <td class="text-align--right" style="width: 80px;">
+                                    <div>
+                                        <apex:outputText value="{!CurrencyFormat}" rendered="{!NOT(ISBLANK(CurrencyFormat))}">
+                                            <apex:param value="{!item.AcctSeed__Net_Amount__c}"/>
+                                        </apex:outputText>
+                                        <apex:outputText value="{0, number, ###,###,##0.00}" rendered="{!ISBLANK(CurrencyFormat)}">
+                                            <apex:param value="{!item.AcctSeed__Net_Amount__c}"/>
+                                        </apex:outputText>
+                                    </div>
+                                </td>
+                            </tr>
+                        </apex:repeat>
+                    </tbody>
+                </table>
+    
+                <!--
+                    *
+                    * SECTION: Cash Disbursement overall calculations
+                    *
+                -->
+                <div class="below-line-summary__container">
+                    <table class="below-line-summary">
+                        <tr>
+                            <td>
+                                <span style="font-weight: bold">
+                                    <apex:outputText value="Sub Total" />
+                                </span>
+                            </td>
+                            <td>
+                                <span style="font-weight: bold">
+                                    <apex:outputText value="{!CurrencyFormat}" rendered="{!NOT(ISBLANK(CurrencyFormat))}" >
+                                        <apex:param value="{!CashDisbursement.AcctSeed__Applied_Amount__c}"/>
+                                    </apex:outputText>
+
+                                    <apex:outputText value="{0, number, currency}" rendered="{!ISBLANK(CurrencyFormat)}" >
+                                        <apex:param value="{!CashDisbursement.AcctSeed__Applied_Amount__c}"/>
+                                    </apex:outputText>
+                                </span>
+                            </td>
+                        </tr>
+                        <!--<tr>
+                            <td>
+                                <span style="font-weight: bold">
+                                    <apex:outputText value="Discount" />
+                                </span>
+                            </td>
+                            <td class="underscore--single">
+                                <span style="font-weight: bold">
+                                    <apex:outputText value="{!CurrencyFormat}" rendered="{!NOT(ISBLANK(CurrencyFormat))}" >
+                                        <apex:param value="{!Totals}"/>
+                                    </apex:outputText>
+
+                                    <apex:outputText value="{0, number, ###,###,##0.00}" rendered="{!ISBLANK(CurrencyFormat)}" >
+                                        <apex:param value="{!Totals}"/>
+                                    </apex:outputText>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span style="font-weight: bold">
+                                    <apex:outputText value="Tax Total" />
+                                </span>
+                            </td>
+                            <td class="underscore--single">
+                                <span style="font-weight: bold">
+                                    <apex:outputText value="{!CurrencyFormat}" rendered="{!NOT(ISBLANK(CurrencyFormat))}" >
+                                        <apex:param value="{!Totals}"/>
+                                    </apex:outputText>
+
+                                    <apex:outputText value="{0, number, ###,###,##0.00}" rendered="{!ISBLANK(CurrencyFormat)}" >
+                                        <apex:param value="{!Totals}"/>
+                                    </apex:outputText>
+                                </span>
+                            </td>
+                        </tr>-->
+                        <tr class="amount-due">
+                            <td>Total</td>
+                            <td>
+                                <apex:outputText value="{!CurrencyFormat}" rendered="{!NOT(ISBLANK(CurrencyFormat))}" >
+                                    <apex:param value="{!CashDisbursement.AcctSeed__Applied_Amount__c}"/>
+                                </apex:outputText>
+
+                                <apex:outputText value="{0, number, ###,###,##0.00}"  rendered="{!ISBLANK(CurrencyFormat)}">
+                                    <apex:param value="{!CashDisbursement.AcctSeed__Applied_Amount__c}"/>
+                                </apex:outputText>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!--
+                    *
+                    * SECTION: Important Notes info
+                    *
+                -->
+                <div>
+                    <div style="padding-bottom: 25px;">
+                        <p style="font-weight: bold; font-size: 20px; margin-bottom: 20px;">
+                            Important Notes
+                        </p>
+
+                        <span style="display: block; margin-bottom: 5px;">
+                            Please note that any invoice submitted without the PO# referenced will result in a delayed payment of the invoice. Please forward all invoices to accounts@eirtradeaviation.com
+                        </span>    
+
+                        <span style="display: block; margin-bottom: 5px;">
+                            Technical Documents Required:
+                        </span>
+
+                        <span style="display: block; margin-bottom: 5px;">
+                            {!PdfFormat.pro_Footer_Line_1__c}
+                        </span>
+
+                        <span style="display: block; margin-bottom: 5px;">
+                            {!PdfFormat.pro_Footer_Line_2__c}
+                        </span>
+
+                        <span style="display: block;">
+                            {!PdfFormat.pro_Footer_Line_3__c}
+                        </span>
+                    </div>
+                </div>
+    
+                <!--
+                    *
+                    * SECTION: Footer
+                    *
+                -->
+                <div class="footer">
+                    <span style="display: inline-block; width: 100%; font-size: 10pt; text-align: right;"> 
+                        Page
+                        &nbsp;
+                        <span class="pagenumber" />
+                        &nbsp;
+                        of
+                        &nbsp;
+                        <span class="pagecount" /> 
+                    </span>
+                </div>
+
+        </body>
+    </html>
+</apex:page>

@@ -1,0 +1,126 @@
+<!-- sldsValidatorIgnore -->
+<!--
+ * Created by Prodigy on 16-03-2023.
+ *
+ * Lightning Web Component Name: c-pro-share-purchase-order.
+ *
+ * Description: Custom UI used during the sharing of Purchase Orders.
+ *
+ * Last modified by Johnny in Prodigy on 23-03-2023.
+-->
+<template>
+    
+
+    <lightning-layout>
+        <!--
+            *
+            * SECTION: Emailing section
+            *
+        -->
+        <lightning-layout-item size="4" style="padding-right: 10px;" padding="around-small">
+            <!-- SECTION START: Top Half of the Page -->
+            <div class="mySpecialTopHalf">
+                <article class="slds-card mySpecialArticle">
+                    <div class="slds-card__header slds-grid specialTopHalfHeader">
+                        <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                            <div class="slds-media__figure">
+                                <lightning-icon icon-name="custom:custom41" alternative-text="record"></lightning-icon>
+                            </div>
+                            <div class="slds-media__body">
+                                <h2 class="slds-card__header-title">
+                                    <strong> <span onclick={navBackToRecord}>{componentTitle}</span> </strong>
+                                </h2>
+                            </div>
+                            <div class="slds-no-flex">
+                                <button class="slds-button slds-button_brand" data-id="proUniqueButton" onclick={SharePurchaseOrder}>Share Purchase Order with PDF</button>
+                            </div>
+                        </header>
+                    </div>
+                    <div class="slds-card__body slds-card__body_inner y_axis_scroll cardBodyHeight">
+                        <lightning-layout multiple-rows="true">
+
+                            <!-- Email Info -->
+                            <lightning-layout-item size="12">
+                                <lightning-layout multiple-rows="true">
+                                    <!-- To Email Address -->
+                                    <lightning-layout-item size="12">
+                                        <label class="slds-form-element__label" for="text-input-id-1"> <abbr class="slds-required" title="required">* </abbr> To Email Address</label>
+                                        <div class="slds-form-element__control ">
+                                            <input type="email" id="text-input-id-1" data-var="myToEmail" placeholder="Enter To email address..." onchange={SetRecipientEmailAddress} value={selectedToEmailAddress}  class="slds-input" />
+                                        </div>
+                                    </lightning-layout-item>
+                                    
+                                    
+                                    <!-- From Email Address -->
+                                    <lightning-layout-item size="12">
+                                        <label class="slds-form-element__label" for="select-01">From Email Address</label>
+                                        <div class="slds-form-element__control ">
+                                            <select class="slds-select" id="select-01" onchange={SetSenderEmailAddress}>
+                                                <template for:each={listOfEmails} for:item="email">
+                                                    <option key={email} value={email}> {email} </option>
+                                                </template>
+                                            </select>
+                                        </div>
+                                    </lightning-layout-item>
+
+                                    <!-- CC Email Address -->
+                                    <lightning-layout-item size="12">
+                                        <label class="slds-form-element__label" for="text-input-id-2">CC Email Address</label>
+                                        <div class="slds-form-element__control ">
+                                            <input type="text" id="text-input-id-2" value={selectedCCEmailAddress} onchange={SetCCEmailAddress} placeholder="Enter CC Email Address(es) separated by a semi colon (no spaces)" class="slds-input" />
+                                        </div>
+                                    </lightning-layout-item>
+                                    
+                                </lightning-layout>
+                            </lightning-layout-item>
+
+                            <lightning-layout-item size="12">
+                                <p> &nbsp; </p>
+                            </lightning-layout-item>
+
+                            <lightning-layout-item size="12">
+                                <lightning-layout multiple-rows="true">
+                                    <lightning-layout-item size="12">
+                                        <label class="slds-form-element__label" for="text-input-id-3">Email Subject</label>
+                                        <div class="slds-form-element__control input_widths2">
+                                            <input type="text" id="text-input-id-3" placeholder="Enter subject here..." class="slds-input" onchange={ChangeEmailSubjectvalue} value={emailSubjectValue} />
+                                        </div>
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size="12">
+                                        <label class="slds-form-element__label" for="textarea-id-01">Email Body</label>
+                                        <div class="slds-form-element__control input_widths2 marg_bottom">
+                                            <textarea id="textarea-id-01" data-var="myBody" rows="10" placeholder="Enter email body here..." class="slds-textarea" ></textarea>
+                                        </div>
+                                    </lightning-layout-item>
+                                </lightning-layout>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                    </div>
+                    <footer class="slds-card__footer"></footer>
+                </article>
+                <!-- SECTION END -->
+            </div>
+        </lightning-layout-item>
+
+        
+        <!--
+            *
+            * SECTION: PDF section
+            *
+        -->
+        <lightning-layout-item size="8" padding="around-small">
+            
+            <article class="slds-card full_height">
+                <div class="slds-card__header slds-grid">
+                    <header class="slds-media slds-media_center slds-has-flexi-truncate"></header>
+                </div>
+                
+                <div class="slds-card__body slds-card__body_inner">
+                    <iframe title={componentIframeTitle} width="100%" height={frameHeight} src={frameUrl}></iframe>
+                </div>
+                
+                <footer class="slds-card__footer"></footer>
+            </article>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Missing_Product</fullName>
+    <active>true</active>
+    <description>JP 15/03/2023 V1 - Created by Prodigy</description>
+    <errorConditionFormula>ISBLANK( pro_Product__c )</errorConditionFormula>
+    <errorDisplayField>pro_Product__c</errorDisplayField>
+    <errorMessage>Product is required.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,8 @@
+<apex:page standardController="Task" renderAs="PDF">
+  
+   <p> <b>Subject: </b>{!task.subject}<br></br>
+       <b>Due Date:</b>
+       <apex:outputText value="{0, date, dd'/'MM'/'yyyy}">    <apex:param value="{!task.activitydate}" /></apex:outputText><br></br>
+       <b>Comments: </b>{!task.description}<br></br>
+   </p>
+</apex:page>

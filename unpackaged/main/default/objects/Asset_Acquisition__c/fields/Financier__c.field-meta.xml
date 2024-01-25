@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Financier__c</fullName>
+    <externalId>false</externalId>
+    <label>Financier</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Blackrock</fullName>
+                <default>false</default>
+                <label>Blackrock</label>
+            </value>
+            <value>
+                <fullName>EirTrade</fullName>
+                <default>false</default>
+                <label>EirTrade</label>
+            </value>
+            <value>
+                <fullName>Faverey</fullName>
+                <default>false</default>
+                <label>Faverey</label>
+            </value>
+            <value>
+                <fullName>TBC</fullName>
+                <default>false</default>
+                <label>TBC</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

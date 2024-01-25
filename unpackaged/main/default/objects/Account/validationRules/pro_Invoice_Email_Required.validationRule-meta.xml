@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pro_Invoice_Email_Required</fullName>
+    <active>true</active>
+    <description>Isil Kaya - Created by Prodigy.</description>
+    <errorConditionFormula>OR(  ISPICKVAL( inscor__Accounting_Type__c , &#39;Customer&#39;) ,
+     ISPICKVAL( inscor__Accounting_Type__c , &#39;Customer and Vendor&#39;) 
+  ) 
+
+&amp;&amp;
+
+     ISBLANK( pro_Invoice_Email__c  )</errorConditionFormula>
+    <errorDisplayField>pro_Invoice_Email__c</errorDisplayField>
+    <errorMessage>Please enter the invoice email for the account.</errorMessage>
+</ValidationRule>

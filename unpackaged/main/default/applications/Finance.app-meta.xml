@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <brand>
+        <headerColor>#0070D2</headerColor>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <description>Items used most frequently by the Accounting Department</description>
+    <formFactors>Small</formFactors>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <label>Finance</label>
+    <navType>Standard</navType>
+    <tabs>AcctSeed__Accounting_Home2</tabs>
+    <tabs>standard-Account</tabs>
+    <tabs>AcctSeed__Billing__c</tabs>
+    <tabs>AcctSeed__Cash_Receipt__c</tabs>
+    <tabs>AcctSeed__Account_Payable__c</tabs>
+    <tabs>AcctSeed__Cash_Disbursement__c</tabs>
+    <tabs>AcctSeed__Journal_Entry__c</tabs>
+    <tabs>standard-report</tabs>
+    <tabs>standard-Dashboard</tabs>
+    <tabs>AcctSeed__GL_Account__c</tabs>
+    <tabs>inscor__Allocation__c</tabs>
+    <tabs>Tech_Team_Request__c</tabs>
+    <tabs>Remote_Work_Request__c</tabs>
+    <tabs>pro_OCR_Document__c</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>Finance_UtilityBar</utilityBar>
+</CustomApplication>

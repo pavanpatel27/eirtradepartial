@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Overtime and Attendance Tracking</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Overtime and Attendance Tracking</value>
+    </caseValues>
+    
+    
+    
+    
+    
+    
+    
+    
+    <layouts>
+        <layout>Attendance Tracking</layout>
+        <sections>
+            <label><!-- Attendance Information --></label>
+            <section>Attendance Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Managers Overtime and Attendance Tracking Layout</layout>
+        <sections>
+            <label><!-- Attendance Information --></label>
+            <section>Attendance Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Overtime Information --></label>
+            <section>Overtime Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Overtime Page Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Overtime Information --></label>
+            <section>Overtime Information</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Attendance --></label>
+        <name>Attendance</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Overtime --></label>
+        <name>pro_Overtime</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Please note if the type is &apos;Overtime&apos; then the following fields need to be populated. &apos;Overtime Date&apos;, &apos;Overtime Hours&apos; and &apos;Overtime Reason&apos; --></errorMessage>
+        <name>Overtime_Selected</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please note if the type is &apos;Attendance&apos; then the following fields need to be populated. &apos;Late Arrival Date&apos;, &apos;Hours Late&apos; and &apos;Late Arrival Reason&apos; --></errorMessage>
+        <name>Tracking_Details</name>
+    </validationRules>
+</CustomObjectTranslation>

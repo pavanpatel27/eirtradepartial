@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>For OPS users to work the stock check. The piece for requesting a stock check is added to Sales, Sourcing, Purchasing, and Repair Users.</description>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Tech_Team_Request__c.pro_TechTeam_Asset_Acquisition__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>AvSight Stock Check</label>
+</PermissionSet>

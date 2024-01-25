@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Technical</name>
+    <queueMembers>
+        <users>
+            <user>prod-avs-admin@eirtrade.com</user>
+            <user>d.beatty@eirtradeaviation.com</user>
+            <user>e.grainger@eirtradeaviation.com</user>
+            <user>f.marinelli@eirtradeaviation.com</user>
+            <user>j.maguinness@eirtradeaviation.com</user>
+            <user>k.jaisi@eirtradeaviation.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Task</sobjectType>
+    </queueSobject>
+</Queue>

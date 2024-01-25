@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pro_Kanban_List</fullName>
+    <columns>NAME</columns>
+    <columns>pro_Tech_Team_Subject__c</columns>
+    <columns>pro_Tech_Team_User__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>pro_Tech_Team_Priotity__c</columns>
+    <columns>pro_Tech_Team_Status__c</columns>
+    <columns>pro_Tech_Team_Closed_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>Open Tech Request by Owner</label>
+</ListView>

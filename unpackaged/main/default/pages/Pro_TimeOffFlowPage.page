@@ -1,0 +1,14 @@
+<apex:page standardController="GlicW__Time_Off__c" recordSetVar="timeOffs">
+    <apex:includeLightning />
+        <div id="display">
+
+        </div>
+
+        <script>
+            $Lightning.use("c:Pro_TimeOffButtonApp", function() {
+                $Lightning.createComponent("c:Pro_TimeOffButton", {}, "display", function(cmp) {
+
+                });
+            });
+        </script>
+</apex:page>

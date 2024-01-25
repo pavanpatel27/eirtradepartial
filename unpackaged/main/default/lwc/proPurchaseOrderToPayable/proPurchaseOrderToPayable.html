@@ -1,0 +1,259 @@
+<!-- sldsValidatorIgnore -->
+<!--
+ * Created by Prodigy on 28-03-2023.
+ *
+ * Lightning Web Component Name: c-pro-purchase-order-to-payable.
+ *
+ * Description: LWC for converting a Purchase Order to a Payable.
+ *
+ * Last modified by Johnny in Prodigy on 06-04-2023.
+-->
+<template>
+    <lightning-layout multiple-rows="true">
+        <!--
+            *
+            * SECTION: Payable Header
+            *
+         -->
+        <lightning-layout-item size="4" class="slds-var-p-around_x-small">
+            <article class="slds-card PurchaseOrderArticle" >
+                <div class="slds-card__header slds-grid">
+                    <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                        <div class="slds-media__figure">
+                            <lightning-icon icon-name={PurchaseOrderIcon} alternative-text="Purchase Order"></lightning-icon>
+                        </div> 
+                        <div class="slds-media__body">
+                            <h2 class="slds-card__header-title">
+                                <strong>
+                                    <span onclick={NavigateBackToPurchaseOrder}>{PurchaseOrderTitle}: {PurchaseOrderName}</span>
+                                </strong>   
+                            </h2>
+                        </div>
+                    </header>
+                </div>
+                <div class="slds-card__body slds-card__body_inner" style="overflow: auto;">
+                    <lightning-layout multiple-rows="true">
+                        <!--
+                            *
+                            * SECTION: Purchase Order Information
+                            *
+                        -->
+                            <!--Payee Reference-->
+                        <lightning-layout-item size="4">
+                            <div class="slds-text-heading_small margin_bottom align-right">
+                                <strong>
+                                    <abbr class="slds-required" title="required">* </abbr>{PayableReferenceLabel}: 
+                                </strong>
+                            </div>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="8">
+                            <div class="input_width inner_padding margin_bottom">
+                                <input type="text" id="PayableReferenceTxt" value={PayableReference} onchange={SetPayableReference} placeholder="Please enter Reference here..." class="slds-input"/>
+                            </div>
+                        </lightning-layout-item>
+                        <!--Issue Date-->
+                        <lightning-layout-item size="4">
+                            <div class="slds-text-heading_small margin_bottom align-right">
+                                <strong>
+                                    <abbr class="slds-required" title="required">* </abbr>{PayableIssueDateLabel}: 
+                                </strong>
+                            </div>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="8">    
+                            <div class="input_width inner_padding margin_bottom">
+                                <input type="date" id="IssueDateDt" value={IssueDate} onchange={SetIssueDate} class="slds-input"/>
+                            </div>
+                        </lightning-layout-item>
+                        <!--Due Date-->
+                        <lightning-layout-item size="4">
+                            <div class="slds-text-heading_small margin_bottom align-right">
+                                <strong>
+                                    <abbr class="slds-required" title="required">* </abbr>Due Date: 
+                                </strong>
+                            </div>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="8">    
+                            <div class="input_width inner_padding margin_bottom">
+                                <input type="date" id="DueDateDt" value={DueDate} onchange={SetDueDate} class="slds-input"/>
+                            </div>
+                        </lightning-layout-item>
+                        <!--Space between-->
+                        <lightning-layout-item size="12">    
+                            &nbsp;
+                        </lightning-layout-item>
+                        <!--Supplier-->
+                        <lightning-layout-item size="4">
+                            <div class="slds-text-heading_small margin_bottom align-right">
+                                <strong>
+                                    {PurchaseOrderSupplierLabel}:
+                                </strong>
+                            </div>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="8">
+                            <div class="slds-text-heading_small margin_bottom">
+                                &nbsp;
+                                {PurchaseOrderSupplier}
+                            </div>
+                        </lightning-layout-item>
+                        <!--Ledger-->
+                        <lightning-layout-item size="4">
+                            <div class="slds-text-heading_small margin_bottom align-right">
+                                <strong>
+                                    {PurchaseOrderLedgerLabel}:
+                                </strong>
+                            </div>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="8">
+                            <div class="slds-text-heading_small margin_bottom">
+                                &nbsp;
+                                {PurchaseOrderLedger}
+                            </div>
+                        </lightning-layout-item>
+                        <!--Purchase Order Date-->
+                        <lightning-layout-item size="4">
+                            <div class="slds-text-heading_small margin_bottom align-right">
+                                <strong>
+                                    {PurchaseOrderDateLabel}:
+                                </strong>
+                            </div>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="8">
+                            <div class="slds-text-heading_small margin_bottom">
+                                &nbsp;
+                                <lightning-formatted-date-time
+                                    value={PurchaseOrderDate}
+                                    year="numeric"
+                                    month="short"
+                                    day="2-digit">
+                                </lightning-formatted-date-time>
+                            </div>
+                        </lightning-layout-item>
+                        <!--Total Amount-->
+                        <lightning-layout-item size="4">
+                            <div class="slds-text-heading_small margin_bottom align-right">
+                                <strong>
+                                    {PurchaseOrderTotalLabel}:
+                                </strong>
+                            </div>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="8">
+                            <div class="slds-text-heading_small margin_bottom">
+                                &nbsp;
+                                <lightning-formatted-number
+                                    format-style="currency"
+                                    value={PurchaseOrderTotal}
+                                    currency-code={CurrencySymbol}
+                                    minimum-fraction-digits="2">
+                                </lightning-formatted-number>
+                            </div>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                    <footer class="slds-card__footer">
+                        <lightning-button
+                            variant="brand"
+                            label="Refresh"
+                            title="Refresh"
+                            data-id="refreshButton"
+                            onclick={RefreshPurchaseOrder}>
+                        </lightning-button>
+                    </footer>
+                </div>         
+            </article>
+        </lightning-layout-item>
+
+        <!--
+            *
+            * SECTION: Purchase Order Lines
+            *
+         -->
+        <lightning-layout-item size="8" class="slds-var-p-around_x-small">
+            <article class="slds-card PurchaseOrderLineArticle section-margin_left">
+                <div class="slds-card__header slds-grid">
+                    <header class="slds-media sdls-media_center slds-has-flexi-truncate proDetailHeader">
+                        <div class="slds-media__figure">
+                            <lightning-icon
+                                icon-name={PurchaseOrderIcon}
+                                alternative-text="Purchase Order Line">
+                            </lightning-icon>
+                        </div>
+                        <div class="slds-media__body">
+                            <h2 class="slds-card__header-title">
+                                <strong>
+                                    <span>Purchase Order Lines</span>
+                                </strong>
+                            </h2>
+                        </div>
+                    </header>
+                </div>
+                <div class="slds-card__body slds-card__body_inner proDetailBody">
+                    <template for:each={PurchaseOrderLines} for:item="currentItem">
+                        <c-pro-purchase-order-to-payable-line
+                            key={currentItem.Id}
+                            record={currentItem}
+                            currency-symbol={CurrencySymbol}>
+                        </c-pro-purchase-order-to-payable-line>
+                    </template>
+                </div>
+                <footer class="slds-card__footer proDetailFooter"></footer>
+            </article>
+        </lightning-layout-item>
+
+        <!--
+            *
+            * SECTION: Payable Lines
+            *
+         -->
+        <lightning-layout-item size="12">
+            <article class="slds-card PayableLineArticle">
+                <lightning-layout multiple-rows="true">
+                    <lightning-layout-item size="12">
+                        <div class="slds-card__header slds-grid">
+                            <header class="slds-media slds-media_center slds-has-flexi-truncate proLineHeader">
+                                <div class="slds-media__figure">
+                                    <lightning-icon icon-name={PurchaseOrderIcon} alternative-text="Purchase Order"></lightning-icon>
+                                </div> 
+                                <div class="slds-media__body">
+                                    <h2 class="slds-card__header-title">
+                                        <strong>
+                                            <span onclick={NavigateBackToPurchaseOrder}>{PurchaseOrderTitle}: {PurchaseOrderName}</span>
+                                        </strong>   
+                                    </h2>
+                                </div>
+                            </header>
+                        </div>
+                        <div class="slds-card__body slds-card__body_inner proLineBody">
+                            <template for:each={SelectedPurchaseOrderLines} for:item="currentItem">
+                                <c-pro-purchase-order-to-payable-line
+                                    record={currentItem}
+                                    is-editable="true"
+                                    currency-symbol={CurrencySymbol}
+                                    key={currentItem.Id}
+                                    onitemremove={RemoveItem}
+                                    ondescriptionupdate={UpdateDescription}
+                                    ontotalupdate={UpdateLineTotal}>
+                                </c-pro-purchase-order-to-payable-line>
+                            </template>
+                        </div>
+                        <footer class="slds-card__footer proLineFooter">
+                            <button
+                                class="slds-button slds-button_outline-brand"
+                                data-id="proBackButton"
+                                onclick={NavigateBackToPurchaseOrder}>
+                                Back
+                            </button>
+                            &nbsp;
+                            &nbsp;
+                            &nbsp;
+                            <button
+                                class="slds-button slds-button_brand"
+                                data-id="proCreateButton"
+                                onclick={CreatePayable}>
+                                Create Payable
+                            </button>
+                        </footer>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </article>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>

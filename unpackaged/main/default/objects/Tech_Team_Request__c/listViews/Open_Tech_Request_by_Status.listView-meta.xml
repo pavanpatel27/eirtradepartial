@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Open_Tech_Request_by_Status</fullName>
+    <columns>NAME</columns>
+    <columns>pro_Tech_Team_User__c</columns>
+    <columns>pro_Tech_Team_Asset__c</columns>
+    <columns>pro_Tech_Team_Subject__c</columns>
+    <columns>pro_Tech_Team_Comments__c</columns>
+    <columns>pro_Tech_Team_Priotity__c</columns>
+    <columns>pro_Tech_Team_Closed_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>pro_Tech_Team_Status__c</field>
+        <operation>equals</operation>
+        <value>New,In Progress,On Hold,Closed</value>
+    </filters>
+    <label>Open Tech Request by Status</label>
+</ListView>

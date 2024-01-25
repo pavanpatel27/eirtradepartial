@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pro_Ledger_Picklist__c</fullName>
+    <description>JP 14/03/2023 V1 - Created by Prodigy</description>
+    <externalId>false</externalId>
+    <label>Ledger</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>pro_Accounting_Ledgers</valueSetName>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,17 @@
+Dear Approver,
+
+The following Purchase Order - Overhead: {!pro_Purchase_Order__c.Name} has been submitted for Approval.
+
+Approval Amount: {!pro_Purchase_Order__c.pro_Approval_Amount__c}
+
+Vendor: {!pro_Purchase_Order__c.pro_Supplier_Account__c}
+
+Description: {!pro_Purchase_Order__c.pro_Description__c}
+
+Owner: {!pro_Purchase_Order__c.OwnerFullName}
+
+Link to record: {!pro_Purchase_Order__c.Link}
+
+Regards,
+EirTrade
+Salesforce System

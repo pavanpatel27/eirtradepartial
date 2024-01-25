@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pro_Release__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>JP 11/05/2023 - Created by Prodigy</description>
+    <externalId>false</externalId>
+    <label>Release</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

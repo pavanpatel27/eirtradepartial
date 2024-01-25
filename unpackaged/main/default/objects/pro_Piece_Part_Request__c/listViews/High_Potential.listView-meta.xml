@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>High_Potential</fullName>
+    <columns>NAME</columns>
+    <columns>pro_Request_Keyword__c</columns>
+    <columns>pro_Serial_Number__c</columns>
+    <columns>pro_Repair_Order_Line__c</columns>
+    <columns>pro_Repair_Order_Lookup__c</columns>
+    <columns>pro_Part_Number__c</columns>
+    <columns>pro_Repair_Shop__c</columns>
+    <columns>pro_Consignment_Rate__c</columns>
+    <columns>pro_Status__c</columns>
+    <columns>pro_High_Potential__c</columns>
+    <columns>pro_Result__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>pro_High_Potential__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>pro_Status__c</field>
+        <operation>notEqual</operation>
+        <value>Complete</value>
+    </filters>
+    <label>High Potential</label>
+</ListView>

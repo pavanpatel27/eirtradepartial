@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pro_Convert_To_Payable</fullName>
+    <availability>online</availability>
+    <description>JP 04/04/2023 V1 - Created by Prodigy</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Convert To Payable</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>/lightning/n/pro_Convert_To_Payable?c__recordId={!pro_Purchase_Order__c.Id}</url>
+</WebLink>

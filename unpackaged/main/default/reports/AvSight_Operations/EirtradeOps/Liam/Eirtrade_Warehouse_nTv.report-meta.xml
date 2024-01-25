@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>inscor__Receipt__c.inscor__Inventory_Line_ID__c</field>
+    </columns>
+    <columns>
+        <field>inscor__Receipt__c.inscor__Product_Received__c</field>
+    </columns>
+    <columns>
+        <field>inscor__Receipt__c.inscor__Serial_Number_Received__c</field>
+    </columns>
+    <columns>
+        <field>inscor__Receipt__c.inscor__Condition_Code_Received__c</field>
+    </columns>
+    <columns>
+        <field>inscor__Receipt__c.inscor__Location__c</field>
+    </columns>
+    <columns>
+        <field>inscor__Receipt__c.inscor__Owner_Code__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>inscor__Receipt__c.inscor__Quantity_Received__c</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>inscor__Receipt__c.inscor__Location__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notContain</operator>
+            <value>KNOCK,US-SCRAP CAGE,US-N.WALL 3,603,US-RECEIVING</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Eirtrade Warehouse</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$inscor__Receipt__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>inscor__Receipt__c.inscor__Create_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

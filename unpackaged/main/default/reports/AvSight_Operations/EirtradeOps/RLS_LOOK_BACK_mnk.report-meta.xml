@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <field>inscor__Invoice__c.inscor__Sales_Order__c</field>
+    </columns>
+    <columns>
+        <field>FK_$inscor__Release__c.inscor__Customer_Vendor__c</field>
+    </columns>
+    <columns>
+        <field>FK_$inscor__Release__c.inscor__Status__c</field>
+    </columns>
+    <columns>
+        <field>FK_CREATED_DATE</field>
+    </columns>
+    <currency>USD</currency>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>FK_$inscor__Release__c.inscor__Company_Location__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>RLS LOOK BACK</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$inscor__Invoice__c@inscor__Invoice__c.inscor__Release__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>inscor__Invoice__c.inscor__Date_Shipped__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Company Setting</label>
+    <protected>false</protected>
+    <values>
+        <field>inscor__Account_Selected_Metrics__c</field>
+        <value xsi:type="xsd:string">ytd repairs,credit available,credit limit,last purchase date</value>
+    </values>
+    <values>
+        <field>inscor__Allow_PN_Creation_During_Uploads__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>inscor__Allow_PR_customization__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>inscor__Allow_Pay_of_PO_Rejects__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>inscor__Allow_Pay_of_RO_Rejects__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>inscor__Allow_Picking_QC_of_Release_Holds__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>inscor__Allow_RO_Line_to_go_backward__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>inscor__Allow_RO_Status_to_go_backward__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>inscor__Allow_line_processing_in_Ops_Queues__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>inscor__Apply_Same_Month_Voucher_Variance__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>inscor__Auto_apply_publication_to_WO_WP_creation__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>inscor__CQ_Hyperlink_Text__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>inscor__Community_URL__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>inscor__Default_Currency_from_Account_to_Docs__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>inscor__Disable_Clocking_into_Multiple_JobCards__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>inscor__Disable_Clocking_into_Multiple_Tasks__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>inscor__Disable_Clocking_into_Multiple_WOs__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>inscor__Disable_Clocking_into_Multiple_WPs__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>inscor__Display_Customer_Quote_Total__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>inscor__Display_Part_Master_Warnings__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>inscor__Enable_Barcoding_in_Operations_Queues__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>inscor__Enable_Location_Restrictions__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>inscor__Enable_Multi_Company_Sharing__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>inscor__Enable_PO_Issues__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>inscor__Enable_RO_Issues__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>inscor__Include_Secondary_in_PR_Summary__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>inscor__JobCard_Req_diff_Inspector_from_Complete__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>inscor__Lease_Hyperlink_Text__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>inscor__Line_Tracking_Header_Fields__c</field>
+        <value xsi:type="xsd:string">inscor__Sales_Order__c,Part_Number__c,Serial_Number__c,inscor__Allocation__c,inscor__Sales_Order_Line__c,inscor__RFQ_Line__c</value>
+    </values>
+    <values>
+        <field>inscor__Max_Margin_Target__c</field>
+        <value xsi:type="xsd:double">25.0</value>
+    </values>
+    <values>
+        <field>inscor__Min_Margin_Target__c</field>
+        <value xsi:type="xsd:double">15.0</value>
+    </values>
+    <values>
+        <field>inscor__PO_Hyperlink_Text__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>inscor__PS_Flag_Setting__c</field>
+        <value xsi:type="xsd:string">InStock,AvailAlt,OnOrder,OnRepair,OpenSale</value>
+    </values>
+    <values>
+        <field>inscor__PS_Header_First_Row_Setting__c</field>
+        <value xsi:type="xsd:string">QtyData,InternalComments,Part360Metrics</value>
+    </values>
+    <values>
+        <field>inscor__PS_Header_Second_Row_Setting__c</field>
+        <value xsi:type="xsd:string">NA</value>
+    </values>
+    <values>
+        <field>inscor__PS_History_Tab_Column1_Setting__c</field>
+        <value xsi:type="xsd:string">VenderQuote,PO,RO,Receipt</value>
+    </values>
+    <values>
+        <field>inscor__PS_History_Tab_Column2_Setting__c</field>
+        <value xsi:type="xsd:string">Quote,SO,RelLine,InvLine,RMA</value>
+    </values>
+    <values>
+        <field>inscor__PS_Inventory_Tab_Setting__c</field>
+        <value xsi:type="xsd:string">PartMaster,Inventory,Alternate</value>
+    </values>
+    <values>
+        <field>inscor__PS_Pricing_Tab_Setting__c</field>
+        <value xsi:type="xsd:string">Pricing,Vendor,Repair,CustomerContract</value>
+    </values>
+    <values>
+        <field>inscor__PS_Research_Tab_Setting__c</field>
+        <value xsi:type="xsd:string">ILS,Partsbase</value>
+    </values>
+    <values>
+        <field>inscor__Part_Master_Symbols_Allowed__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>inscor__Part_Master_Upper_Case_and_Validation__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>inscor__Part_Research_Selected_Metrics__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>inscor__Prevent_Receiving_RO_with_Missing_Costs__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>inscor__Protect_Turned_In_BOM__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>inscor__Pub_requirement_on_Kit_WO_Creation__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>inscor__Pub_requirement_on_WO_Creation__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>inscor__Pub_requirement_on_WO_Task_Add_from_Temp__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>inscor__Pub_requirement_on_WO_Task_Sign_Off__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>inscor__Pub_requirement_on_WP_Creation__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>inscor__Pub_requirement_on_WP_JC_Add_from_Templa__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>inscor__Pub_requirement_on_WP_JC_Sign_Off__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>inscor__Purchase_Selected_Metrics__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>inscor__Q360_Inventory_Tab_Setting__c</field>
+        <value xsi:type="xsd:string">Inventory,CQ,SO</value>
+    </values>
+    <values>
+        <field>inscor__Q360_Pricing_Tab_Setting__c</field>
+        <value xsi:type="xsd:string">Pricing,Vendor,Repair,CustomerContract</value>
+    </values>
+    <values>
+        <field>inscor__Quote_Selected_Metrics__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>inscor__RFQ_Selected_Metrics__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>inscor__Repair_Selected_Metrics__c</field>
+        <value xsi:type="xsd:string">credit available,credit limit,ytd repairs</value>
+    </values>
+    <values>
+        <field>inscor__Require_Account_Approvals__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>inscor__Require_Active_flag_in_Part_Master__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>inscor__Require_PIN_with_Electronic_Signature__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>inscor__Require_Part_Master_Approvals__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>inscor__Restrict_All_Document_Deletion__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>inscor__Restrict_Electronic_Signature_Deletion__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>inscor__Restrict_MRO_receiving_on_capabilities__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>inscor__Sales_Selected_Metrics__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>inscor__Save_Copy_of_Bulk_Transfers_as_CSV_files__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>inscor__Serialized_Cycle_Count_INV_QTY_not_req__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>inscor__Show_Cage_Code_on_Quote_Doc__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>inscor__Show_Credit_Warnings_on_CQ__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>inscor__Show_Credit_Warnings_on_SO__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>inscor__Show_Credit_Warnings_on_WO__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>inscor__Show_Docking_in_Receiving__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>inscor__Show_HazMat_warning_in_Operations__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>inscor__Show_Inventory_Grouping_in_Receiving__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>inscor__Show_Margin_Calculator__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>inscor__Show_NSN_on_Quote_Doc__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>inscor__Show_PN_Comments_on_PR__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>inscor__Show_RO_breakout_costs__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>inscor__Show_WO_Builder_in_Mobile_Technician__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>inscor__Show_WP_Builder_in_Mobile_Technician__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>inscor__Validate_Expiration_Dates_in_Receiving__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>inscor__WOTask_Req_diff_Inspector_from_Complete__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>inscor__WO_Block_for_allocating_Consignment_Part__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>inscor__WO_Block_for_allocating_LOT_Parts__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>inscor__WO_Reconcile_BOM_Validation__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>inscor__WO_Selected_Metrics__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>inscor__WO_validation_for_Inventory_Expiration__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>inscor__WP_Reconcile_Job_Card_BOM_Validation__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>inscor__WP_Selected_Metrics__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>inscor__Warn_MRO_receiving_on_capabilities__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>inscor__Warn_on_Margin_Target__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+</CustomMetadata>

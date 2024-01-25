@@ -1,0 +1,119 @@
+<!-- sldsValidatorIgnore -->
+<!--
+ * Created by Johnny in Prodigy on 09/08/2023.
+ *
+ * Lightning Web Component Name: c-pro-promised-payment.
+ *
+ * Description: Displays an individual Billing on the Promised Payment screen.
+ *
+ * Last modified by Johnny in Prodigy on 21/08/2023.
+-->
+<template>
+    <table>
+        <tbody>
+            <tr>
+                <!--Billing Number-->
+                <td>
+                    <c-pro-custom-lookup-field-dynamic
+                        selected-record-name={record.Name}
+                        selected-record-id={record.Id}
+                        field-label="Billing Number"
+                        not-changeable="true">
+                    </c-pro-custom-lookup-field-dynamic>
+                </td>
+                <!--Purchase Order Number-->
+                <td>
+                    <lightning-input
+                        type="text"
+                        variant="label-stacked"
+                        value={record.AcctSeed__PO_Number__c}
+                        data-id={record.Id}
+                        label="PO Number:"
+                        disabled="true"
+                        style="margin-top: 17%;">
+                    </lightning-input>
+                </td>
+                <!--Balance-->
+                <td>
+                    <lightning-input
+                        type="number"
+                        variant="label-stacked"
+                        value={record.AcctSeed__Balance__c}
+                        formatter="decimal"
+                        step="0.01"
+                        data-id={record.Id}
+                        label="Balance"
+                        disabled="true"
+                        style="margin-top: 17%;">
+                    </lightning-input>
+                </td>
+                <!--Billing Date-->
+                <td>
+                    <lightning-input
+                        type="date"
+                        variant="label-stacked"
+                        value={record.AcctSeed__Date__c}
+                        data-id={record.Id}
+                        label="Billing Date"
+                        readonly
+                        style="margin-top: 17%;">
+                    </lightning-input>
+                </td>
+                <!--Promised Payment Amount-->
+                <td>
+                    <lightning-input
+                        type="number"
+                        variant="label-stacked"
+                        value={record.pro_PP_Amount__c}
+                        formatter="decimal"
+                        step="0.01"
+                        data-id={record.Id}
+                        data-type="promisedPaymentAmount"
+                        label="PP Amount"
+                        onchange={UpdateLineAmount}
+                        style="margin-top: 17%;">
+                    </lightning-input>
+                </td>
+                <!--Promised Payment Date-->
+                <td>
+                    <lightning-input
+                        type="date"
+                        variant="label-stacked"
+                        value={record.pro_PP_Date__c}
+                        data-id={record.Id}
+                        data-type="promisedPaymentDate"
+                        label="PP Date"
+                        onchange={UpdateLineDate}
+                        style="margin-top: 17%;">
+                    </lightning-input>
+                </td>
+                <!--Promised Payment Comment-->
+                <td>
+                    <lightning-input
+                        type="text"
+                        variant="label-stacked"
+                        value={record.pro_PP_Comment__c}
+                        data-id={record.Id}
+                        data-type="promisedPaymentComment"
+                        label="PP Comment"
+                        onchange={UpdateLineComment}
+                        style="margin-top: 17%;">
+                    </lightning-input>
+                </td>
+                <!--Remove Button-->
+                <td>
+                    <div style="margin-left: 35%; margin-top: 100%;">
+                        <lightning-button-icon
+                            icon-name="utility:delete"
+                            variant="brand"
+                            data-id={record.Id}
+                            alternative-text="Remove"
+                            onclick={RemoveLine}
+                            aria-label="Delete">
+                        </lightning-button-icon>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</template>

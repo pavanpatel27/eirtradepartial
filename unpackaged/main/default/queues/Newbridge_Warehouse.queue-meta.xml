@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Newbridge Warehouse</name>
+    <queueMembers>
+        <users>
+            <user>a.byrne@eirtradeaviation.com</user>
+            <user>c.cosgrave@eirtradeaviation.com</user>
+            <user>colin.byrne@eirtradeaviation.com</user>
+            <user>c.hehir@eirtradeaviation.com</user>
+            <user>d.quinn@eirtradeaviation.com</user>
+            <user>d.butchart@eirtradeaviation.com</user>
+            <user>e.walsh@eirtradeaviation.com</user>
+            <user>g.byrne@eirtradeaviation.com</user>
+            <user>g.fitzgibbon@eirtradeaviation.com</user>
+            <user>k.fitzgibbon@eirtradeaviation.com</user>
+            <user>k.gaffney@eirtradeaviation.com</user>
+            <user>l.fitzgibbon@eirtradeaviation.com</user>
+            <user>m.broderick@eirtradeaviation.com</user>
+            <user>m.reardon@eirtradeaviation.com</user>
+            <user>n.baitson@eirtradeaviation.com</user>
+            <user>p.mccabe@eirtradeaviation.com</user>
+            <user>s.falade@eirtradeaviation.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Task</sobjectType>
+    </queueSobject>
+</Queue>

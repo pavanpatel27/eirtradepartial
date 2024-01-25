@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Tech_Team_Request__c</entityName>
+    <fieldName>pro_Tech_Team_Status__c</fieldName>
+    <masterLabel>Tech Team General Path</masterLabel>
+    <recordTypeName>pro_General_Query</recordTypeName>
+</PathAssistant>

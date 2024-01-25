@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>pro_Tech_Team_Priotity__c</columns>
+    <columns>pro_Tech_Team_Status__c</columns>
+    <columns>pro_Tech_Team_Subject__c</columns>
+    <columns>pro_Tech_Team_Comments__c</columns>
+    <columns>pro_Tech_Team_Closed_Date__c</columns>
+    <columns>RECORDTYPE</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

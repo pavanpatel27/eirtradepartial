@@ -1,0 +1,12 @@
+Dear customer,
+
+Just a reminder that we have not received a payment for this invoice yet.
+
+Invoice Ref: {!AcctSeed__Billing__c.inscoras__Invoice__c}
+Invoice Date: {!AcctSeed__Billing__c.AcctSeed__Date__c}
+Invoice Amount O/S: {!AcctSeed__Billing__c.AcctSeed__Balance__c}
+
+If a payment has already been made please disregard this reminder.
+If you have any queries in relation to the above, feel free to contact our Accounts Receivable Manager Ashling: a.farrell@eirtradeaviation.com
+
+Thank you for your business

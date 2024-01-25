@@ -1,0 +1,10 @@
+<messaging:emailTemplate subject="Invoice from Eirtrade Aviation Ireland Limited" recipientType="Contact" relatedToType="AcctSeed__Billing__c">
+<messaging:plainTextEmailBody >
+Please find attached {!relatedto.inscoras__Invoice__r.Name}
+Please feel free to contact us if you have any questions at all.
+
+Regards,
+Eirtrade Aviation Ireland Limited
+accounts@eirtradeaviation.com
+</messaging:plainTextEmailBody>
+</messaging:emailTemplate>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Dallas Warehouse</name>
+    <queueMembers>
+        <users>
+            <user>b.whitmore@eirtradeaviation.com</user>
+            <user>d.caesar@eirtradeaviation.com</user>
+            <user>g.fitzgibbon@eirtradeaviation.com</user>
+            <user>j.avelino@eirtradeaviation.com</user>
+            <user>johnbehan@eirtradeaviation.com</user>
+            <user>k.fitzgibbon@eirtradeaviation.com</user>
+            <user>m.deegan@eirtradeaviation.com</user>
+            <user>m.broderick@eirtradeaviation.com</user>
+            <user>m.avelino@eirtradeaviation.com</user>
+            <user>s.caesar@eirtradeaviation.com</user>
+            <user>t.egan@eirtradeaviation.com</user>
+            <user>b.thompson@eirtradeaviation.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Task</sobjectType>
+    </queueSobject>
+</Queue>

@@ -1,0 +1,416 @@
+<apex:page controller="Custom_ReleaseCertificatePDFController" renderAs="pdf" standardStylesheets="false" showHeader="false" applyHtmlTag="false"
+    applyBodyTag="false">
+    <html>
+
+    <head>
+        <style type="text/css">
+            body,
+            table {
+                font-size: 8pt;
+                font-family: "Arial", sans-serif !important;
+            }
+
+            /*table.border>tr>td{ border: 0.7pt solid #000; } */
+
+            @page {
+                margin-top: 1cm;
+                margin-bottom: 2cm;
+                size: {!IF(fo != null && fo.inscor__Form_Size__c != null, fo.inscor__Form_Size__c, 'auto')};
+                @top-center {
+                    content: element(header);
+                }
+                @bottom-left {
+                    content: element(footer);
+                }
+            }
+
+            div.border {
+                border-top: 0.7pt solid black;
+                border-left: 0.7pt solid black;
+            }
+
+            div.full-border {
+                border-top: 0.7pt solid black;
+                border-left: 0.7pt solid black;
+                border-right: 0.7pt solid black;
+            }
+
+            div.top {
+                border-top: 0.7pt solid black;
+                border-right: 0.7pt solid black;
+                border-left: 0.7pt solid black;
+            }
+
+            tr.top-b>td {
+                border-top: 0.7pt solid black;
+            }
+
+            tr.cell>td {
+                border-right: 0.7pt solid black;
+            }
+
+            tr.bottom>td {
+                border-bottom: 0.7pt solid black;
+                border-right: 0.7pt solid black;
+            }
+
+            .label-float {
+                float: left;
+            }
+
+            .bold-value {
+                font-size: 10.5pt;
+                font-weight: bold;
+            }
+
+            .small {
+                font-size: 7pt;
+            }
+
+            .center {
+                text-align: center;
+            }
+
+            .dynamicfooter .htmlDetailElementTable {
+                font-size: inherit;
+            }
+
+            .dynamicfooter p {
+                margin: 0;
+            }
+
+            .autosign {
+                padding-left: 15px;
+            }
+
+            .autosign img {
+                max-height: 40px;
+                max-width: 300px;
+            }
+            .remark-area {
+                white-space: pre-line;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="top">
+            <table width="100%" border="0" cellspacing="0" cellpadding="3">
+                <tr>
+                    <td width="20%">Original</td>
+                    <td align="center" style="font-size:12pt;">
+                        <b>PART OR MATERIAL CERTIFICATION FORM</b>
+                    </td>
+                    <td width="20%" align="right">{!fo.inscor__Title__c}</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="border">
+            <table width="100%" border="0" cellspacing="0" >
+                <tr class="cell" >
+                    <td  width="50%" valign="top">
+                        <div class="label-float">2. Seller's Name:</div>
+                        <div class="bold-value">&nbsp;&nbsp;{!objCompany.inscor__Company_Name__c}</div>
+                    </td>
+                    <td >
+                        <div class="label-float">3. Reference #:</div>
+                        <div class="bold-value">&nbsp;&nbsp;{!ref}</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="border">
+            <table width="100%" border="0" cellspacing="0" cellpadding="3">
+                <tr class="cell">
+                    <td width="50%" valign="top">
+                        <div>4. Organization: &nbsp;&nbsp;&nbsp; {!objCompany.inscor__Company_Name__c}</div>
+                        <br/>
+                        <div style="padding-left:10px;">
+                            Address:
+                            <br/> {!objCompany.inscor__Address_1__c} {!objCompany.inscor__Address_2__c}
+                            <br/> {!objCompany.inscor__City__c} {!objCompany.inscor__State__c} {!objCompany.inscor__Zip_Code__c}
+                            <br/> Website: {!objCompany.inscor__Website__c}
+                        </div>
+                    </td>
+                    <td valign="top">
+                        <table width="100%" cellspacing="0" cellpadding="3">
+                            <tr>
+                                <td width="30%">Phone#:</td>
+                                <td>{!objCompany.inscor__Phone_Number__c}</td>
+                            </tr>
+                            <tr>
+                                <td width="30%">Fax#:</td>
+                                <td>{!objCompany.inscor__Fax_Number__c}</td>
+                            </tr>
+                            <tr>
+                                <td width="30%"> SITA/Wire Code:</td>
+                                <td>{!objCompany.inscor__Cert_SITA_Wire_Code__c}</td>
+                            </tr>
+                            <tr>
+                                <td width="30%">Status:</td>
+                                <td>{!certstatus}</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+                <tr class="cell top-b">
+                    <td width="50%" style="border-right: 0.7pt solid black;" >
+                        5A. Seller's Contract #: &nbsp;&nbsp;&nbsp; {!sellercontract}
+                    </td>
+                    <td > 
+                        5B. Buyer's PO #: &nbsp;&nbsp;&nbsp; {!buyerpo}
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="border">
+            <table width="100%" border="0" cellspacing="0" cellpadding="3">
+                <tr class="bottom cell" >
+                    <td width="7%">6. Item</td>
+                    <td width="13%">7. Description</td>
+                    <td width="30%" style="border-right: 0.7pt solid black;">8. Manufacturer and Part Number</td>
+                    <td>9. App Code</td>
+                    <td>10. Qty</td>
+                    <td>11. Serial/Batch #</td>
+                    <td>12. Status</td>
+                </tr>
+                <tr style="height:50px;" class="cell">
+                    <td>{!item}</td>
+                    <td>{!description}</td>
+                    <td><apex:outputText value="{!manParts}" escape="false"/></td>
+                    <td>{!appcode}</td>
+                    <td>
+                        <apex:outputText value="{0, number, 0}">
+                            <apex:param value="{!ABS(qtyOverride)}"/>
+                        </apex:outputText>
+                    </td>
+                    <td>{!serial}</td>
+                    <td>{!status}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="full-border">
+            <table width="100%" border="0" cellspacing="0" cellpadding="3">
+                <tr style="{!If(gsata == 'true','height:50px;','height:100px;')}">
+                    <td valign="top">
+                        <div class="remark-area">13A. Remarks:&nbsp; <apex:outputText value="{!remark}" escape="false" />
+                            <apex:outputPanel layout="none" rendered="{!yourParts != null && LEN(yourParts) > 0}">
+                                <br/>Your Part Number: {!yourParts}
+                            </apex:outputPanel>
+                        </div>
+                    </td>
+                </tr>
+                <apex:outputPanel layout="none" rendered="{!gsata == 'true'}">
+                    <tr>
+                        <td valign="bottom">
+                            <div>Serial Numbers: {!serialNums}</div>
+                            <br/>
+                            <br/>
+                            <br/>
+                        </td>
+                    </tr>
+                </apex:outputPanel>
+                <apex:outputPanel layout="none" rendered="{!showESN}">
+                    <tr>
+                        <td valign="bottom">
+                            <div>MSN/ESN: {!esn}</div>
+                        </td>
+                    </tr>
+                </apex:outputPanel>
+                <apex:outputPanel layout="none" rendered="{! and(lifeLimited, trim(csn) != '')}">
+                    <tr>
+                        <td valign="bottom">
+                            <div>CSN: {!csn}</div>
+                        </td>
+                    </tr>
+                </apex:outputPanel>
+                <apex:outputPanel layout="none" rendered="{! and(lifeLimited, trim(tsn) != '')}">
+                    <tr>
+                        <td valign="bottom">
+                            <div>TSN: {!tsn}</div>
+                        </td>
+                    </tr>
+                </apex:outputPanel>
+                <apex:outputPanel layout="none" rendered="{!showLastOperator}">
+                    <apex:outputPanel layout="none" rendered="{!or(noOfLines <=1, and(noOfLines > 1, lastOperator != null && trim(lastOperator)!=''))}">
+                        <tr>
+                            <td valign="bottom">
+                                <div>{!LastOperatorLabel}{!lastOperator}</div>
+                            </td>
+                        </tr>
+                    </apex:outputPanel>
+                </apex:outputPanel>
+                <apex:outputPanel layout="none" rendered="{!showTagInv}">
+                    <apex:outputPanel layout="none" rendered="{!and(invTagRef != null, trim(invTagRef) != '')}">
+                        <tr>
+                            <td valign="bottom">
+                                <div>{!tagInvLabel}{!invTagRef}</div>
+                            </td>
+                        </tr>
+                    </apex:outputPanel>
+                </apex:outputPanel>
+            </table>
+        </div>
+
+        <div class="border">
+            <table width="100%" border="0" cellspacing="0" cellpadding="3">
+                <tr class="bottom">
+                    <td width="50%">
+                        <div>13B. Traceable To:&nbsp;{!traceable}</div>
+                    </td>
+                    <td>
+                        <div>13C. Last Certificated Agency:&nbsp;{!lastcerti}</div>
+                    </td>
+                </tr>
+                <tr class="bottom">
+                    <apex:outputPanel layout="none" rendered="{!show1417}">
+                        <td width="50%">
+                            <div>14. New Parts/Material Verification:</div>
+                            <div class="small">
+                                THE FOLLOWING SIGNATURE ATTESTS THAT THE PART(S) OR MATERIAL(S) IDENTIFIED ABOVE WAS (WERE) MANUFACTURED BY A FAA PRODUCTION
+                                APPROVAL HOLDER (PAH), OR TO AN INDUSTRY COMMERCIAL STANDARD.
+                            </div>
+                        </td>
+                    </apex:outputPanel>
+
+                    <apex:outputPanel layout="none" rendered="{!not(show1417)}">
+                        <td width="50%" style="background-color: #D3D3D3;border-right: 1pt solid black;">
+                            <div >14. New Parts/Material Verification:</div>
+                            <div class="small">
+                                THE FOLLOWING SIGNATURE ATTESTS THAT THE PART(S) OR MATERIAL(S) IDENTIFIED ABOVE WAS (WERE) MANUFACTURED BY A FAA PRODUCTION
+                                APPROVAL HOLDER (PAH), OR TO AN INDUSTRY COMMERCIAL STANDARD.
+                            </div>
+                            
+                        </td>
+                    </apex:outputPanel>
+
+                    <apex:outputPanel layout="none" rendered="{!show1821}">
+                        <td>
+                            <div>18. New Surplus, Used, Repaired or Overhaul Parts Verification:</div>
+                            <div class="small">
+                                THE FOLLOWING SIGNATURE ATTESTS THAT THE DOCUMENTATION SPECIFIED ABOVE OR ATTACHED IS ACCURATE WITH REGARD TO THE ITEM(S)
+                                DESCRIBED.
+                            </div>
+                        </td>
+                    </apex:outputPanel>
+                    <apex:outputPanel layout="none" rendered="{!not(show1821)}">
+                        <td style="background-color: #D3D3D3;">
+                            <div>18. New Surplus, Used, Repaired or Overhaul Parts Verification:</div>
+                            <div class="small">
+                                THE FOLLOWING SIGNATURE ATTESTS THAT THE DOCUMENTATION SPECIFIED ABOVE OR ATTACHED IS ACCURATE WITH REGARD TO THE ITEM(S)
+                                DESCRIBED.
+                            </div>
+                        </td>
+                    </apex:outputPanel>
+                </tr>
+                <tr style="max-height: 70px;vertical-align: top;" class="bottom">
+                    <apex:outputPanel layout="none" rendered="{!show1417}">
+                        <td width="50%" style="max-height: 70px;overflow: hidden;">
+                            <div>15. Signature</div>
+                            <div class="autosign">
+                                <apex:outputPanel layout="none" rendered="{!and(show1417,emp.inscor__Signature__c != null)}">
+                                    <apex:outputText value="{!emp.inscor__Signature__c}" escape="false" />
+                                </apex:outputPanel>
+                            </div>
+                            <apex:outputPanel layout="none" rendered="{!emp.inscor__Signature__c == null}">
+                                <br/>
+                                <br/>
+                                <br/>
+                            </apex:outputPanel>
+                        </td>
+                    </apex:outputPanel>
+                    <apex:outputPanel layout="none" rendered="{!not(show1417)}">
+                        <td width="50%" style="background-color: #D3D3D3;border-right: 1pt solid black;">
+                            <div>15. Signature</div>
+                            <br/>
+                            <br/>
+                            <br/>
+                        </td>
+                    </apex:outputPanel>
+
+                    <apex:outputPanel layout="none" rendered="{!show1821}">
+                        <td width="50%" style="max-height: 70px;overflow: hidden;">
+                            <div>19. Signature</div>
+                            <div class="autosign">
+                                <apex:outputPanel layout="none" rendered="{!emp.inscor__Signature__c != null}">
+                                    <apex:outputText value="{!emp.inscor__Signature__c}" escape="false" />
+                                </apex:outputPanel>
+                            </div>
+                            <apex:outputPanel layout="none" rendered="{!emp.inscor__Signature__c == null}">
+                                <br/>
+                                <br/>
+                                <br/>
+                            </apex:outputPanel>
+                        </td>
+                    </apex:outputPanel>
+
+                    <apex:outputPanel layout="none" rendered="{!not(show1821)}">
+                        <td style="background-color: #D3D3D3;">
+                            <div>19. Signature</div>
+                            <br/>
+                            <br/>
+                            <br/>
+                        </td>
+                    </apex:outputPanel>
+                </tr>
+                <tr class="bottom">
+                    <apex:outputPanel layout="none" rendered="{!show1417}">
+                        <td width="50%">
+                            <table width="100%" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td width="60%">16. Name &nbsp;&nbsp; {!name1}</td>
+                                    <td width="60%">17. Date &nbsp;&nbsp; {!date1}</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </apex:outputPanel>
+                    <apex:outputPanel layout="none" rendered="{!not(show1417)}">
+                        <td width="50%" style="background-color: #D3D3D3;border-right: 1pt solid black;">
+                            <table width="100%" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td width="60%">16. Name &nbsp;&nbsp;</td>
+                                    <td width="60%">17. Date &nbsp;&nbsp;</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </apex:outputPanel>
+
+                    <apex:outputPanel layout="none" rendered="{!show1821}">
+                        <td>
+                            <table width="100%" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td width="60%">20. Name &nbsp;&nbsp;&nbsp; {!name2}</td>
+                                    <td width="60%">21. Date &nbsp;&nbsp; {!date2}</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </apex:outputPanel>
+
+                    <apex:outputPanel layout="none" rendered="{!not(show1821)}">
+                        <td style="background-color: #D3D3D3;">
+                            <table width="100%" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td width="60%">20. Name &nbsp;&nbsp;&nbsp;</td>
+                                    <td width="60%">21. Date &nbsp;&nbsp; </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </apex:outputPanel>
+                </tr>
+            </table>
+        </div>
+
+        <apex:outputPanel layout="none">
+            <!-- Section at the end of PDF to show contact details if any questions on the above purchase order -->
+            <div style="page-break-after: auto;" class="small dynamicfooter">
+                <apex:outputText value="{!fo.inscor__Footer__c}" escape="false" style="width:100%;font-size: 7pt;" styleClass="richtext" />
+                <p style="page-break-after: auto;" />
+            </div>
+        </apex:outputPanel>
+    </body>
+
+    </html>
+</apex:page>

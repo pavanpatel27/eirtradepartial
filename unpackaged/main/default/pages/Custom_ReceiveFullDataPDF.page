@@ -1,0 +1,117 @@
+<apex:page controller="Custom_ReceiveFullDataBarcodeController" renderAs="{!pageMode}" ApplyBodyTag="false"  showHeader="false" showChat="false" sidebar="false" applyHtmlTag="false">
+	<head>
+		<style>
+			td {
+				text-align: left;
+				font-weight: bold;
+            	line-height: 13px;
+			}
+
+			@page {
+				size: 4in 3in;
+				margin: 0.10in 0.10in 0.0in;
+			}
+			table {
+				border-collapse: collapse;
+			}
+
+			.hidden { display: none; }
+			table .hidden { display: none; }
+			.checkbox-img {
+				width: 15px;
+				margin-top:-3px;
+			}
+		</style>
+	</head>
+	<body>
+		<div style="width:100%;height:100%;" class="fullBlock">
+			<table style="width:100%;height:100%">
+				<tr>
+					<td align="center" style="font-size: 12px; font-family: Arial, Helvetica, sans-serif;">
+						<div>
+							<div align="center">
+								<apex:image url="{!invBarcodeUrl}" style="max-height: 0.7in;" />
+							</div>
+							<div align="center">
+								Inv ID: {!data.invName}
+							</div>
+                            <div align="center">
+								{!data.additionalLabel}
+							</div>
+							<div align="center">
+								<table style="width:100%;">
+                                    <tr>
+										<td>
+											PN: {!data.productName}
+											<apex:outputPanel layout="none" rendered="{!hasHazMatInfo == true && showHazMatInfo == true}">
+												&nbsp;<apex:image url="{!$Resource.inscor__Warning_240}" styleClass="checkbox-img"/>
+											</apex:outputPanel>
+										</td>
+                                        <td>ESN: {!data.esn}</td>
+									</tr>
+									<tr >
+										<td>SN: {!data.serialNumber}</td>
+                                        <td>BATCH NUMBER: {!data.batchNum}</td>
+									</tr>
+									<tr>
+										<td>DESC: {!data.description}</td>
+										<td>PO: {!data.poName}</td>
+									</tr>
+									<tr>
+										<td>COND: {!data.condCode}</td>
+										<td>REC DATE: {!data.recDate}</td>
+									</tr>
+									<tr>
+										<td>UOM: {!data.uom}</td>
+										<td>SOURCE: {!data.source}</td>
+									</tr>
+									<tr>
+										<td>LOC: {!data.locName}</td>
+										<td>TRACE: {!data.trace}</td>
+									</tr>
+									<tr>
+										<td>EXP DATE: {!data.expDate}</td>
+										<td>TAG: {!data.tagAgency}</td>
+									</tr>
+									<tr>
+										<td>QTY: {!data.qty}</td>
+										<td>TAG DATE: {!data.tagDate}</td>
+									</tr>
+									<tr>
+										<td>
+											<span class="{!IF(data.lastCalib != null, '', 'hidden')}">
+												LAST CALIB: {!data.lastCalib}
+											</span>
+										</td>
+										<td>
+											<span class="{!IF(data.nextCalib != null, '', 'hidden')}">
+												NEXT CALIB: {!data.nextCalib}
+											</span>
+										</td>
+									</tr>
+                                    <apex:outputPanel layout="none" rendered="{!data.lastInsp != null || data.nextInsp != null}">
+                                        <tr>
+                                            <td>
+                                                <span class="{!IF(data.lastInsp != null, '', 'hidden')}">
+                                                    LAST INSP: {!data.lastInsp}
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <span class="{!IF(data.nextInsp != null, '', 'hidden')}">
+                                                    NEXT INSP: {!data.nextInsp}
+                                                </span>
+                                            </td>
+                                        </tr>
+                                    </apex:outputPanel>
+                                    <tr>
+                                    	<td colspan="2">SUB LOCATION: {!data.subLoc}</td>
+                                    </tr>
+								</table>
+							</div>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</apex:page>

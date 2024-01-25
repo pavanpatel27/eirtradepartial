@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Use this permission for any new custom forms and apply to all users</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>AvSight Custom Forms</label>
+    <pageAccesses>
+        <apexPage>BillingEirtradeCustom</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>BillingEirtradeCustom2</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>BillingOutstandingStmntEirtrade</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>Custom_EngineRemovalTagPDF</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>Custom_ReceiveFullDataPDF</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>Custom_ReleaseCertificate</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>Custom_ReleaseCertificateLandscape</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Tech_Team_Request__c.pro_TechTeam_Asset_Acquisition__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+</PermissionSet>

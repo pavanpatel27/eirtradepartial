@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Closed_Won_Allowed_Users</fullName>
+    <active>false</active>
+    <errorConditionFormula>($User.Username &lt;&gt; &quot;prodigy@eirtrade.ie&quot; &amp;&amp; $User.Username &lt;&gt; &quot;l.carey@eirtradeaviation.com&quot; &amp;&amp; $User.Username &lt;&gt; &quot;e.doherty@eirtradeaviation.com&quot; &amp;&amp; $User.Username &lt;&gt; &quot;b.thompson@eirtradeaviation.com&quot;) &amp;&amp; TEXT(Status__c) = &quot;Closed Won&quot;</errorConditionFormula>
+    <errorMessage>You are not authorised to mark Asset Acquisitions as Closed Won.</errorMessage>
+</ValidationRule>

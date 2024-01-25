@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Finance Approvers</name>
+    <queueMembers>
+        <users>
+            <user>g.afzal@eirtradeaviation.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>salestrip__ExpenseReport__c</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>salestrip__Expense__c</sobjectType>
+    </queueSobject>
+</Queue>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Accounts_with_Record_ID</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>inscor__Business_ID__c</columns>
+    <columns>inscor__Conversion_ID__c</columns>
+    <columns>inscor__External_Reference_ID__c</columns>
+    <columns>AcctSeed__Stripe_Customer_Id__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>Accounts with Record ID</label>
+</ListView>

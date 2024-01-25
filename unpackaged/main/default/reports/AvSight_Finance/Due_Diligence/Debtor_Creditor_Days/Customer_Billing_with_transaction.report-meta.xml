@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>AcctSeed__Billing__c.Customer_Billing_Number__c</field>
+    </columns>
+    <columns>
+        <field>FK_$inscor__Activity__c.inscor__Invoice_Number__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Billing__c.AcctSeed__Proprietary_Billing_Number__c</field>
+    </columns>
+    <columns>
+        <field>FK_$inscor__Activity__c.inscor__Conversion_ID__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Billing__c.AcctSeed__Date__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Billing__c.AcctSeed__Customer__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>FK_$inscor__Activity__c.inscor__Line_Value__c</field>
+    </columns>
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <field>CUST_ID</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Customer Billing # with transaction</description>
+    <filter>
+        <criteriaItems>
+            <column>FK_$inscor__Activity__c.inscor__Doc_Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>SO,RMA</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Customer Billing # with transaction</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntityCustomEntity$AcctSeed__Billing__c$AcctSeed__Billing_Line__c@AcctSeed__Billing_Line__c.inscoras__Transaction_Activity__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>AcctSeed__Billing__c.AcctSeed__Billing_Cycle_End_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

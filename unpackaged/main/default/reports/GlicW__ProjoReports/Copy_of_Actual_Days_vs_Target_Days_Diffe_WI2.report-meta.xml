@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>GlicW__Project__c$Name</field>
+    </columns>
+    <columns>
+        <field>GlicW__Project__c.GlicW__Project_Milestones1__r$Name</field>
+    </columns>
+    <columns>
+        <field>GlicW__Project__c.GlicW__Project_Milestones1__r.GlicW__Project_Tasks1__r$GlicW__Status__c</field>
+    </columns>
+    <columns>
+        <field>GlicW__Project__c.GlicW__Project_Milestones1__r.GlicW__Project_Tasks1__r$GlicW__Start_Date__c</field>
+    </columns>
+    <columns>
+        <field>GlicW__Project__c.GlicW__Project_Milestones1__r.GlicW__Project_Tasks1__r$GlicW__End_Date__c</field>
+    </columns>
+    <columns>
+        <field>GlicW__Project__c.GlicW__Project_Milestones1__r.GlicW__Project_Tasks1__r$GlicW__Due_Date__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>GlicW__Project__c.GlicW__Project_Milestones1__r.GlicW__Project_Tasks1__r$pro_Target_Days__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>GlicW__Project__c.GlicW__Project_Milestones1__r.GlicW__Project_Tasks1__r$pro_Actual_Days__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>AB 01/08/2023</description>
+    <filter>
+        <criteriaItems>
+            <column>GlicW__Project__c.GlicW__Project_Milestones1__r.GlicW__Project_Tasks1__r$GlicW__Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Not Started</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>GlicW__Project__c.GlicW__Project_Milestones1__r.GlicW__Project_Tasks1__r$Name</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Project Task Days</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>pro_Projects_with_Task_Asset__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>GlicW__Project__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

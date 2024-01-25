@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>58.0</apiVersion>
+    <decisions>
+        <description>Checks if the Employee record that triggered the flow has a Manager assigned to it or not.</description>
+        <name>Does_Employee_have_a_Manager</name>
+        <label>Does Employee have a Manager?</label>
+        <locationX>501</locationX>
+        <locationY>323</locationY>
+        <defaultConnectorLabel>Employee does not have a manager</defaultConnectorLabel>
+        <rules>
+            <name>Employee_has_a_manager</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.GlicW__Manager__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>New_or_Existing_Employee</targetReference>
+            </connector>
+            <label>Employee has a manager</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_there_an_Existing_Share</name>
+        <label>Is there an Existing Share?</label>
+        <locationX>446</locationX>
+        <locationY>647</locationY>
+        <defaultConnector>
+            <targetReference>Create_Employee_Share_Existing_Employee</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>EmployeeDetailShare</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Delete_Existing_Share</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Checks if the Employee Detail record that triggered is New or an Existing record.</description>
+        <name>New_or_Existing_Employee</name>
+        <label>New or Existing Employee?</label>
+        <locationX>248</locationX>
+        <locationY>431</locationY>
+        <defaultConnector>
+            <targetReference>Get_Existing_Share</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Existing Employee</defaultConnectorLabel>
+        <rules>
+            <name>New_Employee</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>NewEmployeeVar</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Create_Employee_Share_New_Employee</targetReference>
+            </connector>
+            <label>New Employee</label>
+        </rules>
+    </decisions>
+    <description>AB 07/09/2023 - Updates to Logic
+AB 29/08/2023 - Created by Prodigy</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>NewEmployeeVar</name>
+        <dataType>Boolean</dataType>
+        <expression>ISNEW()</expression>
+    </formulas>
+    <interviewLabel>Prodigy - Employee Detail After Update After Create {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Prodigy - Employee Detail After Update After Create</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <description>Creates the Share for the existing Employee Detail record using the manager set on the record.</description>
+        <name>Create_Employee_Share_Existing_Employee</name>
+        <label>Create Employee Share (Existing Employee)</label>
+        <locationX>446</locationX>
+        <locationY>947</locationY>
+        <inputAssignments>
+            <field>AccessLevel</field>
+            <value>
+                <stringValue>Edit</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ParentId</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RowCause</field>
+        </inputAssignments>
+        <inputAssignments>
+            <field>UserOrGroupId</field>
+            <value>
+                <elementReference>$Record.GlicW__Manager__r.GlicW__User__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>GlicW__Resource__Share</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <description>Creates the Share for the new Employee Detail record using the manager set on the record.</description>
+        <name>Create_Employee_Share_New_Employee</name>
+        <label>Create Employee Share (New Employee)</label>
+        <locationX>50</locationX>
+        <locationY>539</locationY>
+        <inputAssignments>
+            <field>AccessLevel</field>
+            <value>
+                <stringValue>Edit</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ParentId</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RowCause</field>
+        </inputAssignments>
+        <inputAssignments>
+            <field>UserOrGroupId</field>
+            <value>
+                <elementReference>$Record.GlicW__Manager__r.GlicW__User__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>GlicW__Resource__Share</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordDeletes>
+        <description>Deletes the existing share of the Employee Detail record.</description>
+        <name>Delete_Existing_Share</name>
+        <label>Delete Existing Share</label>
+        <locationX>314</locationX>
+        <locationY>755</locationY>
+        <connector>
+            <targetReference>Create_Employee_Share_Existing_Employee</targetReference>
+        </connector>
+        <inputReference>EmployeeDetailShare</inputReference>
+    </recordDeletes>
+    <recordLookups>
+        <description>Retrieves the existing Share of the Employee Detail record</description>
+        <name>Get_Existing_Share</name>
+        <label>Get Existing Share</label>
+        <locationX>446</locationX>
+        <locationY>539</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Is_there_an_Existing_Share</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>ParentId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>UserOrGroupId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record__Prior.GlicW__Manager__r.GlicW__User__c</elementReference>
+            </value>
+        </filters>
+        <object>GlicW__Resource__Share</object>
+        <outputReference>EmployeeDetailShare</outputReference>
+        <queriedFields>Id</queriedFields>
+    </recordLookups>
+    <start>
+        <locationX>375</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Does_Employee_have_a_Manager</targetReference>
+        </connector>
+        <object>GlicW__Resource__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>EmployeeDetailShare</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>GlicW__Resource__Share</objectType>
+    </variables>
+</Flow>

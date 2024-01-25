@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RestrictionRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <description>AB 13/07/2023 -Prodigy</description>
+    <enforcementType>Restrict</enforcementType>
+    <masterLabel>User- Only My CPD</masterLabel>
+    <recordFilter>GlicW__Resource__r.GlicW__User__c=$User.Id</recordFilter>
+    <targetEntity>GlicW__Resource_Skill__c</targetEntity>
+    <userCriteria>$User.IsActive=true</userCriteria>
+    <version>1</version>
+</RestrictionRule>

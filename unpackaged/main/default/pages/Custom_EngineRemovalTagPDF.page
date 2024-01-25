@@ -1,0 +1,106 @@
+<apex:page controller="Custom_ReceiveFullDataBarcodeController" renderAs="{!pageMode}" ApplyBodyTag="false"  showHeader="false" showChat="false" sidebar="false" applyHtmlTag="false">
+	<head>
+		<style>
+			td {
+				text-align: left;
+				font-weight: bold;
+				vertical-align: top;
+			}
+
+			@page {
+				size: 4in 3in;
+				margin: 0.05in 0.05in;
+			}
+			table {
+				border-collapse: collapse;
+			}
+			.company-logo img {
+				float: left;
+				padding-right: 10px;
+            	width: {!width/2}px;
+			}
+			.company-logo p {
+				margin: 0;
+			}
+
+			.hidden { display: none; }
+			table .hidden { display: none; }
+
+			.barcode img {
+				height: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<div style="width:100%;height:100%;" class="fullBlock">
+			<table style="width:100%;height:100%">
+				<tr>
+					<td align="center" style="font-size: 11px; font-family: Arial, Helvetica, sans-serif;">
+						<div>
+							<table style="width:100%;">
+								<tr>
+									<td>
+										<apex:outputPanel rendered="{!body1 != null}" layout="block" style="float:left;vertical-align:top;" styleClass="company-logo">
+											<apex:outputText value="{!body1}" escape="false"/>
+										</apex:outputPanel>
+									</td>
+									<td>
+                                        <div class="barcode-img">
+                                            <div align="center">
+                                                <apex:image url="{!invBarcodeUrl}" style="max-height: 0.7in;width:{!width/2}px"/>
+                                            </div>
+                                            <div align="center">
+                                                Inv ID: {!data.invName}
+                                            </div>
+                                        </div>
+									</td>
+								</tr>
+							</table>
+                            <br/>
+							<div align="center">
+								<table style="width:100%;">
+                                    <tr>
+										<td width="{!width/2}">PN: {!data.productName}</td>
+                                        <td width="{!width/2}">WO: {!data.woName}</td>
+									</tr>
+									<tr>
+										<td>SN: {!data.serialNumber}</td>
+										<td>ESN: {!data.esn}</td>
+									</tr>
+									<tr>
+										<td>DESC: {!data.description}</td>
+										<td>TRACED TO: {!data.hours}</td>
+									</tr>
+									<tr>
+										<td>COND: {!data.condCode}</td>
+										<td>REMOVAL DATE: {!data.removeDate}</td>
+									</tr>
+									<tr>
+										<td>LOC: {!data.locName}</td>
+										<td>TSN: {!data.tsn}</td>
+									</tr>
+									<tr>
+										<td>QTY: {!data.qty}</td>
+										<td>CSN: {!data.csn}</td>
+									</tr>
+									<tr>
+										<td>REMOVED BY: {!data.removedBy}</td>
+										<td>TAG DATE: {!data.tagDate}</td>
+									</tr>
+								</table>
+							</div>
+                            <br/><br/>
+                            <table style="width:100%;">
+                                <tr>
+                                    <td style="text-align: center;">
+                                        EAIL QM 006-12
+                                    </td>
+                                </tr>
+                            </table>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</apex:page>

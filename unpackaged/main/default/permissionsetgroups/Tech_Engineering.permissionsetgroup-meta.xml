@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Tech Engineering</label>
+    <permissionSets>AvSight_Create_List_Views</permissionSets>
+    <permissionSets>AvSight_Dashboard_User</permissionSets>
+    <permissionSets>AvSight_Reporting_User</permissionSets>
+    <permissionSets>inscor__AvSight_Accounts_Admin</permissionSets>
+    <permissionSets>inscor__AvSight_Accounts_User</permissionSets>
+    <permissionSets>inscor__AvSight_Cycle_Count</permissionSets>
+    <permissionSets>inscor__AvSight_Inventory_User</permissionSets>
+    <permissionSets>inscor__AvSight_Labeling_User</permissionSets>
+    <permissionSets>inscor__AvSight_Outbound_QC</permissionSets>
+    <permissionSets>inscor__AvSight_Part_Master_Basic</permissionSets>
+    <permissionSets>inscor__AvSight_Parts_Analyzer</permissionSets>
+    <permissionSets>inscor__AvSight_Purchasing_User</permissionSets>
+    <permissionSets>inscor__AvSight_QA_Admin</permissionSets>
+    <permissionSets>inscor__AvSight_Receiving_User</permissionSets>
+    <permissionSets>inscor__AvSight_Shipping_User</permissionSets>
+    <permissionSets>inscor__AvSight_User</permissionSets>
+    <permissionSets>inscor__AvSight_User_Base_Read</permissionSets>
+    <permissionSets>inscor__AvSight_User_Operations</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

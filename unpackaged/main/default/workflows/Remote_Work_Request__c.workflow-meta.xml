@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>pro_Recall_Remote_Work</fullName>
+        <description>Recall Remote Work</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>GlicW__GlicWorks_Templates/pro_Remote_Work_Recall</template>
+    </alerts>
+    <alerts>
+        <fullName>pro_Recall_the_Remote_Work_Request</fullName>
+        <description>Recall the Remote Work Request</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>GlicW__GlicWorks_Templates/pro_Remote_Work_Recall</template>
+    </alerts>
+    <alerts>
+        <fullName>pro_Remote_Rejected</fullName>
+        <description>Remote Rejected</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>GlicW__GlicWorks_Templates/pro_Remote_Rejected</template>
+    </alerts>
+    <alerts>
+        <fullName>pro_Remote_Request_Approved</fullName>
+        <description>Remote Request Approved</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>GlicW__GlicWorks_Templates/pro_Remote_Approved</template>
+    </alerts>
+    <alerts>
+        <fullName>pro_Remote_Request_Submitted</fullName>
+        <description>Remote Request Submitted</description>
+        <protected>false</protected>
+        <recipients>
+            <field>pro_Remote_Manager__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>GlicW__GlicWorks_Templates/pro_Remote_Request_Submission</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Remote_Approved</fullName>
+        <field>pro_Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Remote Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Remote_Rejected</fullName>
+        <field>pro_Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Remote Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Remote_Submitted</fullName>
+        <field>pro_Status__c</field>
+        <literalValue>Submitted</literalValue>
+        <name>Remote Submitted</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Submitted</fullName>
+        <field>pro_Status__c</field>
+        <literalValue>Submitted</literalValue>
+        <name>Submitted</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>pro_Recall_Remote</fullName>
+        <field>pro_Status__c</field>
+        <literalValue>Draft</literalValue>
+        <name>Recall Remote</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+</Workflow>

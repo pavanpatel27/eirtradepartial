@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Department Heads</name>
+    <queueMembers>
+        <users>
+            <user>prod-avs-admin@eirtrade.com</user>
+            <user>d.beatty@eirtradeaviation.com</user>
+            <user>e.doyle@eirtradeaviation.com</user>
+            <user>e.skehan@eirtradeaviation.com</user>
+            <user>e.botha@eirtradeaviation.com</user>
+            <user>k.fitzgibbon@eirtradeaviation.com</user>
+            <user>l.carey@eirtradeaviation.com</user>
+            <user>p.gleeson@eirtradeaviation.com</user>
+            <user>s.trowell@eirtradeaviation.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>inscor__Purchase_Order__c</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>inscor__Repair_Order__c</sobjectType>
+    </queueSobject>
+</Queue>

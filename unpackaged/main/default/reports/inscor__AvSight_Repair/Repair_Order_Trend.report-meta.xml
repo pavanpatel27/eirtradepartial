@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>inscor__Repair_Order__c.inscor__RO_Total_Estimated_Cost__c</field>
+    </columns>
+    <columns>
+        <field>inscor__Repair_Order__c.inscor__Repair_Total_Cost__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>CY and PY</description>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>inscor__Repair_Order__c.inscor__Create_Date__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Repair Order Trend</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntityCustomEntity$inscor__Repair_Order__c$inscor__Repair_Order_Line__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>inscor__Repair_Order__c.inscor__Create_Date__c</dateColumn>
+        <interval>INTERVAL_PREVCURY</interval>
+    </timeFrameFilter>
+</Report>

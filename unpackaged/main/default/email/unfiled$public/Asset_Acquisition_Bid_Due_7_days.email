@@ -1,0 +1,8 @@
+Please note that the following Asset Acquisition Bid Due Date is in 7 days.
+
+Asset Acquisition Number: {!Asset_Acquisition__c.Name}
+Asset: {!Asset_Acquisition__c.Asset_Name__c}
+Bid Due Date: {!Asset_Acquisition__c.Bid_Due__c}
+
+Link to Record:
+{!Asset_Acquisition__c.Link}

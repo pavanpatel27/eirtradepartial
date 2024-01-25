@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_Duplicate_ESN_MSN</fullName>
+    <active>true</active>
+    <errorConditionFormula>Duplicate_Found__c = TRUE</errorConditionFormula>
+    <errorMessage>Unable to Save! There is already an Asset Acquisition with this ESN/MSN Number.</errorMessage>
+</ValidationRule>

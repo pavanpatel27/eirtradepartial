@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Repairs</label>
+    <permissionSets>AvSight_Create_List_Views</permissionSets>
+    <permissionSets>AvSight_Dashboard_User</permissionSets>
+    <permissionSets>AvSight_Reporting_User</permissionSets>
+    <permissionSets>ReleaseTax</permissionSets>
+    <permissionSets>inscor__AvSight_Accounts_Basic</permissionSets>
+    <permissionSets>inscor__AvSight_Accounts_User</permissionSets>
+    <permissionSets>inscor__AvSight_Inventory_Admin</permissionSets>
+    <permissionSets>inscor__AvSight_Inventory_User</permissionSets>
+    <permissionSets>inscor__AvSight_Part_Master_Basic</permissionSets>
+    <permissionSets>inscor__AvSight_Product_Line</permissionSets>
+    <permissionSets>inscor__AvSight_Purchasing_User</permissionSets>
+    <permissionSets>inscor__AvSight_Receiving_User</permissionSets>
+    <permissionSets>inscor__AvSight_Repair_User</permissionSets>
+    <permissionSets>inscor__AvSight_Sales_User</permissionSets>
+    <permissionSets>inscor__AvSight_Shipping_User</permissionSets>
+    <permissionSets>inscor__AvSight_Sourcing_User</permissionSets>
+    <permissionSets>inscor__AvSight_User</permissionSets>
+    <permissionSets>inscor__AvSight_User_Base_Read</permissionSets>
+    <permissionSets>inscor__AvSight_User_Operations</permissionSets>
+    <permissionSets>inscoras__AvSight_AS_Full_Admin</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

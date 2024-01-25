@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Asset_Acquisition_CL</fullName>
+    <fields>Name</fields>
+    <fields>Asset__c</fields>
+    <fields>Projected_Gross_Sales__c</fields>
+    <fields>Profit_Margin__c</fields>
+    <label>Asset Acquisition CL</label>
+</CompactLayout>

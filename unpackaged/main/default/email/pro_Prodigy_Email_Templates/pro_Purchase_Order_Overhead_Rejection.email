@@ -1,0 +1,8 @@
+Hi,
+
+The following Purchase Order: {!pro_Purchase_Order__c.Name} has been Rejected.
+
+Link to record: {!pro_Purchase_Order__c.Link}
+
+EirTrade
+Salesforce System

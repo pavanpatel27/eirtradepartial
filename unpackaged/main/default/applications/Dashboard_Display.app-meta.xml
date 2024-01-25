@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <brand>
+        <headerColor>#0070D2</headerColor>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <description>Used to Display a constant screen for the Sales dashboards in the Office</description>
+    <formFactors>Small</formFactors>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>true</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>true</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <label>Dashboard Display</label>
+    <navType>Standard</navType>
+    <tabs>Sales_Dashboards_Display</tabs>
+    <tabs>Repairs_Dashboards_Display</tabs>
+    <tabs>Operations_Dashboard_Display</tabs>
+    <tabs>Accounts_Dashboards_Display</tabs>
+    <tabs>Tech_Team_Request__c</tabs>
+    <tabs>Remote_Work_Request__c</tabs>
+    <tabs>pro_OCR_Document__c</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>Dashboard_Display_UtilityBar</utilityBar>
+</CustomApplication>

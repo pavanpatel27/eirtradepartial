@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Type 5</label>
+    <protected>false</protected>
+    <values>
+        <field>GlicW__Balance__c</field>
+        <value xsi:type="xsd:string">GlicW__Parental_Leave_Balance__c</value>
+    </values>
+    <values>
+        <field>GlicW__Field__c</field>
+        <value xsi:type="xsd:string">GlicW__Parental_Leave_Amount__c</value>
+    </values>
+    <values>
+        <field>GlicW__Type__c</field>
+        <value xsi:type="xsd:string">Parental leave Amount</value>
+    </values>
+    <values>
+        <field>GlicW__entitlementField__c</field>
+        <value xsi:type="xsd:string">GlicW__Parental_Leave_Entitlement__c</value>
+    </values>
+</CustomMetadata>

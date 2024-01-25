@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Name</fullName>
+    <inlineHelpText>When creating a New Asset this is a Short Description of the Seller. Once Save it is auto updated to a combination of Seller Short Description + Platform + ESN/MSN</inlineHelpText>
+    <trackHistory>false</trackHistory>
+</CustomField>

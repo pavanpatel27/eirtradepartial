@@ -1,0 +1,89 @@
+<!-- sldsValidatorIgnore -->
+<!--
+ * Created by Prodigy Ltd on 28/11/2023.
+ *
+ * Lightning Web Component Name: c-pro-rebate-process-lines.
+ *
+ * Description: Line Items on Rebate Process.
+ *
+ * Last modified by Finbar in Prodigy on 13/12/2023.
+-->
+<template>
+    <table style="width: 600px;">
+        <tbody>
+            <tr>
+                <td style="width: 50px;">
+                    <lightning-input
+                        type="text"
+                        variant="label-stacked"
+                        value=">"
+                        label="Operator"
+                        disabled="true"
+                        style="width: 60px; text-align:center">
+                    </lightning-input>
+                </td>
+                <td style="width: 125px;">
+                    <lightning-input
+                        type="number"
+                        variant="label-stacked"
+                        value={record.pro_Range_Start__c}
+                        formatter="decimal"
+                        step="0.01"
+                        data-id={record.Id}
+                        data-type="quantity"
+                        label="Starting Range"
+                        disabled="true">
+                    </lightning-input>
+                </td>
+                <td style="width: 50px;">
+                    <lightning-input
+                        type="text"
+                        variant="label-stacked"
+                        value="<="
+                        label="Operator"
+                        disabled="true"
+                        style="width: 60px; text-align:center">
+                    </lightning-input>
+                </td>
+                <td style="width: 125px;">
+                    <lightning-input
+                        type="number"
+                        variant="label-stacked"
+                        value={record.pro_Range_End__c}
+                        formatter="decimal"
+                        step="0.01"
+                        data-id={record.Id}
+                        data-type="quantity"
+                        label="End Range"
+                        onchange={ChangeEndRange}>
+                    </lightning-input>
+                </td>
+                <td style="width: 75px;">
+                    <lightning-input
+                        type="number"
+                        variant="label-stacked"
+                        value={record.pro_Rebate_Percent__c}
+                        formatter="decimal"
+                        step="0.01"
+                        data-id={record.Id}
+                        data-type="quantity"
+                        label="Benefit"
+                        onchange={ChangeBenefit}>
+                    </lightning-input>
+                </td>
+                <td style="width: 175px;">
+                    <template if:true={record.LastRecord}>
+                        <div style="height: 18px;">
+    
+                        </div>
+                        <lightning-button 
+                            label="Remove Rate" 
+                            onclick={RemoveLine}
+                            variant="destructive">
+                        </lightning-button>
+                    </template>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</template>

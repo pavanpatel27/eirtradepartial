@@ -1,0 +1,2 @@
+PN: {!inscor__Receipt__c.inscor__Product_Received__c}
+Owner Code: {!inscor__Receipt__c.inscor__Owner_Code__c}

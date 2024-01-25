@@ -1,0 +1,11 @@
+Dear Approver,
+
+The following Purchase Order - Overhead: {!pro_Purchase_Order__c.Name} has been submitted for Approval.
+
+Please provide Approval or Reject the Purchase Order - Overhead.
+
+Link to record: {!pro_Purchase_Order__c.Link}
+
+Regards,
+EirTrade
+Salesforce System

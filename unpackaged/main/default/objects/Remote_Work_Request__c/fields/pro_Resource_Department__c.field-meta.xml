@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pro_Resource_Department__c</fullName>
+    <description>JP 01/11/2023 - Created by Prodigy</description>
+    <externalId>false</externalId>
+    <formula>TEXT(pro_Employee_Remote_Request__r.Department__c)</formula>
+    <label>Resource Department</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

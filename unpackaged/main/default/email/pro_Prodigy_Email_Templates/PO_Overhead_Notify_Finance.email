@@ -1,0 +1,13 @@
+Hi,
+
+The following Purchase Order has been approved by the Department Head:
+
+Purchase Order: {!pro_Purchase_Order__c.Name}
+
+Amount: {!pro_Purchase_Order__c.pro_Total_Amount__c}
+
+Link to record: {!pro_Purchase_Order__c.Link}
+
+Regards,
+EirTrade
+Salesforce System

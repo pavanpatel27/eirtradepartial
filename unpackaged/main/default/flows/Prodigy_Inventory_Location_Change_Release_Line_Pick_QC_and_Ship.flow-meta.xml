@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>58.0</apiVersion>
+    <decisions>
+        <name>PICKQC_or_SHIP</name>
+        <label>PICKQC or SHIP</label>
+        <locationX>314</locationX>
+        <locationY>323</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>At_Picking_or_QC</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.inscor__Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Picked</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.inscor__Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>In QC</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Inventory_Location</targetReference>
+            </connector>
+            <label>At Picking or QC</label>
+        </rules>
+        <rules>
+            <name>At_Shipping</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.inscor__Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>In Shipping</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.inscor__Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>QCd</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_1_of_Update_Inventory_Location</targetReference>
+            </connector>
+            <label>At Shipping</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <interviewLabel>Prodigy - Inventory Location Change Release Line Pick, QC and Ship {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Prodigy - Inventory Location Change Release Line Pick, QC and Ship</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Copy_1_of_Update_Inventory_Location</name>
+        <label>Set Inventory Location to SHIP</label>
+        <locationX>314</locationX>
+        <locationY>431</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.inscor__Repair_Order_Line__r.inscor__Original_Inventory_Line__r.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>inscor__Location__c</field>
+            <value>
+                <stringValue>a0IDL00000csbq22AA</stringValue>
+            </value>
+        </inputAssignments>
+        <object>inscor__Inventory_Line__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Inventory_Location</name>
+        <label>Set Inventory Location to PICKQC</label>
+        <locationX>50</locationX>
+        <locationY>431</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.inscor__Repair_Order_Line__r.inscor__Original_Inventory_Line__r.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>inscor__Location__c</field>
+            <value>
+                <stringValue>a0IDL00000csbpx2AA</stringValue>
+            </value>
+        </inputAssignments>
+        <object>inscor__Inventory_Line__c</object>
+    </recordUpdates>
+    <start>
+        <locationX>188</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>PICKQC_or_SHIP</targetReference>
+        </connector>
+        <filterLogic>or</filterLogic>
+        <filters>
+            <field>inscor__Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Picked</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>inscor__Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>In Shipping</stringValue>
+            </value>
+        </filters>
+        <object>inscor__Release_Line__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

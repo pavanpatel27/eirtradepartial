@@ -1,0 +1,12 @@
+Hi , 
+
+Please be advised, a sales order has been created with a line item higher than $75,000.
+
+Item value: {!inscor__Sales_Order_Line__c.inscor__Line_Total__c}
+
+Sales order num: {!inscor__Sales_Order__c.Name}
+
+Owner code: {!inscor__Owner_Code__c.Name}
+
+
+Regards

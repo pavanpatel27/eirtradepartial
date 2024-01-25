@@ -1,0 +1,30 @@
+<!--
+ * Created by Prodigy Ltd on 03-04-2023.
+ *
+ * Lightning Web Component Name: c-pro-custom-total-field.
+ *
+ * Description: Custom total field.
+ *
+ * Last modified by Johnny in Prodigy on 03-04-2023.
+-->
+<template>
+    <lightning-layout>
+        <lightning-layout-item size="3">
+            <div style="font-weight: bold; padding-top: 5px; text-align:right; padding-right: 5px;">
+                {currencySymbol}
+            </div>
+        </lightning-layout-item>
+        <lightning-layout-item size="9">
+            <lightning-input 
+                type="number" 
+                name="input2"
+                value={totalValue} 
+                formatter="decimal" 
+                class="alignment"
+                variant="label-hidden"
+                step="0.01"
+                disabled >
+            </lightning-input>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>

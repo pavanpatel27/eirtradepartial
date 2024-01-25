@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Asset_Acquisitions</fullName>
+    <columns>NAME</columns>
+    <columns>Asset__c</columns>
+    <columns>Projected_Gross_Sales__c</columns>
+    <columns>EirTrade_Profit__c</columns>
+    <columns>Profit_Margin__c</columns>
+    <columns>Acquisition_Price__c</columns>
+    <columns>Contracting_Entity__c</columns>
+    <columns>Contract_Term__c</columns>
+    <columns>Financier__c</columns>
+    <columns>Bid_Due__c</columns>
+    <columns>Deal_Type__c</columns>
+    <columns>Seller__c</columns>
+    <columns>Status__c</columns>
+    <columns>Asset_Type__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All Asset Acquisitions</label>
+</ListView>

@@ -1,0 +1,179 @@
+<!-- sldsValidatorIgnore -->
+<!--
+ * Created by Johnny in Prodigy on 06-04-2023.
+ *
+ * Lightning Web Component Name: c-pro-purchase-order-to-payable-line.
+ *
+ * Description: Displays an individual line item on the Purchae Order to Payable Conversion screen.
+ *
+ * Last modified by Johnny in Prodigy on 27-06-2023.
+-->
+<template>
+    <table>
+        <tbody>
+            <template if:false={isEditable}>
+                <tr>
+                    <td >
+                        <c-pro-custom-lookup-field-dynamic
+                            selected-record-name={record.pro_Product__r.Name}
+                            selected-record-id={record.pro_Product__c}
+                            field-label="Product"
+                            not-changeable="true">
+                        </c-pro-custom-lookup-field-dynamic>
+                    </td>
+                    <td >
+                        <lightning-input
+                            type="text"
+                            value={record.pro_Comment__c}
+                            data-id={record.Id}
+                            variant="label-stacked"
+                            label="Invoice Comment"
+                            disabled="true">
+                        </lightning-input>
+                    </td>
+                    <td >
+                        <lightning-input
+                            type="number"
+                            variant="label-stacked"
+                            value={record.pro_Quantity__c}
+                            formatter="decimal"
+                            step="0.01"
+                            data-id={record.Id}
+                            data-type="quantity"
+                            label="Quantity"
+                            disabled="true">
+                        </lightning-input>
+                    </td>
+                    <td>
+                        <lightning-input
+                            type="number"
+                            variant="label-stacked"
+                            value={record.pro_Converted_Amount__c}
+                            formatter="decimal"
+                            step="0.01"
+                            data-id={record.Id}
+                            data-type="quantity"
+                            label="Converted Quantity"
+                            disabled="true">
+                        </lightning-input>
+                    </td>
+                    <td>
+                        <lightning-input
+                            type="number"
+                            variant="label-stacked"
+                            value={record.pro_Remaining_Balance__c}
+                            formatter="decimal"
+                            step="0.01"
+                            data-id={record.Id}
+                            data-type="quantity"
+                            label="Remaining Quantity"
+                            disabled="true">
+                        </lightning-input>
+                    </td>
+                    <td >
+                        <lightning-input
+                            type="number"
+                            variant="label-stacked"
+                            value={record.pro_Unit_Price__c}
+                            formatter="decimal"
+                            step="0.01"
+                            currenycode={CurrencySymbol}
+                            label="Unit Cost"
+                            disabled="true">
+                        </lightning-input>
+                    </td>
+                    <td >
+                        <div class="slds-truncate" style="margin-left: 25%;">
+                            Total
+                        </div>
+                        <c-pro-custom-total-field
+                            quantity={record.pro_Quantity__c}
+                            unit-price={record.pro_Unit_Price__c}
+                            identity={record.Id}
+                            data-id={record.Id}
+                            includes-tax="false"
+                            currency-symbol={CurrencySymbol}>
+                        </c-pro-custom-total-field>
+                    </td>
+                </tr>
+            </template>
+            <template if:true={isEditable}>
+                <tr>
+                    <td >
+                        <c-pro-custom-lookup-field-dynamic
+                            selected-record-name={record.pro_Product__r.Name}
+                            selected-record-id={record.pro_Product__c}
+                            field-label="Product"
+                            not-changeable="true">
+                        </c-pro-custom-lookup-field-dynamic>
+                    </td>
+                    <td >
+                        <lightning-input
+                            type="text"
+                            value={record.pro_Comment__c}
+                            data-id={record.Id}
+                            onchange={UpdateLineDescription}
+                            variant="label-stacked"
+                            label="Invoice Comment">
+                        </lightning-input>
+                    </td>
+                    <td >
+                        <lightning-input
+                            type="number"
+                            name="PayableQuantityInput"
+                            variant="label-stacked"
+                            value={record.pro_Remaining_Balance__c}
+                            formatter="decimal"
+                            step="0.01"
+                            data-id={record.Id}
+                            data-type="quantity"
+                            onchange={UpdateLineTotal}
+                            label="Quantity"
+                            max={record.pro_Remaining_Balance__c}>
+                        </lightning-input>
+                    </td>
+                    <td >
+                        <lightning-input
+                            type="number"
+                            name="PayableUnitPriceInput"
+                            variant="label-stacked"
+                            data-id={record.Id}
+                            data-type="unitPrice"
+                            value={record.pro_Unit_Price__c}
+                            formatter="decimal"
+                            step="0.01"
+                            onchange={UpdateLineTotal}
+                            currenycode={CurrencySymbol}
+                            label="Unit Cost">
+                        </lightning-input>
+                    </td>
+                    <td >
+                        <div class="slds-truncate" style="margin-left: 25%;">
+                            Total
+                        </div>
+                        <c-pro-custom-total-field
+                            quantity={record.pro_Quantity__c}
+                            unit-price={record.pro_Unit_Price__c}
+                            identity={record.Id}
+                            data-id={record.Id}
+                            includes-tax="false"
+                            currency-symbol={currencySymbol}>
+                        </c-pro-custom-total-field>
+                    </td>
+                    <td >
+                        <div style="margin-left: 35%; margin-top: 10%;">
+                            <lightning-button-icon
+                                icon-name="utility:delete"
+                                variant="brand"
+                                data-id={record.Id}
+                                alternative-text="Delete"
+                                onclick={RemoveLine}
+                                aria-label="Delete">
+                            </lightning-button-icon>
+                        </div>
+                    </td>
+                </tr>
+            </template>
+        </tbody>
+    </table>
+</template>

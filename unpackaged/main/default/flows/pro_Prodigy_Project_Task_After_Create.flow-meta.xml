@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Create_Custom_Notification</name>
+        <label>Create Custom Notification</label>
+        <locationX>308</locationX>
+        <locationY>971</locationY>
+        <actionName>customNotificationAction</actionName>
+        <actionType>customNotificationAction</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>customNotifTypeId</name>
+            <value>
+                <elementReference>Get_Custom_Notification_Type.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientIds</name>
+            <value>
+                <elementReference>RecipientIDs</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>title</name>
+            <value>
+                <stringValue>Project Task has been Created</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>body</name>
+            <value>
+                <elementReference>NotificationBody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>targetId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <apiVersion>58.0</apiVersion>
+    <assignments>
+        <name>Assign_Owner_to_Recipients</name>
+        <label>Assign Owner to Recipients</label>
+        <locationX>308</locationX>
+        <locationY>863</locationY>
+        <assignmentItems>
+            <assignToReference>RecipientIDs</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>$Record.GlicW__Task_Owner__r.OwnerId</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Create_Custom_Notification</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Department_Set</name>
+        <label>Department Set?</label>
+        <locationX>176</locationX>
+        <locationY>539</locationY>
+        <defaultConnector>
+            <targetReference>Update_Task_Record</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Department has been set</defaultConnectorLabel>
+        <rules>
+            <name>Department_has_not_been_set</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>DepartmentFormula</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>&quot;&quot;</stringValue>
+                </rightValue>
+            </conditions>
+            <label>Department has not been set</label>
+        </rules>
+    </decisions>
+    <description>AB 24/10/2023 - Updates to Logic
+AB 23/08/2023 - Updates to Logic
+AB 02/08/2023 - Updates to Logic
+AB 01/08/2023 - Created by Prodigy</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>DaysFromOriginalStart</name>
+        <dataType>Number</dataType>
+        <expression>CASE({!$Record.GlicW__Project_Milestone__r.Name}, 
+&quot;Technical Review&quot;, 0, 
+&quot;Commercial Agreement&quot;, 15,
+&quot;Physical Inspection&quot;, 30,
+&quot;Investment Sign Off&quot;, 35,
+&quot;APU Stand Sourced&quot;, 40,
+&quot;Shipment to Disassembly Location&quot;, 45,
+&quot;Disassembly&quot;, 52,
+&quot;Return of Engine Stand&quot;, 60,
+&quot;Reconciliation Complete&quot;, 73,
+&quot;Hotlist&quot;, 73,
+&quot;Repairs Drop Shipped&quot;, 73,
+&quot;Shipment of Material to Warehouse&quot;, 80,
+&quot;Material Check-in&quot;, 87,
+&quot;Inventory Priced on AvSight&quot;, 117,
+&quot;Consignment Report&quot;, 117,
+-1)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>DepartmentFormula</name>
+        <dataType>String</dataType>
+        <expression>CASE({!$Record.GlicW__Project_Milestone__r.Name}, 
+&quot;Technical Review&quot;, {!Get_Projo_HR_Custom_Setting.pro_Warehouse_Ops_HOD__c}, 
+&quot;Commercial Agreement&quot;, {!Get_Projo_HR_Custom_Setting.pro_Accounting_Department_HOD__c},
+&quot;Physical Inspection&quot;, {!Get_Projo_HR_Custom_Setting.pro_Warehouse_Ops_HOD__c},
+&quot;Investment Sign Off&quot;, {!Get_Projo_HR_Custom_Setting.pro_Asset_Department_HOD__c},
+&quot;APU Stand Sourced&quot;, {!Get_Projo_HR_Custom_Setting.pro_Operations_Department_HOD__c},
+&quot;Shipment to Disassembly Location&quot;, {!Get_Projo_HR_Custom_Setting.pro_Operations_Department_HOD__c},
+&quot;Disassembly&quot;, {!Get_Projo_HR_Custom_Setting.pro_Operations_Department_HOD__c},
+&quot;Return of Engine Stand&quot;, {!Get_Projo_HR_Custom_Setting.pro_Operations_Department_HOD__c},
+&quot;Reconciliation Complete&quot;, {!Get_Projo_HR_Custom_Setting.pro_Asset_Department_HOD__c},
+&quot;Hotlist&quot;, {!Get_Projo_HR_Custom_Setting.pro_Asset_Department_HOD__c},
+&quot;Repairs Drop Shipped&quot;, {!Get_Projo_HR_Custom_Setting.pro_Repairs_Department_HOD__c},
+&quot;Shipment of Material to Warehouse&quot;, {!Get_Projo_HR_Custom_Setting.pro_Operations_Department_HOD__c},
+&quot;Material Check-in&quot;, {!Get_Projo_HR_Custom_Setting.pro_Operations_Department_HOD__c},
+&quot;Inventory Priced on AvSight&quot;, {!Get_Projo_HR_Custom_Setting.pro_Asset_Department_HOD__c},
+&quot;Consignment Report&quot;, {!Get_Projo_HR_Custom_Setting.pro_Asset_Department_HOD__c},
+&quot;&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>EndDateFormula</name>
+        <dataType>Date</dataType>
+        <expression>CASE(
+ WEEKDAY({!StartDateFormula}),
+  1, ({!StartDateFormula}) + {!TargetAmountOfDays} + 
+      FLOOR(({!TargetAmountOfDays}-1)/5)*2,
+  2, ({!StartDateFormula}) + {!TargetAmountOfDays} + 
+      FLOOR(({!TargetAmountOfDays})/5)*2,
+  3, ({!StartDateFormula}) + {!TargetAmountOfDays} + 
+      FLOOR(({!TargetAmountOfDays}+1)/5)*2,
+  4, ({!StartDateFormula}) + {!TargetAmountOfDays} + 
+      FLOOR(({!TargetAmountOfDays}+2)/5)*2,
+  5, ({!StartDateFormula}) + {!TargetAmountOfDays} + 
+      FLOOR(({!TargetAmountOfDays}+3)/5)*2,
+  6, ({!StartDateFormula}) + {!TargetAmountOfDays} + 
+      CEILING(({!TargetAmountOfDays})/5)*2,
+  7, ({!StartDateFormula}) - IF({!TargetAmountOfDays}&gt;0,1,0) + {!TargetAmountOfDays} + 
+      CEILING(({!TargetAmountOfDays})/5)*2,
+ null)</expression>
+    </formulas>
+    <formulas>
+        <name>NotificationBody</name>
+        <dataType>String</dataType>
+        <expression>{!$Record.GlicW__Project_Milestone__r.Name} + &quot; has been created with the following Project Task:  &quot; + {!$Record.Name} +TEXT({!$Record.GlicW__Start_Date__c}) + &quot; the due date is on the &quot; + TEXT({!$Record.GlicW__Due_Date__c})</expression>
+    </formulas>
+    <formulas>
+        <name>StartDateFormula</name>
+        <dataType>Date</dataType>
+        <expression>CASE(
+ WEEKDAY({!$Record.GlicW__Project_Milestone__r.GlicW__Project__r.GlicW__Start_Date__c}),
+  1, ({!$Record.GlicW__Project_Milestone__r.GlicW__Project__r.GlicW__Start_Date__c}) + {!DaysFromOriginalStart} + 
+      FLOOR(({!DaysFromOriginalStart}-1)/5)*2,
+  2, ({!$Record.GlicW__Project_Milestone__r.GlicW__Project__r.GlicW__Start_Date__c}) + {!DaysFromOriginalStart} + 
+      FLOOR(({!DaysFromOriginalStart})/5)*2,
+  3, ({!$Record.GlicW__Project_Milestone__r.GlicW__Project__r.GlicW__Start_Date__c}) + {!DaysFromOriginalStart} + 
+      FLOOR(({!DaysFromOriginalStart}+1)/5)*2,
+  4, ({!$Record.GlicW__Project_Milestone__r.GlicW__Project__r.GlicW__Start_Date__c}) + {!DaysFromOriginalStart} + 
+      FLOOR(({!DaysFromOriginalStart}+2)/5)*2,
+  5, ({!$Record.GlicW__Project_Milestone__r.GlicW__Project__r.GlicW__Start_Date__c}) + {!DaysFromOriginalStart} + 
+      FLOOR(({!DaysFromOriginalStart}+3)/5)*2,
+  6, ({!$Record.GlicW__Project_Milestone__r.GlicW__Project__r.GlicW__Start_Date__c}) + {!DaysFromOriginalStart} + 
+      CEILING(({!DaysFromOriginalStart})/5)*2,
+  7, ({!$Record.GlicW__Project_Milestone__r.GlicW__Project__r.GlicW__Start_Date__c}) - IF({!DaysFromOriginalStart}&gt;0,1,0) + {!DaysFromOriginalStart} + 
+      CEILING(({!DaysFromOriginalStart})/5)*2,
+ null)</expression>
+    </formulas>
+    <formulas>
+        <name>TargetAmountOfDays</name>
+        <dataType>Number</dataType>
+        <expression>CASE({!$Record.GlicW__Project_Milestone__r.Name}, 
+&quot;Technical Review&quot;, 14, 
+&quot;Commercial Agreement&quot;, 30,
+&quot;Physical Inspection&quot;, 5,
+&quot;Investment Sign Off&quot;, 3,
+&quot;APU Stand Sourced&quot;, 3,
+&quot;Shipment to Disassembly Location&quot;, 7,
+&quot;Disassembly&quot;, 21,
+&quot;Return of Engine Stand&quot;, 3,
+&quot;Reconciliation Complete&quot;, 3,
+&quot;Hotlist&quot;, 1,
+&quot;Repairs Drop Shipped&quot;, 7,
+&quot;Shipment of Material to Warehouse&quot;, 7,
+&quot;Material Check-in&quot;, 30,
+&quot;Inventory Priced on AvSight&quot;, 3,
+&quot;Consignment Report&quot;, 3,
+-1)</expression>
+        <scale>0</scale>
+    </formulas>
+    <interviewLabel>Prodigy - Project Task After Create {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Prodigy - Project Task After Create</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Custom_Notification_Type</name>
+        <label>Get Custom Notification Type</label>
+        <locationX>176</locationX>
+        <locationY>431</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Department_Set</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>pro_Asset_PM</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>CustomNotificationType</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Projo_HR_Custom_Setting</name>
+        <label>Get Projo HR Custom Setting</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Custom_Notification_Type</targetReference>
+        </connector>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>pro_PHRCS__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Milestone_Record</name>
+        <label>Update Milestone Record</label>
+        <locationX>308</locationX>
+        <locationY>755</locationY>
+        <connector>
+            <targetReference>Assign_Owner_to_Recipients</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>GlicW__End_Date__c</field>
+            <value>
+                <elementReference>EndDateFormula</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>GlicW__Start_Date__c</field>
+            <value>
+                <elementReference>StartDateFormula</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>pro_Owner__c</field>
+            <value>
+                <elementReference>DepartmentFormula</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record.GlicW__Project_Milestone__r</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Task_Record</name>
+        <label>Update Task Record</label>
+        <locationX>308</locationX>
+        <locationY>647</locationY>
+        <connector>
+            <targetReference>Update_Milestone_Record</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>GlicW__Due_Date__c</field>
+            <value>
+                <elementReference>EndDateFormula</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>GlicW__End_Date__c</field>
+            <value>
+                <elementReference>EndDateFormula</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>GlicW__Start_Date__c</field>
+            <value>
+                <elementReference>StartDateFormula</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>GlicW__Task_Owner__c</field>
+            <value>
+                <elementReference>DepartmentFormula</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>$Record.GlicW__Project_Milestone__r.Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>pro_Target_Days__c</field>
+            <value>
+                <elementReference>TargetAmountOfDays</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Projo_HR_Custom_Setting</targetReference>
+        </connector>
+        <object>GlicW__Project_Task1__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>RecipientIDs</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

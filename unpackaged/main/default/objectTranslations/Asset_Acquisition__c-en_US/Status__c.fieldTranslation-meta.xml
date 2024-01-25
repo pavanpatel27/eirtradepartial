@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Active - in progress</masterLabel>
+            <translation><!-- Active - in progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Active – bid submitted</masterLabel>
+            <translation><!-- Active – bid submitted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Active – not started</masterLabel>
+            <translation><!-- Active – not started --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed Lost – no bid sent</masterLabel>
+            <translation><!-- Closed Lost – no bid sent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed Lost – no feedback</masterLabel>
+            <translation><!-- Closed Lost – no feedback --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed Lost – underbidder</masterLabel>
+            <translation><!-- Closed Lost – underbidder --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed Won</masterLabel>
+            <translation><!-- Closed Won --></translation>
+        </picklistValues>
+    </CustomFieldTranslation>

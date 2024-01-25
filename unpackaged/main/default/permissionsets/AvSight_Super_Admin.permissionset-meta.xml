@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>For access to fix data in read-only fields. Only to be given as temporary access.</description>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Tech_Team_Request__c.pro_TechTeam_Asset_Acquisition__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>AvSight Super Admin</label>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>EditReadonlyFields</name>
+    </userPermissions>
+</PermissionSet>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RestrictionRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <enforcementType>Restrict</enforcementType>
+    <masterLabel>Test</masterLabel>
+    <recordFilter>pro_Employee_Remote_Request__c=$User.Id</recordFilter>
+    <targetEntity>Remote_Work_Request__c</targetEntity>
+    <userCriteria>$User.Department=&#39;Repairs&#39;</userCriteria>
+    <version>1</version>
+</RestrictionRule>

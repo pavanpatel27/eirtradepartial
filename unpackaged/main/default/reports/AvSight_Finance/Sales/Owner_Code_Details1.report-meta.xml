@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>inscor__Owner_Code__c.inscor__Consignment_Rate__c</field>
+    </columns>
+    <columns>
+        <field>inscor__Owner_Code__c.inscor__Owner_Group__c</field>
+    </columns>
+    <columns>
+        <field>inscor__Owner_Code__c.inscor__Owner_Code_Description__c</field>
+    </columns>
+    <columns>
+        <field>inscor__Owner_Code__c.inscor__Default_Consignor__c</field>
+    </columns>
+    <columns>
+        <field>inscor__Owner_Code__c.inscor__Engine_Serial_Number__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>All Owner Codes with limited Details</description>
+    <format>Tabular</format>
+    <name>Owner Code Details</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$inscor__Owner_Code__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>false</showGrandTotal>
+    <showSubTotals>false</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>inscor__Owner_Code__c.inscor__Acquisition_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pro_Employee_Remote_Request__c</fullName>
+    <description>AB 20/0/2023 - Prodigy</description>
+    <externalId>false</externalId>
+    <label>Employee Remote Request</label>
+    <referenceTo>GlicW__Resource__c</referenceTo>
+    <relationshipLabel>Remote Work Request</relationshipLabel>
+    <relationshipName>Remote_Work_Request</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

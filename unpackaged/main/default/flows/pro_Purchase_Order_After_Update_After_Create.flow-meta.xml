@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>57.0</apiVersion>
+    <assignments>
+        <name>Assign_Account_Currency</name>
+        <label>Assign Account Currency</label>
+        <locationX>182</locationX>
+        <locationY>3035</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.CurrencyIsoCode</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.pro_Supplier_Account__r.CurrencyIsoCode</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Assign_Cc_Email</name>
+        <label>Assign Cc Email</label>
+        <locationX>50</locationX>
+        <locationY>1703</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.pro_Supplier_CC_Email_Address__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.pro_Supplier_Account__r.pro_Purchase_Order_CC_Email__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Is_Region_Blank</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Conversion_Rate</name>
+        <label>Assign Conversion Rate</label>
+        <locationX>182</locationX>
+        <locationY>2927</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.pro_Currency_Conversion_Rate__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Conversion_Rate</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_Account_Currency</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Project</name>
+        <label>Assign Project</label>
+        <locationX>50</locationX>
+        <locationY>2519</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.pro_Project__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Project.pro_AS_Project__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Get_Dated_conversion_Rates</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Region</name>
+        <label>Assign Region</label>
+        <locationX>50</locationX>
+        <locationY>2111</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.pro_Region__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Region.pro_AS_Accounting_Variable__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Is_Project_blank</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_value_to_Conversion_Rate</name>
+        <label>Assign value to Conversion Rate</label>
+        <locationX>182</locationX>
+        <locationY>2819</locationY>
+        <assignmentItems>
+            <assignToReference>Conversion_Rate</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Dated_conversion_Rates.ConversionRate</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_Conversion_Rate</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>JP 15/03/2023 V1 - Created by Prodigy</description>
+        <name>pro_Assign_Billing_Address</name>
+        <label>Assign Billing Address</label>
+        <locationX>50</locationX>
+        <locationY>395</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.pro_Billing_City__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.pro_Supplier_Account__r.BillingCity</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.pro_Billing_Country__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.pro_Supplier_Account__r.BillingCountry</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.pro_Billing_Postal_Code__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.pro_Supplier_Account__r.BillingPostalCode</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.pro_Billing_State__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.pro_Supplier_Account__r.BillingState</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.pro_Billing_Street__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.pro_Supplier_Account__r.BillingStreet</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>pro_Is_Shipping_Address_Populated</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>JP 16/03/2023 V1 - Created by Prodigy</description>
+        <name>pro_Assign_Email</name>
+        <label>Assign Email</label>
+        <locationX>50</locationX>
+        <locationY>1403</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.pro_Supplier_Email_Address__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.pro_Supplier_Account__r.pro_Purchase_Order_Email__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Is_CC_Email_Blank</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>JP 15/03/2023 V1 - Created by Prodigy</description>
+        <name>pro_Assign_Ledger</name>
+        <label>Assign Ledger</label>
+        <locationX>50</locationX>
+        <locationY>1103</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.pro_Ledger_Lookup__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Ledger.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Is_Email_Blank</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>JP 15/03/2023 V1 - Created by Prodigy</description>
+        <name>pro_Assign_Shipping_Address</name>
+        <label>Assign Shipping Address</label>
+        <locationX>50</locationX>
+        <locationY>695</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.pro_Shipping_City__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.pro_Supplier_Account__r.ShippingCity</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.pro_Shipping_Country__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.pro_Supplier_Account__r.ShippingCountry</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.pro_Shipping_Postal_Code__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.pro_Supplier_Account__r.ShippingPostalCode</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.pro_Shipping_State__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.pro_Supplier_Account__r.ShippingState</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.pro_Shipping_Street__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.pro_Supplier_Account__r.ShippingStreet</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>pro_Is_Ledger_Blank</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Is_CC_Email_Blank</name>
+        <label>Is CC Email Blank</label>
+        <locationX>182</locationX>
+        <locationY>1595</locationY>
+        <defaultConnector>
+            <targetReference>Is_Region_Blank</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>CC Email not Blank</defaultConnectorLabel>
+        <rules>
+            <name>CC_Email_is_blank</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.pro_Supplier_CC_Email_Address__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>pro_Is_New_Purchase_Order</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Cc_Email</targetReference>
+            </connector>
+            <label>CC Email is blank</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>JP 16/03/2023 V1 - Created by Prodigy</description>
+        <name>Is_Email_Blank</name>
+        <label>Is Email Blank?</label>
+        <locationX>182</locationX>
+        <locationY>1295</locationY>
+        <defaultConnector>
+            <targetReference>Is_CC_Email_Blank</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>pro_Email_is_Blank</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.pro_Supplier_Email_Address__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>pro_Is_New_Purchase_Order</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>pro_Assign_Email</targetReference>
+            </connector>
+            <label>Email is Blank</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_Project_blank</name>
+        <label>Is Project blank?</label>
+        <locationX>182</locationX>
+        <locationY>2303</locationY>
+        <defaultConnector>
+            <targetReference>Get_Dated_conversion_Rates</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Project_is_blank</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.pro_Project__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Project</targetReference>
+            </connector>
+            <label>Yes - Project is blank</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_Region_Blank</name>
+        <label>Is Region Blank?</label>
+        <locationX>182</locationX>
+        <locationY>1895</locationY>
+        <defaultConnector>
+            <targetReference>Is_Project_blank</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Region_is_blank</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.pro_Region__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Region</targetReference>
+            </connector>
+            <label>Yes - Region is blank</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>JP 15/03/2023 V1 - Created by Prodigy</description>
+        <name>pro_Is_Billing_Address_Populated</name>
+        <label>Is Billing Address Populated?</label>
+        <locationX>182</locationX>
+        <locationY>287</locationY>
+        <defaultConnector>
+            <targetReference>pro_Is_Shipping_Address_Populated</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Billing Address is Populated</defaultConnectorLabel>
+        <rules>
+            <name>pro_Billing_Address_is_not_Populated</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>pro_Billing_Address_Formula</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>pro_Is_New_Purchase_Order</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>pro_Assign_Billing_Address</targetReference>
+            </connector>
+            <label>Billing Address is not Populated</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>JP 15/03/2023 V1 - Created by Prodigy</description>
+        <name>pro_Is_Ledger_Blank</name>
+        <label>Is Ledger Blank?</label>
+        <locationX>182</locationX>
+        <locationY>887</locationY>
+        <defaultConnector>
+            <targetReference>Is_Email_Blank</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Ledger is not Blank</defaultConnectorLabel>
+        <rules>
+            <name>pro_Ledger_is_Blank</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.pro_Ledger_Lookup__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Ledger</targetReference>
+            </connector>
+            <label>Ledger is Blank</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>pro_Is_Shipping_Address_Populated</name>
+        <label>Is Shipping Address Populated?</label>
+        <locationX>182</locationX>
+        <locationY>587</locationY>
+        <defaultConnector>
+            <targetReference>pro_Is_Ledger_Blank</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Shipping Address is Populated</defaultConnectorLabel>
+        <rules>
+            <name>pro_Shipping_Address_is_Not_Populated</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>pro_Shipping_Address_Formula</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>pro_Is_New_Purchase_Order</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>pro_Assign_Shipping_Address</targetReference>
+            </connector>
+            <label>Shipping Address is Not Populated</label>
+        </rules>
+    </decisions>
+    <description>JP 18/01/2024 - Updates to Logic
+JP 19/07/2023 - Updates to Logic
+JP 12/07/2023 - Updates to Logic
+JP 04/07/2023 - Updates to Logic
+JP 22/05/2023 - Updates to logic
+JP 25/04/2023 - Updates to logic
+OA 25/04/2023 - Updates to logic
+JP 15/03/2023 V1 - Created by Prodigy</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>JP 15/03/2023 V1 - Created by Prodigy</description>
+        <name>pro_Billing_Address_Formula</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+ISBLANK({!$Record.pro_Billing_City__c}),
+ISBLANK({!$Record.pro_Billing_Street__c}),
+ISBLANK({!$Record.pro_Billing_State__c}))</expression>
+    </formulas>
+    <formulas>
+        <description>JP 15/03/2023 V1 - Created by Prodigy</description>
+        <name>pro_Is_New_Purchase_Order</name>
+        <dataType>Boolean</dataType>
+        <expression>ISNEW()</expression>
+    </formulas>
+    <formulas>
+        <description>JP 15/03/2023 V1 - Created by Prodigy</description>
+        <name>pro_Shipping_Address_Formula</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+ISBLANK({!$Record.pro_Shipping_City__c}),
+ISBLANK({!$Record.pro_Shipping_Street__c}),
+ISBLANK({!$Record.pro_Shipping_State__c}))</expression>
+    </formulas>
+    <interviewLabel>Purchase Order After Update After Create {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Prodigy - Purchase Order After Update After Create</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Dated_conversion_Rates</name>
+        <label>Get Dated conversion Rates</label>
+        <locationX>182</locationX>
+        <locationY>2711</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Assign_value_to_Conversion_Rate</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>IsoCode</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.CurrencyIsoCode</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>StartDate</field>
+            <operator>LessThanOrEqualTo</operator>
+            <value>
+                <elementReference>$Record.CreatedDate</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>NextStartDate</field>
+            <operator>GreaterThanOrEqualTo</operator>
+            <value>
+                <elementReference>$Record.CreatedDate</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>DatedConversionRate</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>JP 15/03/2023 V1 - Created by Prodigy</description>
+        <name>Get_Ledger</name>
+        <label>Get Ledger</label>
+        <locationX>50</locationX>
+        <locationY>995</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>pro_Assign_Ledger</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>pro_Ledger__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.pro_Ledger_Picklist__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>AcctSeed__Ledger__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Project</name>
+        <label>Get Project</label>
+        <locationX>50</locationX>
+        <locationY>2411</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Assign_Project</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.pro_Project_Lookup__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>pro_Project_Lookup__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Region</name>
+        <label>Get Region</label>
+        <locationX>50</locationX>
+        <locationY>2003</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Assign_Region</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.pro_Region_Lookup__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>pro_Variable_Lookup__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>pro_Is_Billing_Address_Populated</targetReference>
+        </connector>
+        <object>pro_Purchase_Order__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>Conversion_Rate</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>6</scale>
+        <value>
+            <numberValue>1.0</numberValue>
+        </value>
+    </variables>
+</Flow>

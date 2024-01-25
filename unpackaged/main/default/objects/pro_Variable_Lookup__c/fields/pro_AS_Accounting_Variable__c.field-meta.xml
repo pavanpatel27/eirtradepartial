@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pro_AS_Accounting_Variable__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>JP 17/01/2024 - Created by Prodigy</description>
+    <externalId>false</externalId>
+    <label>AS Accounting Variable</label>
+    <referenceTo>AcctSeed__Accounting_Variable__c</referenceTo>
+    <relationshipLabel>Variable Lookups</relationshipLabel>
+    <relationshipName>Variable_Lookups</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

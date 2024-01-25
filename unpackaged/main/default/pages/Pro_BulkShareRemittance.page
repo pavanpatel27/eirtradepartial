@@ -1,0 +1,10 @@
+<!--
+ * Created by Johnny in Prodigy on 22-06-2023.
+ *
+ * Description: Visualforce page used to store and pass on selected Cash Disbursements Ids.
+ *
+ * Last modified by Johnny in Prodigy on 22-06-2023.
+-->
+<apex:page standardController="AcctSeed__Cash_Disbursement__c" recordSetVar="selectedRecords" extensions="Pro_BulkShareRemittance_ext" action="{!SendRecords}">
+
+</apex:page>

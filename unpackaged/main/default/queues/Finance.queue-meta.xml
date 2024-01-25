@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>true</doesSendEmailToMembers>
+    <email>accounts@eirtradeaviation.com</email>
+    <name>Finance</name>
+    <queueMembers>
+        <users>
+            <user>prod-avs-admin@eirtrade.com</user>
+            <user>a.farrell@eirtradeaviation.com</user>
+            <user>e.doyle@eirtradeaviation.com</user>
+            <user>e.botha@eirtradeaviation.com</user>
+            <user>g.afzal@eirtradeaviation.com</user>
+            <user>i.akbar@eirtradeaviation.com</user>
+            <user>j.nagrani@eirtradeaviation.com</user>
+            <user>m.chen@eirtradeaviation.com</user>
+            <user>r.singh@eirtradeaviation.com</user>
+            <user>r.walsh@eirtradeaviation.com</user>
+            <user>v.caesar@eirtradeaviation.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>GlicW__Time_Log1__c</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>Task</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>inscor__Purchase_Order__c</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>inscor__Repair_Order__c</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>pro_Purchase_Order__c</sobjectType>
+    </queueSobject>
+</Queue>

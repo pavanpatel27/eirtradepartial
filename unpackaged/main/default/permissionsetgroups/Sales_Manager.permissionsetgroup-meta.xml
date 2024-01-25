@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Sales Manager</label>
+    <permissionSets>AvSight_Create_List_Views</permissionSets>
+    <permissionSets>AvSight_Dashboard_Admin</permissionSets>
+    <permissionSets>AvSight_Dashboard_User</permissionSets>
+    <permissionSets>AvSight_Reporting_Admin</permissionSets>
+    <permissionSets>AvSight_Reporting_User</permissionSets>
+    <permissionSets>inscor__AvSight_Account_Sales_Admin</permissionSets>
+    <permissionSets>inscor__AvSight_Accounts_Basic</permissionSets>
+    <permissionSets>inscor__AvSight_Accounts_User</permissionSets>
+    <permissionSets>inscor__AvSight_Admin_Sales</permissionSets>
+    <permissionSets>inscor__AvSight_Inventory_Admin</permissionSets>
+    <permissionSets>inscor__AvSight_Inventory_User</permissionSets>
+    <permissionSets>inscor__AvSight_Part_Master_Basic</permissionSets>
+    <permissionSets>inscor__AvSight_Parts_Analyzer</permissionSets>
+    <permissionSets>inscor__AvSight_Purchasing_User</permissionSets>
+    <permissionSets>inscor__AvSight_RMA_User</permissionSets>
+    <permissionSets>inscor__AvSight_Sales_DS_Map_User</permissionSets>
+    <permissionSets>inscor__AvSight_Sales_User</permissionSets>
+    <permissionSets>inscor__AvSight_Sourcing_User</permissionSets>
+    <permissionSets>inscor__AvSight_User</permissionSets>
+    <permissionSets>inscor__AvSight_User_Base_Read</permissionSets>
+    <permissionSets>inscor__AvSight_User_Operations</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

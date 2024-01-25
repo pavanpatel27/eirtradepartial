@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label><!-- Reason for No Bid --></label>
+        <name>Reason_for_No_Bid__c</name>
+        <picklistValues>
+            <masterLabel>Asset type</masterLabel>
+            <translation><!-- Asset type --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Engine condition</masterLabel>
+            <translation><!-- Engine condition --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Incident Related</masterLabel>
+            <translation><!-- Incident Related --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Incomplete Technical Records</masterLabel>
+            <translation><!-- Incomplete Technical Records --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Last Operator</masterLabel>
+            <translation><!-- Last Operator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Price too high</masterLabel>
+            <translation><!-- Price too high --></translation>
+        </picklistValues>
+    </CustomFieldTranslation>

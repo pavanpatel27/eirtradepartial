@@ -1,0 +1,62 @@
+.section-margin_left{
+    margin-left: 5px;
+}
+
+.section-margin_right{
+    margin-right: 5px;
+}
+
+.padding_right{
+    padding-right: 5px;
+}
+
+.alignment{
+    text-align: center;
+}
+
+.align_right{
+    text-align: right;
+}
+
+.align_left{
+    text-align: left;
+}
+
+.margin_bottom{
+    margin-bottom: 10px;
+}
+
+article{
+    /*background-color: #CACACA;*/
+    padding: 10px !important;
+}
+
+.input_width{
+    width: 80%;
+}
+
+.inner_padding{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.frozen-header {
+    top: 0;
+    position: sticky;
+    color: black;
+    /*background-color: #999999;*/
+    z-index: 20;
+    padding-bottom: 0.5%;
+}
+
+.proLineBody {
+    overflow-y: auto;
+}
+
+.proPageWrapper {
+    height: 100%;
+}
+
+.proDetailBody {
+    overflow-y: auto;
+}

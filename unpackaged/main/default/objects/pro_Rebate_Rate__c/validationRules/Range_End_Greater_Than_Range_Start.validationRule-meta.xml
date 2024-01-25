@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Range_End_Greater_Than_Range_Start</fullName>
+    <active>false</active>
+    <errorConditionFormula>NOT(pro_Range_End__c &gt; pro_Range_Start__c)</errorConditionFormula>
+    <errorDisplayField>pro_Range_End__c</errorDisplayField>
+    <errorMessage>The RangeEnd value must be Greater Than the Range Start value</errorMessage>
+</ValidationRule>

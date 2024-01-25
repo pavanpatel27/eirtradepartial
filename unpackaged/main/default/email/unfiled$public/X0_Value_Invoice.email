@@ -1,0 +1,4 @@
+This is an automated notification advising that a 0 value invoice was created and was eligible to go out to customers today. This sending has been cancelled, please review.
+
+Customer:{!inscor__Invoice__c.inscor__Account__c}
+SO: {!inscor__Invoice__c.inscor__Sales_Order__c}

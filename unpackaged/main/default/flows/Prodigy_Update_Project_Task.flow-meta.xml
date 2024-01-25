@@ -1,0 +1,2090 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Copy_10_of_Send_Notification_to_Owner</name>
+        <label>Copy 10 of Send Notification to Owner</label>
+        <locationX>2690</locationX>
+        <locationY>971</locationY>
+        <actionName>customNotificationAction</actionName>
+        <actionType>customNotificationAction</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>customNotifTypeId</name>
+            <value>
+                <elementReference>Get_Notifiaction.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientIds</name>
+            <value>
+                <elementReference>RecipientIds</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>title</name>
+            <value>
+                <stringValue>Project Task Created </stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>body</name>
+            <value>
+                <elementReference>NotificationBody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>targetId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>Copy_11_of_Send_Notification_to_Owner</name>
+        <label>Copy 11 of Send Notification to Owner</label>
+        <locationX>2954</locationX>
+        <locationY>971</locationY>
+        <actionName>customNotificationAction</actionName>
+        <actionType>customNotificationAction</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>customNotifTypeId</name>
+            <value>
+                <elementReference>Get_Notifiaction.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientIds</name>
+            <value>
+                <elementReference>RecipientIds</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>title</name>
+            <value>
+                <stringValue>Project Task Created </stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>body</name>
+            <value>
+                <elementReference>NotificationBody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>targetId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>Copy_12_of_Send_Notification_to_Owner</name>
+        <label>Copy 12 of Send Notification to Owner</label>
+        <locationX>3218</locationX>
+        <locationY>971</locationY>
+        <actionName>customNotificationAction</actionName>
+        <actionType>customNotificationAction</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>customNotifTypeId</name>
+            <value>
+                <elementReference>Get_Notifiaction.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientIds</name>
+            <value>
+                <elementReference>RecipientIds</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>title</name>
+            <value>
+                <stringValue>Project Task Created </stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>body</name>
+            <value>
+                <elementReference>NotificationBody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>targetId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>Copy_13_of_Send_Notification_to_Owner</name>
+        <label>Copy 13 of Send Notification to Owner</label>
+        <locationX>3482</locationX>
+        <locationY>971</locationY>
+        <actionName>customNotificationAction</actionName>
+        <actionType>customNotificationAction</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>customNotifTypeId</name>
+            <value>
+                <elementReference>Get_Notifiaction.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientIds</name>
+            <value>
+                <elementReference>RecipientIds</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>title</name>
+            <value>
+                <stringValue>Project Task Created </stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>body</name>
+            <value>
+                <elementReference>NotificationBody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>targetId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>Copy_14_of_Send_Notification_to_Owner</name>
+        <label>Copy 14 of Send Notification to Owner</label>
+        <locationX>3746</locationX>
+        <locationY>971</locationY>
+        <actionName>customNotificationAction</actionName>
+        <actionType>customNotificationAction</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>customNotifTypeId</name>
+            <value>
+                <elementReference>Get_Notifiaction.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientIds</name>
+            <value>
+                <elementReference>RecipientIds</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>title</name>
+            <value>
+                <stringValue>Project Task Created </stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>body</name>
+            <value>
+                <elementReference>NotificationBody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>targetId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>Copy_1_of_Send_Notification_to_Owner</name>
+        <label>Copy 1 of Send Notification to Owner</label>
+        <locationX>314</locationX>
+        <locationY>971</locationY>
+        <actionName>customNotificationAction</actionName>
+        <actionType>customNotificationAction</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>customNotifTypeId</name>
+            <value>
+                <elementReference>Get_Notifiaction.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientIds</name>
+            <value>
+                <elementReference>RecipientIds</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>title</name>
+            <value>
+                <stringValue>Project Task Created </stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>body</name>
+            <value>
+                <elementReference>NotificationBody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>targetId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>Copy_2_of_Send_Notification_to_Owner</name>
+        <label>Copy 2 of Send Notification to Owner</label>
+        <locationX>578</locationX>
+        <locationY>971</locationY>
+        <actionName>customNotificationAction</actionName>
+        <actionType>customNotificationAction</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>customNotifTypeId</name>
+            <value>
+                <elementReference>Get_Notifiaction.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientIds</name>
+            <value>
+                <elementReference>RecipientIds</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>title</name>
+            <value>
+                <stringValue>Project Task Created </stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>body</name>
+            <value>
+                <elementReference>NotificationBody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>targetId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>Copy_3_of_Send_Notification_to_Owner</name>
+        <label>Copy 3 of Send Notification to Owner</label>
+        <locationX>842</locationX>
+        <locationY>971</locationY>
+        <actionName>customNotificationAction</actionName>
+        <actionType>customNotificationAction</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>customNotifTypeId</name>
+            <value>
+                <elementReference>Get_Notifiaction.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientIds</name>
+            <value>
+                <elementReference>RecipientIds</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>title</name>
+            <value>
+                <stringValue>Project Task Created </stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>body</name>
+            <value>
+                <elementReference>NotificationBody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>targetId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>Copy_4_of_Send_Notification_to_Owner</name>
+        <label>Copy 4 of Send Notification to Owner</label>
+        <locationX>1106</locationX>
+        <locationY>971</locationY>
+        <actionName>customNotificationAction</actionName>
+        <actionType>customNotificationAction</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>customNotifTypeId</name>
+            <value>
+                <elementReference>Get_Notifiaction.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientIds</name>
+            <value>
+                <elementReference>RecipientIds</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>title</name>
+            <value>
+                <stringValue>Project Task Created </stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>body</name>
+            <value>
+                <elementReference>NotificationBody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>targetId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>Copy_5_of_Send_Notification_to_Owner</name>
+        <label>Copy 5 of Send Notification to Owner</label>
+        <locationX>1370</locationX>
+        <locationY>971</locationY>
+        <actionName>customNotificationAction</actionName>
+        <actionType>customNotificationAction</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>customNotifTypeId</name>
+            <value>
+                <elementReference>Get_Notifiaction.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientIds</name>
+            <value>
+                <elementReference>RecipientIds</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>title</name>
+            <value>
+                <stringValue>Project Task Created </stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>body</name>
+            <value>
+                <elementReference>NotificationBody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>targetId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>Copy_6_of_Send_Notification_to_Owner</name>
+        <label>Copy 6 of Send Notification to Owner</label>
+        <locationX>1634</locationX>
+        <locationY>971</locationY>
+        <actionName>customNotificationAction</actionName>
+        <actionType>customNotificationAction</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>customNotifTypeId</name>
+            <value>
+                <elementReference>Get_Notifiaction.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientIds</name>
+            <value>
+                <elementReference>RecipientIds</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>title</name>
+            <value>
+                <stringValue>Project Task Created </stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>body</name>
+            <value>
+                <elementReference>NotificationBody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>targetId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>Copy_7_of_Send_Notification_to_Owner</name>
+        <label>Copy 7 of Send Notification to Owner</label>
+        <locationX>1898</locationX>
+        <locationY>971</locationY>
+        <actionName>customNotificationAction</actionName>
+        <actionType>customNotificationAction</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>customNotifTypeId</name>
+            <value>
+                <elementReference>Get_Notifiaction.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientIds</name>
+            <value>
+                <elementReference>RecipientIds</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>title</name>
+            <value>
+                <stringValue>Project Task Created </stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>body</name>
+            <value>
+                <elementReference>NotificationBody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>targetId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>Copy_8_of_Send_Notification_to_Owner</name>
+        <label>Copy 8 of Send Notification to Owner</label>
+        <locationX>2162</locationX>
+        <locationY>971</locationY>
+        <actionName>customNotificationAction</actionName>
+        <actionType>customNotificationAction</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>customNotifTypeId</name>
+            <value>
+                <elementReference>Get_Notifiaction.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientIds</name>
+            <value>
+                <elementReference>RecipientIds</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>title</name>
+            <value>
+                <stringValue>Project Task Created </stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>body</name>
+            <value>
+                <elementReference>NotificationBody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>targetId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>Copy_9_of_Send_Notification_to_Owner</name>
+        <label>Copy 9 of Send Notification to Owner</label>
+        <locationX>2426</locationX>
+        <locationY>971</locationY>
+        <actionName>customNotificationAction</actionName>
+        <actionType>customNotificationAction</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>customNotifTypeId</name>
+            <value>
+                <elementReference>Get_Notifiaction.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientIds</name>
+            <value>
+                <elementReference>RecipientIds</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>title</name>
+            <value>
+                <stringValue>Project Task Created </stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>body</name>
+            <value>
+                <elementReference>NotificationBody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>targetId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_Notification_to_Owner</name>
+        <label>Send Notification to Owner</label>
+        <locationX>50</locationX>
+        <locationY>971</locationY>
+        <actionName>customNotificationAction</actionName>
+        <actionType>customNotificationAction</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>customNotifTypeId</name>
+            <value>
+                <elementReference>Get_Notifiaction.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientIds</name>
+            <value>
+                <elementReference>RecipientIds</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>title</name>
+            <value>
+                <stringValue>Project Task Created </stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>body</name>
+            <value>
+                <elementReference>NotificationBody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>targetId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <apiVersion>58.0</apiVersion>
+    <assignments>
+        <name>Assign_to_Owner</name>
+        <label>Assign to Owner</label>
+        <locationX>50</locationX>
+        <locationY>863</locationY>
+        <assignmentItems>
+            <assignToReference>RecipientIds</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>$Record.GlicW__Task_Owner__r.OwnerId</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Send_Notification_to_Owner</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Copy_10_of_Assign_to_Owner</name>
+        <label>Copy 10 of Assign to Owner</label>
+        <locationX>2690</locationX>
+        <locationY>863</locationY>
+        <assignmentItems>
+            <assignToReference>RecipientIds</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>$Record.GlicW__Task_Owner__r.OwnerId</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Copy_10_of_Send_Notification_to_Owner</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Copy_11_of_Assign_to_Owner</name>
+        <label>Copy 11 of Assign to Owner</label>
+        <locationX>2954</locationX>
+        <locationY>863</locationY>
+        <assignmentItems>
+            <assignToReference>RecipientIds</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>$Record.GlicW__Task_Owner__r.OwnerId</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Copy_11_of_Send_Notification_to_Owner</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Copy_12_of_Assign_to_Owner</name>
+        <label>Copy 12 of Assign to Owner</label>
+        <locationX>3218</locationX>
+        <locationY>863</locationY>
+        <assignmentItems>
+            <assignToReference>RecipientIds</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>$Record.GlicW__Task_Owner__r.OwnerId</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Copy_12_of_Send_Notification_to_Owner</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Copy_13_of_Assign_to_Owner</name>
+        <label>Copy 13 of Assign to Owner</label>
+        <locationX>3482</locationX>
+        <locationY>863</locationY>
+        <assignmentItems>
+            <assignToReference>RecipientIds</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>$Record.GlicW__Task_Owner__r.OwnerId</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Copy_13_of_Send_Notification_to_Owner</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Copy_14_of_Assign_to_Owner</name>
+        <label>Copy 14 of Assign to Owner</label>
+        <locationX>3746</locationX>
+        <locationY>863</locationY>
+        <assignmentItems>
+            <assignToReference>RecipientIds</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>$Record.GlicW__Task_Owner__r.OwnerId</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Copy_14_of_Send_Notification_to_Owner</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Copy_1_of_Assign_to_Owner</name>
+        <label>Copy 1 of Assign to Owner</label>
+        <locationX>314</locationX>
+        <locationY>863</locationY>
+        <assignmentItems>
+            <assignToReference>RecipientIds</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>$Record.GlicW__Task_Owner__r.OwnerId</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Copy_1_of_Send_Notification_to_Owner</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Copy_2_of_Assign_to_Owner</name>
+        <label>Copy 2 of Assign to Owner</label>
+        <locationX>578</locationX>
+        <locationY>863</locationY>
+        <assignmentItems>
+            <assignToReference>RecipientIds</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>$Record.GlicW__Task_Owner__r.OwnerId</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Copy_2_of_Send_Notification_to_Owner</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Copy_3_of_Assign_to_Owner</name>
+        <label>Copy 3 of Assign to Owner</label>
+        <locationX>842</locationX>
+        <locationY>863</locationY>
+        <assignmentItems>
+            <assignToReference>RecipientIds</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>$Record.GlicW__Task_Owner__r.OwnerId</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Copy_3_of_Send_Notification_to_Owner</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Copy_4_of_Assign_to_Owner</name>
+        <label>Copy 4 of Assign to Owner</label>
+        <locationX>1106</locationX>
+        <locationY>863</locationY>
+        <assignmentItems>
+            <assignToReference>RecipientIds</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>$Record.GlicW__Task_Owner__r.OwnerId</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Copy_4_of_Send_Notification_to_Owner</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Copy_5_of_Assign_to_Owner</name>
+        <label>Copy 5 of Assign to Owner</label>
+        <locationX>1370</locationX>
+        <locationY>863</locationY>
+        <assignmentItems>
+            <assignToReference>RecipientIds</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>$Record.GlicW__Task_Owner__r.OwnerId</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Copy_5_of_Send_Notification_to_Owner</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Copy_6_of_Assign_to_Owner</name>
+        <label>Copy 6 of Assign to Owner</label>
+        <locationX>1634</locationX>
+        <locationY>863</locationY>
+        <assignmentItems>
+            <assignToReference>RecipientIds</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>$Record.GlicW__Task_Owner__r.OwnerId</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Copy_6_of_Send_Notification_to_Owner</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Copy_7_of_Assign_to_Owner</name>
+        <label>Copy 7 of Assign to Owner</label>
+        <locationX>1898</locationX>
+        <locationY>863</locationY>
+        <assignmentItems>
+            <assignToReference>RecipientIds</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>$Record.GlicW__Task_Owner__r.OwnerId</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Copy_7_of_Send_Notification_to_Owner</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Copy_8_of_Assign_to_Owner</name>
+        <label>Copy 8 of Assign to Owner</label>
+        <locationX>2162</locationX>
+        <locationY>863</locationY>
+        <assignmentItems>
+            <assignToReference>RecipientIds</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>$Record.GlicW__Task_Owner__r.OwnerId</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Copy_8_of_Send_Notification_to_Owner</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Copy_9_of_Assign_to_Owner</name>
+        <label>Copy 9 of Assign to Owner</label>
+        <locationX>2426</locationX>
+        <locationY>863</locationY>
+        <assignmentItems>
+            <assignToReference>RecipientIds</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>$Record.GlicW__Task_Owner__r.OwnerId</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Copy_9_of_Send_Notification_to_Owner</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Is_Project_Task_Engine</name>
+        <label>Is Project Task?</label>
+        <locationX>2030</locationX>
+        <locationY>647</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Engine_Technical_Review</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.GlicW__Project_Milestone__r.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Technical Review</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Engine_Technical_review_Record</targetReference>
+            </connector>
+            <label>Technical Review</label>
+        </rules>
+        <rules>
+            <name>Engine_Commercial_Agreemnets</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.GlicW__Project_Milestone__r.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Commercial Agreement</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Engine_Commercial_Agreement</targetReference>
+            </connector>
+            <label>Commercial Agreemnets</label>
+        </rules>
+        <rules>
+            <name>Engine_Physical_Inspection</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.GlicW__Project_Milestone__r.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Physical Inspection</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Engine_Physical_Inspection</targetReference>
+            </connector>
+            <label>Physical Inspection</label>
+        </rules>
+        <rules>
+            <name>Engine_Investment_Time_Off</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.GlicW__Project_Milestone__r.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Investment Sign Off</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Engine_Investment</targetReference>
+            </connector>
+            <label>Investment Time Off</label>
+        </rules>
+        <rules>
+            <name>Engine_APU_Stand_Sourced</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.GlicW__Project_Milestone__r.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>APU Stand Sourced</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Engine_APU_Stand</targetReference>
+            </connector>
+            <label>APU Stand Sourced</label>
+        </rules>
+        <rules>
+            <name>Engine_Shipment_to_Disassembly_Location</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.GlicW__Project_Milestone__r.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Shipment to Disassembly Location</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Engine_Shipment_to_Disassembly</targetReference>
+            </connector>
+            <label>Shipment to Disassembly Location</label>
+        </rules>
+        <rules>
+            <name>Engine_Disassembly</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.GlicW__Project_Milestone__r.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Disassembly</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Engine_Disassembly</targetReference>
+            </connector>
+            <label>Disassembly</label>
+        </rules>
+        <rules>
+            <name>Engine_Return_of_Engine_Stand</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.GlicW__Project_Milestone__r.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Return of Engine Stand</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>UpdateEngine_Return</targetReference>
+            </connector>
+            <label>Return of Engine Stand</label>
+        </rules>
+        <rules>
+            <name>Engine_Reconciliation_Complete</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.GlicW__Project_Milestone__r.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Reconciliation Complete</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Engine_Recon</targetReference>
+            </connector>
+            <label>Reconciliation Complete</label>
+        </rules>
+        <rules>
+            <name>Engine_Hotlist</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.GlicW__Project_Milestone__r.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Hotlist</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Engine_Hotlist</targetReference>
+            </connector>
+            <label>Hotlist</label>
+        </rules>
+        <rules>
+            <name>Engine_Repairs_Drop_Shipped</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.GlicW__Project_Milestone__r.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Repairs Drop Shipped</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Engine_Repair_Drop</targetReference>
+            </connector>
+            <label>Repairs Drop Shipped</label>
+        </rules>
+        <rules>
+            <name>Engine_Shipment_of_Material_to_Warehouse</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.GlicW__Project_Milestone__r.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Shipment of Material to Warehouse</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Engine_Shipment_Materials</targetReference>
+            </connector>
+            <label>Shipment of Material to Warehouse</label>
+        </rules>
+        <rules>
+            <name>Engine_Material_Check_In</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.GlicW__Project_Milestone__r.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Material Check-in</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Engine_Materials</targetReference>
+            </connector>
+            <label>Material Check-In</label>
+        </rules>
+        <rules>
+            <name>Engine_Priced_in_AVsight</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.GlicW__Project_Milestone__r.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Inventory Priced on AvSight</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Engine_Avsight</targetReference>
+            </connector>
+            <label>Priced in AVsight</label>
+        </rules>
+        <rules>
+            <name>Engine_Consignment_Report</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.GlicW__Project_Milestone__r.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Consignment Report</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Engine_Consignment</targetReference>
+            </connector>
+            <label>Consignment Report</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_Project_Template</name>
+        <label>Is Project Template</label>
+        <locationX>3152</locationX>
+        <locationY>539</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.GlicW__Project_Milestone__r.GlicW__Project__r.GlicW__Is_Template__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Is_Project_Task_Engine</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <description>AB 26/07/2023 - Prodigy</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>APU_End_Date</name>
+        <dataType>Date</dataType>
+        <expression>CASE(
+ WEEKDAY({!APU_Start_Date}),
+  1, ({!APU_Start_Date}) + 3 + 
+      FLOOR((3-1)/5)*2,
+  2, ({!APU_Start_Date}) + 3 + 
+      FLOOR((3)/5)*2,
+  3, ({!APU_Start_Date}) + 3 + 
+      FLOOR((3+1)/5)*2,
+  4, ({!APU_Start_Date}) + 3 + 
+      FLOOR((3+2)/5)*2,
+  5, ({!APU_Start_Date}) + 3 + 
+      FLOOR((3+3)/5)*2,
+  6, ({!APU_Start_Date}) + 3 + 
+      CEILING((3)/5)*2,
+  7, ({!APU_Start_Date}) - IF(3&gt;0,1,0) + 3 + 
+      CEILING((3)/5)*2,
+ null)</expression>
+    </formulas>
+    <formulas>
+        <name>APU_Start_Date</name>
+        <dataType>Date</dataType>
+        <expression>CASE(
+ WEEKDAY({!Investment_End_Date}),
+  1, ({!Investment_End_Date}) + 2 + 
+      FLOOR((2-1)/5)*2,
+  2, ({!Investment_End_Date}) + 2 + 
+      FLOOR((2)/5)*2,
+  3, ({!Investment_End_Date}) + 2 + 
+      FLOOR((2+1)/5)*2,
+  4, ({!Investment_End_Date}) + 2 + 
+      FLOOR((2+2)/5)*2,
+  5, ({!Investment_End_Date}) + 2 + 
+      FLOOR((2+3)/5)*2,
+  6, ({!Investment_End_Date}) + 2 + 
+      CEILING((2)/5)*2,
+  7, ({!Investment_End_Date}) - IF(2&gt;0,1,0) + 2 + 
+      CEILING((2)/5)*2,
+ null)</expression>
+    </formulas>
+    <formulas>
+        <name>AVsight_EndDate</name>
+        <dataType>Date</dataType>
+        <expression>CASE(
+ WEEKDAY({!Avsight_StartDate}),
+  1, ({!Avsight_StartDate}) + 3 + 
+      FLOOR((3-1)/5)*2,
+  2, ({!Avsight_StartDate}) + 3 + 
+      FLOOR((3)/5)*2,
+  3, ({!Avsight_StartDate}) + 3 + 
+      FLOOR((3+1)/5)*2,
+  4, ({!Avsight_StartDate}) + 3 + 
+      FLOOR((3+2)/5)*2,
+  5, ({!Avsight_StartDate}) + 3 + 
+      FLOOR((3+3)/5)*2,
+  6, ({!Avsight_StartDate}) + 3 + 
+      CEILING((3)/5)*2,
+  7, ({!Avsight_StartDate}) - IF(3&gt;0,1,0) + 3 + 
+      CEILING((3)/5)*2,
+ null)</expression>
+    </formulas>
+    <formulas>
+        <name>Avsight_StartDate</name>
+        <dataType>Date</dataType>
+        <expression>{!Material_EndDate}</expression>
+    </formulas>
+    <formulas>
+        <name>CommercialAgreement_End_Date</name>
+        <dataType>Date</dataType>
+        <expression>CASE(
+ WEEKDAY({!CommercialAgreement_Start_Date}),
+  1, ({!CommercialAgreement_Start_Date}) + 30 + 
+      FLOOR((30-1)/5)*2,
+  2, ({!CommercialAgreement_Start_Date}) + 30 + 
+      FLOOR((30)/5)*2,
+  3, ({!CommercialAgreement_Start_Date}) + 30 + 
+      FLOOR((30+1)/5)*2,
+  4, ({!CommercialAgreement_Start_Date}) + 30 + 
+      FLOOR((30+2)/5)*2,
+  5, ({!CommercialAgreement_Start_Date}) + 30 + 
+      FLOOR((30+3)/5)*2,
+  6, ({!CommercialAgreement_Start_Date}) + 30 + 
+      CEILING((30)/5)*2,
+  7, ({!CommercialAgreement_Start_Date}) - IF(30&gt;0,1,0) + 30 + 
+      CEILING((30)/5)*2,
+ null)</expression>
+    </formulas>
+    <formulas>
+        <name>CommercialAgreement_Start_Date</name>
+        <dataType>Date</dataType>
+        <expression>CASE(
+ WEEKDAY({!TechnicalEndDate}),
+  1, ({!TechnicalEndDate}) + 1 + 
+      FLOOR((1-1)/5)*2,
+  2, ({!TechnicalEndDate}) + 1 + 
+      FLOOR((1)/5)*2,
+  3, ({!TechnicalEndDate}) + 1 + 
+      FLOOR((1+1)/5)*2,
+  4, ({!TechnicalEndDate}) + 1 + 
+      FLOOR((1+2)/5)*2,
+  5, ({!TechnicalEndDate}) + 1 + 
+      FLOOR((1+3)/5)*2,
+  6, ({!TechnicalEndDate}) + 1 + 
+      CEILING((1)/5)*2,
+  7, ({!TechnicalEndDate}) - IF(1&gt;0,1,0) + 1 + 
+      CEILING((1)/5)*2,
+ null)</expression>
+    </formulas>
+    <formulas>
+        <name>Disassembly_EndDate</name>
+        <dataType>Date</dataType>
+        <expression>CASE(
+ WEEKDAY({!Disassembly_Start_Date}),
+  1, ({!Disassembly_Start_Date}) + 21 + 
+      FLOOR((21-1)/5)*2,
+  2, ({!Disassembly_Start_Date}) + 21 + 
+      FLOOR((21)/5)*2,
+  3, ({!Disassembly_Start_Date}) + 21 + 
+      FLOOR((21+1)/5)*2,
+  4, ({!Disassembly_Start_Date}) + 21 + 
+      FLOOR((21+2)/5)*2,
+  5, ({!Disassembly_Start_Date}) + 21 + 
+      FLOOR((21+3)/5)*2,
+  6, ({!Disassembly_Start_Date}) + 21 + 
+      CEILING((21)/5)*2,
+  7, ({!Disassembly_Start_Date}) - IF(21&gt;0,1,0) + 21 + 
+      CEILING((21)/5)*2,
+ null)</expression>
+    </formulas>
+    <formulas>
+        <name>Disassembly_Start_Date</name>
+        <dataType>Date</dataType>
+        <expression>{!Shipment_to_Disassembly_StartDate}</expression>
+    </formulas>
+    <formulas>
+        <name>Hotlist_EndDate</name>
+        <dataType>Date</dataType>
+        <expression>{!Hotlist_StartDate}</expression>
+    </formulas>
+    <formulas>
+        <name>Hotlist_StartDate</name>
+        <dataType>Date</dataType>
+        <expression>{!Recon_StartDate}</expression>
+    </formulas>
+    <formulas>
+        <name>Investment_End_Date</name>
+        <dataType>Date</dataType>
+        <expression>CASE(
+ WEEKDAY({!Investment_Start_Date}),
+  1, ({!Investment_Start_Date}) + 3 + 
+      FLOOR((3-1)/5)*2,
+  2, ({!Investment_Start_Date}) + 3 + 
+      FLOOR((3)/5)*2,
+  3, ({!Investment_Start_Date}) + 3 + 
+      FLOOR((3+1)/5)*2,
+  4, ({!Investment_Start_Date}) + 3 + 
+      FLOOR((3+2)/5)*2,
+  5, ({!Investment_Start_Date}) + 3 + 
+      FLOOR((3+3)/5)*2,
+  6, ({!Investment_Start_Date}) + 3 + 
+      CEILING((3)/5)*2,
+  7, ({!Investment_Start_Date}) - IF(3&gt;0,1,0) + 3 + 
+      CEILING((3)/5)*2,
+ null)</expression>
+    </formulas>
+    <formulas>
+        <name>Investment_Start_Date</name>
+        <dataType>Date</dataType>
+        <expression>{!Physical_End_Date}</expression>
+    </formulas>
+    <formulas>
+        <name>Material_EndDate</name>
+        <dataType>Date</dataType>
+        <expression>CASE(
+ WEEKDAY({!Material_StartDate}),
+  1, ({!ShipmentMat_StartDate}) + 30 + 
+      FLOOR((30-1)/5)*2,
+  2, ({!ShipmentMat_StartDate}) + 30 + 
+      FLOOR((30)/5)*2,
+  3, ({!ShipmentMat_StartDate}) + 30 + 
+      FLOOR((30+1)/5)*2,
+  4, ({!ShipmentMat_StartDate}) + 30 + 
+      FLOOR((30+2)/5)*2,
+  5, ({!ShipmentMat_StartDate}) + 30 + 
+      FLOOR((30+3)/5)*2,
+  6, ({!ShipmentMat_StartDate}) + 30 + 
+      CEILING((30)/5)*2,
+  7, ({!ShipmentMat_StartDate}) - IF(30&gt;0,1,0) + 30 + 
+      CEILING((30)/5)*2,
+ null)</expression>
+    </formulas>
+    <formulas>
+        <name>Material_StartDate</name>
+        <dataType>Date</dataType>
+        <expression>{!ShipmentMat_EndDate}</expression>
+    </formulas>
+    <formulas>
+        <name>NotificationBody</name>
+        <dataType>String</dataType>
+        <expression>{!$Record.GlicW__Project_Milestone__r.Name} + &quot; has been created with the following Project Task:  &quot; + {!$Record.Name} + TEXT({!$Record.GlicW__Start_Date__c}) + &quot; the due date is on the &quot; + TEXT({!$Record.GlicW__Due_Date__c})</expression>
+    </formulas>
+    <formulas>
+        <name>Physical_End_Date</name>
+        <dataType>Date</dataType>
+        <expression>CASE(
+ WEEKDAY({!Physical_Start_Date}),
+  1, ({!Physical_Start_Date}) + 5 + 
+      FLOOR((5-1)/5)*2,
+  2, ({!Physical_Start_Date}) + 5 + 
+      FLOOR((5)/5)*2,
+  3, ({!Physical_Start_Date}) + 5 + 
+      FLOOR((5+1)/5)*2,
+  4, ({!Physical_Start_Date}) + 5 + 
+      FLOOR((5+2)/5)*2,
+  5, ({!Physical_Start_Date}) + 5 + 
+      FLOOR((5+3)/5)*2,
+  6, ({!Physical_Start_Date}) + 5 + 
+      CEILING((5)/5)*2,
+  7, ({!Physical_Start_Date}) - IF(5&gt;0,1,0) + 5 + 
+      CEILING((5)/5)*2,
+ null)</expression>
+    </formulas>
+    <formulas>
+        <name>Physical_Inspection</name>
+        <dataType>Date</dataType>
+        <expression>{!CommercialAgreement_End_Date} + 15</expression>
+    </formulas>
+    <formulas>
+        <name>Physical_Start_Date</name>
+        <dataType>Date</dataType>
+        <expression>CASE(
+ WEEKDAY({!CommercialAgreement_Start_Date}),
+  1, ({!CommercialAgreement_Start_Date}) + 15 + 
+      FLOOR((15-1)/5)*2,
+  2, ({!CommercialAgreement_Start_Date}) + 15 + 
+      FLOOR((15)/5)*2,
+  3, ({!CommercialAgreement_Start_Date}) + 15 + 
+      FLOOR((15+1)/5)*2,
+  4, ({!CommercialAgreement_Start_Date}) + 15 + 
+      FLOOR((15+2)/5)*2,
+  5, ({!CommercialAgreement_Start_Date}) + 15 + 
+      FLOOR((15+3)/5)*2,
+  6, ({!CommercialAgreement_Start_Date}) + 15 + 
+      CEILING((15)/5)*2,
+  7, ({!CommercialAgreement_Start_Date}) - IF(15&gt;0,1,0) + 15 + 
+      CEILING((15)/5)*2,
+ null)</expression>
+    </formulas>
+    <formulas>
+        <name>Recon_EndDate</name>
+        <dataType>Date</dataType>
+        <expression>CASE(
+ WEEKDAY({!Recon_StartDate}),
+  1, ({!Recon_StartDate}) + 3 + 
+      FLOOR((3-1)/5)*2,
+  2, ({!Recon_StartDate}) + 3 + 
+      FLOOR((3)/5)*2,
+  3, ({!Recon_StartDate}) + 3 + 
+      FLOOR((3+1)/5)*2,
+  4, ({!Recon_StartDate}) + 3 + 
+      FLOOR((3+2)/5)*2,
+  5, ({!Recon_StartDate}) + 3 + 
+      FLOOR((3+3)/5)*2,
+  6, ({!Recon_StartDate}) + 3 + 
+      CEILING((3)/5)*2,
+  7, ({!Recon_StartDate}) - IF(3&gt;0,1,0) + 3 + 
+      CEILING((3)/5)*2,
+ null)</expression>
+    </formulas>
+    <formulas>
+        <name>Recon_StartDate</name>
+        <dataType>Date</dataType>
+        <expression>{!Disassembly_EndDate}</expression>
+    </formulas>
+    <formulas>
+        <name>Repair_StartDate</name>
+        <dataType>Date</dataType>
+        <expression>{!Hotlist_EndDate}</expression>
+    </formulas>
+    <formulas>
+        <name>Repairs_EndDate</name>
+        <dataType>Date</dataType>
+        <expression>CASE(
+ WEEKDAY({!Repair_StartDate}),
+  1, ({!Repair_StartDate}) + 7 + 
+      FLOOR((7-1)/5)*2,
+  2, ({!Repair_StartDate}) + 7 + 
+      FLOOR((7)/5)*2,
+  3, ({!Repair_StartDate}) + 7 + 
+      FLOOR((7+1)/5)*2,
+  4, ({!Repair_StartDate}) + 7 + 
+      FLOOR((7+2)/5)*2,
+  5, ({!Repair_StartDate}) + 7 + 
+      FLOOR((7+3)/5)*2,
+  6, ({!Repair_StartDate}) + 7 + 
+      CEILING((7)/5)*2,
+  7, ({!Repair_StartDate}) - IF(7&gt;0,1,0) + 7 + 
+      CEILING((7)/5)*2,
+ null)</expression>
+    </formulas>
+    <formulas>
+        <name>Return_End_Date</name>
+        <dataType>Date</dataType>
+        <expression>CASE(
+ WEEKDAY({!Return_StartDate}),
+  1, ({!Return_StartDate}) + 3 + 
+      FLOOR((3-1)/5)*2,
+  2, ({!Return_StartDate}) + 3 + 
+      FLOOR((3)/5)*2,
+  3, ({!Return_StartDate}) + 3 + 
+      FLOOR((3+1)/5)*2,
+  4, ({!Return_StartDate}) + 3 + 
+      FLOOR((3+2)/5)*2,
+  5, ({!Return_StartDate}) + 3 + 
+      FLOOR((3+3)/5)*2,
+  6, ({!Return_StartDate}) + 3 + 
+      CEILING((3)/5)*2,
+  7, ({!Return_StartDate}) - IF(3&gt;0,1,0) + 3 + 
+      CEILING((3)/5)*2,
+ null)</expression>
+    </formulas>
+    <formulas>
+        <name>Return_StartDate</name>
+        <dataType>Date</dataType>
+        <expression>CASE(
+ WEEKDAY({!Disassembly_Start_Date}),
+  1, ({!Disassembly_Start_Date}) + 8 + 
+      FLOOR((8-1)/5)*2,
+  2, ({!Disassembly_Start_Date}) + 8 + 
+      FLOOR((8)/5)*2,
+  3, ({!Disassembly_Start_Date}) + 8 + 
+      FLOOR((8+1)/5)*2,
+  4, ({!Disassembly_Start_Date}) + 8 + 
+      FLOOR((8+2)/5)*2,
+  5, ({!Disassembly_Start_Date}) + 8 + 
+      FLOOR((8+3)/5)*2,
+  6, ({!Disassembly_Start_Date}) + 8 + 
+      CEILING((8)/5)*2,
+  7, ({!Disassembly_Start_Date}) - IF(8&gt;0,1,0) + 8 + 
+      CEILING((8)/5)*2,
+ null)</expression>
+    </formulas>
+    <formulas>
+        <name>Shipment_to_Disassembly_StartDate</name>
+        <dataType>Date</dataType>
+        <expression>{!APU_End_Date}</expression>
+    </formulas>
+    <formulas>
+        <name>Shipment_to_Dissaembly_EndDate</name>
+        <dataType>Date</dataType>
+        <expression>CASE(
+ WEEKDAY({!Shipment_to_Disassembly_StartDate}),
+  1, ({!Shipment_to_Disassembly_StartDate}) + 7 + 
+      FLOOR((7-1)/5)*2,
+  2, ({!Shipment_to_Disassembly_StartDate}) + 7 + 
+      FLOOR((7)/5)*2,
+  3, ({!Shipment_to_Disassembly_StartDate}) + 7 + 
+      FLOOR((7+1)/5)*2,
+  4, ({!Shipment_to_Disassembly_StartDate}) + 7 + 
+      FLOOR((7+2)/5)*2,
+  5, ({!Shipment_to_Disassembly_StartDate}) + 7 + 
+      FLOOR((7+3)/5)*2,
+  6, ({!Shipment_to_Disassembly_StartDate}) + 7 + 
+      CEILING((7)/5)*2,
+  7, ({!Shipment_to_Disassembly_StartDate}) - IF(7&gt;0,1,0) + 7 + 
+      CEILING((7)/5)*2,
+ null)</expression>
+    </formulas>
+    <formulas>
+        <name>ShipmentMat_EndDate</name>
+        <dataType>Date</dataType>
+        <expression>CASE(
+ WEEKDAY({!ShipmentMat_StartDate}),
+  1, ({!ShipmentMat_StartDate}) + 7 + 
+      FLOOR((7-1)/5)*2,
+  2, ({!ShipmentMat_StartDate}) + 7 + 
+      FLOOR((7)/5)*2,
+  3, ({!ShipmentMat_StartDate}) + 7 + 
+      FLOOR((7+1)/5)*2,
+  4, ({!ShipmentMat_StartDate}) + 7 + 
+      FLOOR((7+2)/5)*2,
+  5, ({!ShipmentMat_StartDate}) + 7 + 
+      FLOOR((7+3)/5)*2,
+  6, ({!ShipmentMat_StartDate}) + 7 + 
+      CEILING((7)/5)*2,
+  7, ({!ShipmentMat_StartDate}) - IF(7&gt;0,1,0) + 7 + 
+      CEILING((7)/5)*2,
+ null)</expression>
+    </formulas>
+    <formulas>
+        <name>ShipmentMat_StartDate</name>
+        <dataType>Date</dataType>
+        <expression>{!Repairs_EndDate}</expression>
+    </formulas>
+    <formulas>
+        <name>TechnicalEndDate</name>
+        <dataType>Date</dataType>
+        <expression>CASE(
+ WEEKDAY({!TechnicalStartDate}),
+  1, ({!TechnicalStartDate}) + 14 + 
+      FLOOR((14-1)/5)*2,
+  2, ({!TechnicalStartDate}) + 14 + 
+      FLOOR((14)/5)*2,
+  3, ({!TechnicalStartDate}) + 14 + 
+      FLOOR((14+1)/5)*2,
+  4, ({!TechnicalStartDate}) + 14 + 
+      FLOOR((14+2)/5)*2,
+  5, ({!TechnicalStartDate}) + 14 + 
+      FLOOR((14+3)/5)*2,
+  6, ({!TechnicalStartDate}) + 14 + 
+      CEILING((14)/5)*2,
+  7, ({!TechnicalStartDate}) - IF(14&gt;0,1,0) + 14 + 
+      CEILING((14)/5)*2,
+ null)</expression>
+    </formulas>
+    <formulas>
+        <name>TechnicalStartDate</name>
+        <dataType>Date</dataType>
+        <expression>{!$Flow.CurrentDate}</expression>
+    </formulas>
+    <interviewLabel>Prodigy - Update Project Task {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Prodigy - Update Project Task</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Department_HOD_s</name>
+        <label>Get Department HOD&#39;s</label>
+        <locationX>3152</locationX>
+        <locationY>323</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Notifiaction</targetReference>
+        </connector>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>pro_PHRCS__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Notifiaction</name>
+        <label>Get Notification</label>
+        <locationX>3152</locationX>
+        <locationY>431</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Is_Project_Template</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>pro_Asset_PM</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>CustomNotificationType</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Engine_APU_Stand</name>
+        <label>Update Engine - APU Stand</label>
+        <locationX>1106</locationX>
+        <locationY>755</locationY>
+        <connector>
+            <targetReference>Copy_4_of_Assign_to_Owner</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>GlicW__Due_Date__c</field>
+            <value>
+                <elementReference>APU_End_Date</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>GlicW__Start_Date__c</field>
+            <value>
+                <elementReference>APU_Start_Date</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>GlicW__Task_Owner__c</field>
+            <value>
+                <elementReference>Get_Department_HOD_s.pro_Operations_Department_HOD__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>pro_Target_Days__c</field>
+            <value>
+                <numberValue>3.0</numberValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Engine_Avsight</name>
+        <label>Update Engine - Avsight</label>
+        <locationX>3482</locationX>
+        <locationY>755</locationY>
+        <connector>
+            <targetReference>Copy_13_of_Assign_to_Owner</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>GlicW__Due_Date__c</field>
+            <value>
+                <elementReference>AVsight_EndDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>GlicW__Start_Date__c</field>
+            <value>
+                <elementReference>Avsight_StartDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>GlicW__Task_Owner__c</field>
+            <value>
+                <elementReference>Get_Department_HOD_s.pro_Asset_Department_HOD__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>pro_Target_Days__c</field>
+            <value>
+                <numberValue>3.0</numberValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Engine_Commercial_Agreement</name>
+        <label>Update Engine - Commercial Agreement</label>
+        <locationX>314</locationX>
+        <locationY>755</locationY>
+        <connector>
+            <targetReference>Copy_1_of_Assign_to_Owner</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>GlicW__Due_Date__c</field>
+            <value>
+                <elementReference>CommercialAgreement_End_Date</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>GlicW__Start_Date__c</field>
+            <value>
+                <elementReference>CommercialAgreement_Start_Date</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>GlicW__Task_Owner__c</field>
+            <value>
+                <elementReference>Get_Department_HOD_s.pro_Accounting_Department_HOD__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>pro_Target_Days__c</field>
+            <value>
+                <numberValue>30.0</numberValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Engine_Consignment</name>
+        <label>Update Engine - Consignment</label>
+        <locationX>3746</locationX>
+        <locationY>755</locationY>
+        <connector>
+            <targetReference>Copy_14_of_Assign_to_Owner</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>GlicW__Due_Date__c</field>
+            <value>
+                <elementReference>AVsight_EndDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>GlicW__Start_Date__c</field>
+            <value>
+                <elementReference>Avsight_StartDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>GlicW__Task_Owner__c</field>
+            <value>
+                <elementReference>Get_Department_HOD_s.pro_Asset_Department_HOD__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>pro_Target_Days__c</field>
+            <value>
+                <numberValue>3.0</numberValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Engine_Disassembly</name>
+        <label>Update Engine - Disassembly</label>
+        <locationX>1634</locationX>
+        <locationY>755</locationY>
+        <connector>
+            <targetReference>Copy_6_of_Assign_to_Owner</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>GlicW__Due_Date__c</field>
+            <value>
+                <elementReference>Disassembly_EndDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>GlicW__Start_Date__c</field>
+            <value>
+                <elementReference>Disassembly_Start_Date</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>GlicW__Task_Owner__c</field>
+            <value>
+                <elementReference>Get_Department_HOD_s.pro_Operations_Department_HOD__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>pro_Target_Days__c</field>
+            <value>
+                <numberValue>21.0</numberValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Engine_Hotlist</name>
+        <label>Update Engine - Hotlist</label>
+        <locationX>2426</locationX>
+        <locationY>755</locationY>
+        <connector>
+            <targetReference>Copy_9_of_Assign_to_Owner</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>GlicW__Due_Date__c</field>
+            <value>
+                <elementReference>Hotlist_EndDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>GlicW__Start_Date__c</field>
+            <value>
+                <elementReference>Hotlist_StartDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>GlicW__Task_Owner__c</field>
+            <value>
+                <elementReference>Get_Department_HOD_s.pro_Asset_Department_HOD__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>pro_Target_Days__c</field>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Engine_Investment</name>
+        <label>Update Engine - Investment</label>
+        <locationX>842</locationX>
+        <locationY>755</locationY>
+        <connector>
+            <targetReference>Copy_3_of_Assign_to_Owner</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>GlicW__Due_Date__c</field>
+            <value>
+                <elementReference>Investment_End_Date</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>GlicW__Start_Date__c</field>
+            <value>
+                <elementReference>Investment_Start_Date</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>GlicW__Task_Owner__c</field>
+            <value>
+                <elementReference>Get_Department_HOD_s.pro_Asset_Department_HOD__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>pro_Target_Days__c</field>
+            <value>
+                <numberValue>5.0</numberValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Engine_Materials</name>
+        <label>Update Engine - Materials</label>
+        <locationX>3218</locationX>
+        <locationY>755</locationY>
+        <connector>
+            <targetReference>Copy_12_of_Assign_to_Owner</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>GlicW__Due_Date__c</field>
+            <value>
+                <elementReference>Material_EndDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>GlicW__Start_Date__c</field>
+            <value>
+                <elementReference>Material_StartDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>GlicW__Task_Owner__c</field>
+            <value>
+                <elementReference>Get_Department_HOD_s.pro_Operations_Department_HOD__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>pro_Target_Days__c</field>
+            <value>
+                <numberValue>30.0</numberValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Engine_Physical_Inspection</name>
+        <label>Update Engine - Physical Inspection</label>
+        <locationX>578</locationX>
+        <locationY>755</locationY>
+        <connector>
+            <targetReference>Copy_2_of_Assign_to_Owner</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>GlicW__Due_Date__c</field>
+            <value>
+                <elementReference>Physical_End_Date</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>GlicW__Start_Date__c</field>
+            <value>
+                <elementReference>Physical_Inspection</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>GlicW__Task_Owner__c</field>
+            <value>
+                <elementReference>Get_Department_HOD_s.pro_Warehouse_Ops_HOD__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>pro_Target_Days__c</field>
+            <value>
+                <numberValue>5.0</numberValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Engine_Recon</name>
+        <label>Update Engine - Recon</label>
+        <locationX>2162</locationX>
+        <locationY>755</locationY>
+        <connector>
+            <targetReference>Copy_8_of_Assign_to_Owner</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>GlicW__Due_Date__c</field>
+            <value>
+                <elementReference>Recon_EndDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>GlicW__Start_Date__c</field>
+            <value>
+                <elementReference>Recon_StartDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>GlicW__Task_Owner__c</field>
+            <value>
+                <elementReference>Get_Department_HOD_s.pro_Asset_Department_HOD__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>pro_Target_Days__c</field>
+            <value>
+                <numberValue>3.0</numberValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Engine_Repair_Drop</name>
+        <label>Update Engine - Repair Drop</label>
+        <locationX>2690</locationX>
+        <locationY>755</locationY>
+        <connector>
+            <targetReference>Copy_10_of_Assign_to_Owner</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>GlicW__End_Date__c</field>
+            <value>
+                <elementReference>Repairs_EndDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>GlicW__Start_Date__c</field>
+            <value>
+                <elementReference>Repair_StartDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>GlicW__Task_Owner__c</field>
+            <value>
+                <elementReference>Get_Department_HOD_s.pro_Repairs_Department_HOD__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>pro_Target_Days__c</field>
+            <value>
+                <numberValue>7.0</numberValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Engine_Shipment_Materials</name>
+        <label>Update Engine -Shipment Materials</label>
+        <locationX>2954</locationX>
+        <locationY>755</locationY>
+        <connector>
+            <targetReference>Copy_11_of_Assign_to_Owner</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>GlicW__Due_Date__c</field>
+            <value>
+                <elementReference>ShipmentMat_EndDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>GlicW__Start_Date__c</field>
+            <value>
+                <elementReference>ShipmentMat_StartDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>GlicW__Task_Owner__c</field>
+            <value>
+                <elementReference>Get_Department_HOD_s.pro_Operations_Department_HOD__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>pro_Target_Days__c</field>
+            <value>
+                <numberValue>7.0</numberValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Engine_Shipment_to_Disassembly</name>
+        <label>Update Engine - Shipment to Disassembly</label>
+        <locationX>1370</locationX>
+        <locationY>755</locationY>
+        <connector>
+            <targetReference>Copy_5_of_Assign_to_Owner</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>GlicW__Due_Date__c</field>
+            <value>
+                <elementReference>Shipment_to_Disassembly_StartDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>GlicW__Start_Date__c</field>
+            <value>
+                <elementReference>Shipment_to_Dissaembly_EndDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>GlicW__Task_Owner__c</field>
+            <value>
+                <elementReference>Get_Department_HOD_s.pro_Operations_Department_HOD__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>pro_Target_Days__c</field>
+            <value>
+                <numberValue>7.0</numberValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Engine_Technical_review_Record</name>
+        <label>Update Engine - Technical review Record</label>
+        <locationX>50</locationX>
+        <locationY>755</locationY>
+        <connector>
+            <targetReference>Assign_to_Owner</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>GlicW__Due_Date__c</field>
+            <value>
+                <elementReference>TechnicalEndDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>GlicW__Start_Date__c</field>
+            <value>
+                <elementReference>TechnicalStartDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>GlicW__Task_Owner__c</field>
+            <value>
+                <elementReference>Get_Department_HOD_s.pro_Warehouse_Ops_HOD__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>pro_Target_Days__c</field>
+            <value>
+                <numberValue>14.0</numberValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>UpdateEngine_Return</name>
+        <label>Update Engine - Return</label>
+        <locationX>1898</locationX>
+        <locationY>755</locationY>
+        <connector>
+            <targetReference>Copy_7_of_Assign_to_Owner</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>GlicW__Due_Date__c</field>
+            <value>
+                <elementReference>Return_End_Date</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>GlicW__Start_Date__c</field>
+            <value>
+                <elementReference>Return_StartDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>GlicW__Task_Owner__c</field>
+            <value>
+                <elementReference>Get_Department_HOD_s.pro_Operations_Department_HOD__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>pro_Target_Days__c</field>
+            <value>
+                <numberValue>3.0</numberValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>3026</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Department_HOD_s</targetReference>
+        </connector>
+        <object>GlicW__Project_Task1__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Draft</status>
+    <variables>
+        <name>RecipientIds</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

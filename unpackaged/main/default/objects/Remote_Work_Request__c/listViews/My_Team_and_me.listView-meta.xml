@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Team_and_me</fullName>
+    <columns>NAME</columns>
+    <columns>pro_Calendar_Description__c</columns>
+    <columns>pro_Start_Date__c</columns>
+    <columns>pro_End_Date__c</columns>
+    <columns>pro_Employee_Remote_Request__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>My Team and me</label>
+    <sharedTo>
+        <group>HR_Group</group>
+    </sharedTo>
+</ListView>

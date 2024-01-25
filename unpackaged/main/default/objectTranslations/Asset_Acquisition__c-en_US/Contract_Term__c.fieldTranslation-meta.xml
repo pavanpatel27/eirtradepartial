@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label><!-- Contract Term --></label>
+        <name>Contract_Term__c</name>
+        <picklistValues>
+            <masterLabel>12 Months</masterLabel>
+            <translation><!-- 12 Months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>15 Months</masterLabel>
+            <translation><!-- 15 Months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>18 Months</masterLabel>
+            <translation><!-- 18 Months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>24 Months</masterLabel>
+            <translation><!-- 24 Months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>30 Months</masterLabel>
+            <translation><!-- 30 Months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>36 Months</masterLabel>
+            <translation><!-- 36 Months --></translation>
+        </picklistValues>
+    </CustomFieldTranslation>

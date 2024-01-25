@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pro_Expense_GL_Account__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <description>JP 06/04/2023 - Created by Prodigy</description>
+    <externalId>false</externalId>
+    <label>Expense GL Account</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>AcctSeed__GL_Account__c.AcctSeed__Type__c</field>
+            <operation>equals</operation>
+            <value>Balance Sheet, Expense</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>AcctSeed__GL_Account__c</referenceTo>
+    <relationshipLabel>Purchase Order Lines - Overhead</relationshipLabel>
+    <relationshipName>pro_Purchase_Order_Lines</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

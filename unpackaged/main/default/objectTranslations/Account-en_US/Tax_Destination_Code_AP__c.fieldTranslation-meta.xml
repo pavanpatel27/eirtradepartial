@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label><!-- Tax Destination Code AP --></label>
+        <name>Tax_Destination_Code_AP__c</name>
+        <relationshipLabel><!-- Accounts (Tax Destination Code AP) --></relationshipLabel>
+    </CustomFieldTranslation>

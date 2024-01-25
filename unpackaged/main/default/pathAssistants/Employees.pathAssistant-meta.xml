@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>GlicW__Resource__c</entityName>
+    <fieldName>Onboarding_Status__c</fieldName>
+    <masterLabel>Employees</masterLabel>
+    <pathAssistantSteps>
+        <info>&lt;ul&gt;&lt;li&gt;Register employee with revenue&lt;/li&gt;&lt;/ul&gt;</info>
+        <picklistValueName>Activate Employee</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;ul&gt;&lt;li&gt;Return Laptop and other company property&lt;/li&gt;&lt;/ul&gt;</info>
+        <picklistValueName>Collection of Assets</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;ul&gt;&lt;li&gt;Turn off access to systems&lt;/li&gt;&lt;/ul&gt;</info>
+        <picklistValueName>Deactivate</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;ul&gt;&lt;li&gt;Lunch with Manager&lt;/li&gt;&lt;li&gt;Welcome Announcement to Team&lt;/li&gt;&lt;li&gt;Logon access to systems&lt;/li&gt;&lt;/ul&gt;</info>
+        <picklistValueName>Onboarding and Welcome</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;ul&gt;&lt;li&gt;Exit Interview with HR&lt;/li&gt;&lt;/ul&gt;</info>
+        <picklistValueName>Pre-Offboarding</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;ul&gt;&lt;li&gt;Confirm PPSN Number&lt;/li&gt;&lt;li&gt;Eligible to work in Ireland&lt;/li&gt;&lt;li&gt;Bank Details&lt;/li&gt;&lt;/ul&gt;</info>
+        <picklistValueName>Pre-Onboarding</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;ul&gt;&lt;li&gt;AvSight User Training&lt;/li&gt;&lt;/ul&gt;</info>
+        <picklistValueName>Training</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;ul&gt;&lt;li&gt;2 Week Check In&lt;/li&gt;&lt;/ul&gt;</info>
+        <picklistValueName>Transition into Role</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>__MASTER__</recordTypeName>
+</PathAssistant>

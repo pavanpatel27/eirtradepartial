@@ -1,0 +1,66 @@
+<!-- sldsValidatorIgnore -->
+<!--
+ * Created by Johnny in Prodigy on 02-08-2023.
+ *
+ * Lightning Web Component Name: c-pro-promised-payment.
+ *
+ * Description: LWC for converting a Purchase Order to a Payable.
+ *
+ * Last modified by Johnny in Prodigy on on 21-08-2023.
+-->
+<template>
+    <lightning-layout multiple-rows="true">
+        <lightning-layout-item size="12">
+            <article class="slds-card__header slds-grid">
+                <lightning-layout multiple-rows="true">
+                    <lightning-layout-item size="12">
+                        <div class="slds-card__header slds-grid">
+                            <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                                <div>
+                                    <lightning-icon icon-name={BillingIcon} alternative-text="Billing"></lightning-icon>
+                                </div>
+                                <div class="slds-media__body">
+                                    <h2 class="slds-card__header-title">
+                                        <strong>
+                                            <span> Billings: </span>
+                                        </strong>
+                                    </h2>
+                                </div>
+                            </header>
+                        </div>
+                        <div class="slds-card__body slds-card__body_inner">
+                            <template for:each={SelectedBillingRecords} for:item="currentBilling">
+                                <c-pro-promised-payment-line
+                                    record={currentBilling}
+                                    currency-symbol={CurrencySymbol}
+                                    key={currentBilling.Id}
+                                    onitemremove={RemoveItem}
+                                    ondateupdate={UpdateDate}
+                                    onamountupdate={UpdateAmount}
+                                    oncommentupdate={UpdateComment}>
+                                </c-pro-promised-payment-line>
+                            </template>
+                        </div>
+                        <footer>
+                            <button
+                                class="slds-button slds-button_outline-brand"
+                                data-id="proCloseButton"
+                                onclick={CloseLWC}>
+                                Close
+                            </button>
+                            &nbsp;
+                            &nbsp;
+                            &nbsp;
+                            <button
+                                class="slds-button slds-button_outline-brand"
+                                data-id="proSaveButton"
+                                onclick={SaveUpdates}>
+                                Save
+                            </button>
+                        </footer>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </article>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>

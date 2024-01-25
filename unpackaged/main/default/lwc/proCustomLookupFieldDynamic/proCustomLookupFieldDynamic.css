@@ -1,0 +1,31 @@
+.pillFullLength{
+    width: 100%;
+}
+
+.pad_sides{
+    width: 70%;
+}
+
+.containerPosition{
+    position: relative;
+}
+
+.resultsPosition{
+    position: absolute;
+}
+
+.pushLabelDown{
+    margin-top: 5px;
+}
+
+.pushLabelRight{
+    margin-left: 5px;
+}
+
+.pill_colour{
+    color: #0645AD;
+}
+
+.selectedItemHover{
+    cursor: pointer;
+}

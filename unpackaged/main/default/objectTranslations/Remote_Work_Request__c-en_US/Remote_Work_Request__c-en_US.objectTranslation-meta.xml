@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Remote Work Request</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Remote Work Request</value>
+    </caseValues>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <layouts>
+        <layout>Remote Work Request Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Cancel Request --></label>
+        <name>pro_Cancel_Request</name>
+    </quickActions>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- pro_New_Remote_Request --></label>
+        <name>pro_New_Remote_Request</name>
+    </webLinks>
+</CustomObjectTranslation>

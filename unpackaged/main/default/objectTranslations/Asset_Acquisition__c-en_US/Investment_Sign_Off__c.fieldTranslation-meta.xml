@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- Please go to Related Tab and upload the document under Notes &amp; Attachments, once done tick this checkbox. --></help>
+        <label><!-- Investment Sign Off --></label>
+        <name>Investment_Sign_Off__c</name>
+    </CustomFieldTranslation>

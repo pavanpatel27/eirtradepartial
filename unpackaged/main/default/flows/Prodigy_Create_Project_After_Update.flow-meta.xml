@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>58.0</apiVersion>
+    <decisions>
+        <name>Is_Project</name>
+        <label>Is Project</label>
+        <locationX>314</locationX>
+        <locationY>323</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Engine</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Asset__r.RecordType.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Engine</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Project_Template_Engine</targetReference>
+            </connector>
+            <label>Engine</label>
+        </rules>
+        <rules>
+            <name>Airframe</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Asset__r.RecordType.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Airframe</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Project_Template_Airframe</targetReference>
+            </connector>
+            <label>Airframe</label>
+        </rules>
+    </decisions>
+    <description>AB 01/11/2023 - Updates to Logic
+AB 10/08/2023 - Update to Logic
+AB 27/07/2023 - Updates to Logic
+AB 26/07/2023 - Prodigy</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>EndDateFormula</name>
+        <dataType>Date</dataType>
+        <expression>CASE(
+WEEKDAY({!$Flow.CurrentDate}),
+  1, ({!$Flow.CurrentDate}) + 120 + 
+      FLOOR((120-1)/5)*2,
+  2, ({!$Flow.CurrentDate}) + 120 + 
+      FLOOR((120)/5)*2,
+  3, ({!$Flow.CurrentDate}) + 120 + 
+      FLOOR((120+1)/5)*2,
+  4, ({!$Flow.CurrentDate}) + 120 + 
+      FLOOR((120+2)/5)*2,
+  5, ({!$Flow.CurrentDate}) + 120 + 
+      FLOOR((120+3)/5)*2,
+  6, ({!$Flow.CurrentDate}) + 120 + 
+      CEILING((120)/5)*2,
+  7, ({!$Flow.CurrentDate}) - IF(120&gt;0,1,0) + 120 + 
+      CEILING((120)/5)*2,
+null)</expression>
+    </formulas>
+    <interviewLabel>Prodigy - Create Project - After Update {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Prodigy - Create Project - After Update</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Create_Airframe_Project</name>
+        <label>Create Airframe Project</label>
+        <locationX>314</locationX>
+        <locationY>647</locationY>
+        <assignRecordIdToReference>ProjectId</assignRecordIdToReference>
+        <inputAssignments>
+            <field>GlicW__Billing_Type__c</field>
+            <value>
+                <stringValue>Time &amp; Materials</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>GlicW__Clone_Project__c</field>
+            <value>
+                <elementReference>Get_Project_Template_Airframe.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>GlicW__End_Date__c</field>
+            <value>
+                <elementReference>EndDateFormula</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>GlicW__Owner__c</field>
+            <value>
+                <elementReference>Get_Owner_Employee_Airframe.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>GlicW__Start_Date__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>GlicW__Status__c</field>
+            <value>
+                <stringValue>Not Started</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>$Record.Asset__r.Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>pro_Asset_Acquisition__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>GlicW__Project__c</object>
+    </recordCreates>
+    <recordCreates>
+        <name>Create_Engine_Project</name>
+        <label>Create Engine Project</label>
+        <locationX>50</locationX>
+        <locationY>647</locationY>
+        <inputAssignments>
+            <field>GlicW__Billing_Type__c</field>
+            <value>
+                <stringValue>Time &amp; Materials</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>GlicW__Clone_Project__c</field>
+            <value>
+                <elementReference>Get_Project_Template_Engine.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>GlicW__End_Date__c</field>
+            <value>
+                <elementReference>EndDateFormula</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>GlicW__Owner__c</field>
+            <value>
+                <elementReference>Get_Owner_Employee_Engine.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>GlicW__Start_Date__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>GlicW__Status__c</field>
+            <value>
+                <stringValue>Not Started</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>$Record.Asset__r.Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>pro_Asset_Acquisition__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>GlicW__Project__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordLookups>
+        <name>Get_Owner_Employee_Airframe</name>
+        <label>Get Owner Employee (Airframe)</label>
+        <locationX>314</locationX>
+        <locationY>539</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Create_Airframe_Project</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>GlicW__User__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.OwnerId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>GlicW__Resource__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Owner_Employee_Engine</name>
+        <label>Get Owner Employee (Engine)</label>
+        <locationX>50</locationX>
+        <locationY>539</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Create_Engine_Project</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>GlicW__User__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.OwnerId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>GlicW__Resource__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Project_Template_Airframe</name>
+        <label>Get Project Template (Airframe)</label>
+        <locationX>314</locationX>
+        <locationY>431</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Owner_Employee_Airframe</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>a6b8X000000wtgnQAA</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>GlicW__Project__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Project_Template_Engine</name>
+        <label>Get Project Template (Engine)</label>
+        <locationX>50</locationX>
+        <locationY>431</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Owner_Employee_Engine</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>a6b8X000000wtgoQAA</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>GlicW__Project__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>188</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Is_Project</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Closed Won</stringValue>
+            </value>
+        </filters>
+        <object>Asset_Acquisition__c</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>ProjectId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

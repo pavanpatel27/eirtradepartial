@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Asset Acquisition</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Asset Acquisitions</value>
+    </caseValues>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <layouts>
+        <layout>Asset Acquisition Layout</layout>
+        <sections>
+            <label><!-- Acquisition Information --></label>
+            <section>Acquisition Information</section>
+        </sections>
+        <sections>
+            <label><!-- Asset Details --></label>
+            <section>Asset Details</section>
+        </sections>
+        <sections>
+            <label><!-- Contract Information --></label>
+            <section>Contract Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Financial Information --></label>
+            <section>Financial Information</section>
+        </sections>
+        <sections>
+            <label><!-- Logistic Information --></label>
+            <section>Logistic Information</section>
+        </sections>
+        <sections>
+            <label><!-- Review Information --></label>
+            <section>Review Information</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Trace Pack Request --></label>
+        <name>pro_Asset_Acq_Trace_Pack_Request</name>
+    </quickActions>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <errorMessage><!-- Please enter a Closed Lost reason before saving. --></errorMessage>
+        <name>Closed_Lost_Reason</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You are not authorised to mark Asset Acquisitions as Closed Won. --></errorMessage>
+        <name>Closed_Won_Allowed_Users</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter a No Bid reason before saving. --></errorMessage>
+        <name>No_Bid_Reason</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Unable to Save! There is already an Asset Acquisition with this ESN/MSN Number. --></errorMessage>
+        <name>Prevent_Duplicate_ESN_MSN</name>
+    </validationRules>
+</CustomObjectTranslation>
